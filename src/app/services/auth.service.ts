@@ -92,35 +92,34 @@ export class AuthService {
     this.router.navigate([routesAppFromRoot.home]);
   }
 
-  casAuthentication(ticket: string) {
-    console.log('DEBUG 2');
-    try {
-      this.httpService.get('/cas/login' + '?ticket=' + ticket).subscribe((res1) => {
-        console.log('SUCCESS');
-        console.log(res1);
-        this.httpService.get(API_ROUTES.casAuthenticate + '?ticket=' + ticket).subscribe(
-          (res: { access_token }) => {
-            console.log('FINALLY');
-            console.log(res);
-            this.authenticate(res.access_token);
-          },
-          (error) => {
-            this.loginError = true;
-          }
-        );
-      });
-    } catch (error) {
-      console.log('ERROR');
-      console.error(error);
+  casLogin(ticket: string) {
+    console.log('DEBUG 3 LOGIN');
+    this.httpService.get('/cas/login' + '?ticket=' + ticket).subscribe((res1) => {
+      console.log('SUCCESS');
+      console.log(res1);
       this.httpService.get(API_ROUTES.casAuthenticate + '?ticket=' + ticket).subscribe(
         (res: { access_token }) => {
+          console.log('FINALLY');
+          console.log(res);
           this.authenticate(res.access_token);
         },
         (error) => {
           this.loginError = true;
         }
       );
-    }
+    });
+  }
+  casAuthentication(ticket: string) {
+    console.log('DEBUG 3 AUTH');
+    this.httpService.get(API_ROUTES.casAuthenticate + '?ticket=' + ticket).subscribe(
+      (res: { access_token }) => {
+        console.log(res);
+        this.authenticate(res.access_token);
+      },
+      (error) => {
+        this.loginError = true;
+      }
+    );
   }
 
   // Login : request to the server and update of the information on the user

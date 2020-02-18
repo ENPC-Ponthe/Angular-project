@@ -15,6 +15,7 @@ export class AuthGuard implements CanActivate {
   ) => {
     const ticket = route.queryParams.ticket;
     if (ticket !== undefined) {
+      this.authService.casLogin(ticket);
       this.authService.casAuthentication(ticket);
     }
 
