@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
 
 import { AuthService } from '../../services/auth.service';
 import { PwaService } from '../../services/Pwa.service';
@@ -14,7 +13,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./auth.component.scss'],
 })
 
-export class AuthComponent implements OnInit, OnDestroy {
+export class AuthComponent implements OnInit {
   pathAuthVideo = PATH_AUTH_VIDEO;
   ssoPath: string;
 
@@ -23,10 +22,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   routes = routesAppFromRoot;
   isMobileOrTablet: boolean;
 
-  isLoginErrorSubscription: Subscription;
-  isLoginError = false;
-
-  constructor(private authService: AuthService,
+  constructor(public authService: AuthService,
               public Pwa: PwaService,
               private formBuilder: FormBuilder) {
   }
@@ -37,14 +33,7 @@ export class AuthComponent implements OnInit, OnDestroy {
     this.initForm();
     this.getBreakpoint();
 
-    this.isLoginErrorSubscription = this.authService.loginErrorStream.subscribe(state => {
-      this.isLoginError = state;
-    });
     this.ssoPath = CAS_BASE_URL + encodeURI(environment.baseUrl);
-  }
-
-  ngOnDestroy() {
-    this.isLoginErrorSubscription.unsubscribe();
   }
 
   getBreakpoint() {
@@ -65,7 +54,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   }
 
   closeAlert() {
-    this.authService.updateLoginError(false);
+    this.authService.loginError = false;
   }
 
   installPwa(): void {

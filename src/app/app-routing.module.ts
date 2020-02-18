@@ -34,6 +34,7 @@ export const routes: Routes = [
   { path: routesApp.dashboard, canActivate: [AuthGuard], component: DashboardComponent, data: {animation: 'DashboardPage'} },
   { path: 'dash', redirectTo: routesApp.dashboard },
   { path: 'board', redirectTo: routesApp.dashboard },
+  { path: 'admin', redirectTo: routesApp.dashboard },
   { path: routesApp.moderation, canActivate: [AuthGuard], component: ModerationComponent, data: {animation: 'ModerationPage'} },
   { path: 'modo', redirectTo: routesApp.moderation },
   { path: routesApp.members, canActivate: [AuthGuard], component: MembersComponent, data: {animation: 'MembersPage'} },
@@ -44,7 +45,7 @@ export const routes: Routes = [
   // { path: routesApp.videos + ':video', canActivate: [AuthGuard], component: VideoComponent, data: {animation: 'VideoComponent'} },
   { path: routesApp.pics + ':event', canActivate: [AuthGuard], component: EventComponent, data: {animation: 'EventPage'} },
   { path: routesApp.notFound, canActivate: [AuthGuard], component: NotfoundComponent },
-  { path: '**', redirectTo: routesApp.notFound }
+  { path: '**', canActivate: [AuthGuard], redirectTo: routesApp.notFound }
 ];
 
 @NgModule({

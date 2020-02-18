@@ -10,27 +10,32 @@ import API_ROUTES from './Api';
 import { BehaviorSubject } from 'rxjs';
 
 export const TOKEN_NAME = 'jwt_token';
+const NULL_TOKEN = [null, 'null', undefined];
 
 @Injectable()
 export class AuthService {
   isAuth: boolean;
 
   loginError = false;
-  loginErrorSource = new BehaviorSubject(false);
-  loginErrorStream = this.loginErrorSource.asObservable();
 
   constructor(private httpService: HttpService,
               private homeService: HomeService,
               private router: Router) {
-    this.isAuth = false;
     this.getUserInfos();
   }
 
   getUserInfos() {
     this.getToken();
+    this.isAuth = NULL_TOKEN.indexOf(this.httpService.token) === -1;
     if (this.httpService.token) {
       this.getUserByJWT();
     }
+  }
+
+  setUserInfos(admin: boolean, promotion: string | null, permission: boolean) {
+    this.httpService.isAdmin = admin;
+    this.httpService.promotion = promotion;
+    this.isAuth = permission;
   }
 
   getToken(): string {
@@ -45,15 +50,12 @@ export class AuthService {
 
   getUserByJWT() {
     this.httpService.get(API_ROUTES.getUserByJwt).subscribe(
-      (response: {admin, promotion}) => {
-        this.httpService.isAdmin = response.admin;
-        this.httpService.promotion = response.promotion;
-        this.isAuth = true;
+      (response: { admin: boolean, promotion: string }) => {
+        const { admin, promotion } = response;
+        this.setUserInfos(admin, promotion, true);
       },
       (err) => {
-        this.httpService.isAdmin = false;
-        this.httpService.promotion = '';
-        this.isAuth = false;
+        this.setUserInfos(false, null, false);
         this.router.navigate([routesAppFromRoot.auth]);
        }
     );
@@ -84,18 +86,10 @@ export class AuthService {
     return this.httpService.get(API_ROUTES.cgu);
   }
 
-  updateLoginError(newState: boolean) {
-    this.loginError = newState;
-    this.loginErrorSource.next(newState);
-  }
-
   authenticate(token: string) {
     this.setToken(token);
     this.isAuth = true;
     this.router.navigate([routesAppFromRoot.home]);
-    this.getUserByJWT();
-    this.homeService.getLatestGalleries();
-    this.homeService.getLovePics();
   }
 
   casAuthentication(ticket: string) {
@@ -104,7 +98,7 @@ export class AuthService {
         this.authenticate(res.access_token);
       },
       (error) => {
-        this.updateLoginError(true);
+        this.loginError = true;
       }
     );
   }
@@ -115,7 +109,7 @@ export class AuthService {
       (res: { token }) => {
         this.authenticate(res.token);
       },
-      (error) => { this.updateLoginError(true); }
+      (error) => { this.loginError = true; }
     );
   }
 
