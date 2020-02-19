@@ -30,10 +30,16 @@ export class AuthComponent implements OnInit {
   ngOnInit() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+    const currentLocation = new URL(window.location.href);
+    const ticket = currentLocation.searchParams.get('ticket');
+    if (ticket !== undefined) {
+      this.authService.casProcess(ticket);
+    }
+
     this.initForm();
     this.getBreakpoint();
-
-    this.ssoPath = CAS_BASE_URL + encodeURI(environment.baseUrl);
+    this.ssoPath = CAS_BASE_URL + encodeURI(environment.baseUrl + routesAppFromRoot.auth);
   }
 
   getBreakpoint() {

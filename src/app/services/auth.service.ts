@@ -4,10 +4,8 @@ import { Router } from '@angular/router';
 import * as jwt_decode from 'jwt-decode';
 
 import { HttpService } from './http.service';
-import { HomeService } from './home.service';
 import { routesAppFromRoot } from '../Routes';
 import API_ROUTES from './Api';
-import { BehaviorSubject } from 'rxjs';
 
 export const TOKEN_NAME = 'jwt_token';
 const NULL_TOKEN = [null, 'null', undefined];
@@ -19,7 +17,6 @@ export class AuthService {
   loginError = false;
 
   constructor(private httpService: HttpService,
-              private homeService: HomeService,
               private router: Router) {
     this.getUserInfos();
   }
@@ -27,7 +24,7 @@ export class AuthService {
   getUserInfos() {
     this.getToken();
     this.isAuth = NULL_TOKEN.indexOf(this.httpService.token) === -1;
-    if (this.httpService.token) {
+    if (this.isAuth) {
       this.getUserByJWT();
     }
   }
@@ -108,6 +105,11 @@ export class AuthService {
         this.loginError = true;
       }
     );
+  }
+
+  casProcess(ticket: string) {
+    this.casLogin(ticket);
+    this.casAuthentication(ticket);
   }
 
   // Login : request to the server and update of the information on the user
