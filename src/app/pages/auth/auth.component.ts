@@ -7,6 +7,8 @@ import { routesAppFromRoot } from '../../Routes';
 import { BREAKPOINTS, PATH_AUTH_VIDEO, CAS_BASE_URL } from '../../Constants';
 import { environment } from 'src/environments/environment';
 
+const NULL_TICKET = [null, 'null', undefined];
+
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -33,7 +35,7 @@ export class AuthComponent implements OnInit {
 
     const currentLocation = new URL(window.location.href);
     const ticket = currentLocation.searchParams.get('ticket');
-    if (ticket !== undefined) {
+    if (NULL_TICKET.indexOf(ticket) === -1) {
       this.authService.casProcess(ticket);
     }
 

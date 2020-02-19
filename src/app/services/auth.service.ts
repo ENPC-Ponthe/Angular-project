@@ -90,13 +90,11 @@ export class AuthService {
   }
 
   casLogin(ticket: string) {
-    console.log('DEBUG 4 LOGIN');
-    this.httpService.get('/cas/login' + '?ticket=' + ticket).subscribe(() => {
-      // this.httpService.get(API_ROUTES.casAuthenticate + '?ticket=' + ticket);
-    });
+    console.log('DEBUG 5 LOGIN');
+    this.httpService.get('/cas/login' + '?ticket=' + ticket);
   }
   casAuthentication(ticket: string) {
-    console.log('DEBUG 4 AUTH');
+    console.log('DEBUG 5 AUTH');
     this.httpService.get(API_ROUTES.casAuthenticate + '?ticket=' + ticket).subscribe(
       (res: { access_token }) => {
         this.authenticate(res.access_token);
@@ -108,6 +106,7 @@ export class AuthService {
   }
 
   casProcess(ticket: string) {
+    console.log('ticket', ticket)
     this.casLogin(ticket);
     this.casAuthentication(ticket);
   }

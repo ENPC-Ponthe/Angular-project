@@ -14,10 +14,10 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ) => {
     const ticket = route.queryParams.ticket;
-    if (ticket !== undefined) {
-      this.authService.casLogin(ticket);
-      this.authService.casAuthentication(ticket);
-    }
+    // if (ticket !== undefined) {
+    //   this.authService.casLogin(ticket);
+    //   this.authService.casAuthentication(ticket);
+    // }
 
     this.authService.getUserByJWT();
     if (this.authService.isAuth) {
