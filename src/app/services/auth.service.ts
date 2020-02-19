@@ -106,7 +106,7 @@ export class AuthService {
   }
 
   casProcess(ticket: string) {
-    console.log('ticket', ticket)
+    console.log('ticket', ticket);
     this.casLogin(ticket);
     this.casAuthentication(ticket);
   }
