@@ -18,6 +18,10 @@
     "crush.noCrush.title": "Here you'll find your favorite pictures. So far, you haven't liked any of them. To see them appear here, go to the galleries and add reactions to the pictures. :)",
 
     "dashboard.header.title": "Administration area",
+    "dashboard.cguForm.title": "Modification of the TOS",
+    "dashboard.cguForm.submitButton": "Validate the TOS",
+    "dashboard.change.success": "Successful modifications",
+    "dashboard.change.failure": "Modification failure",
     "dashboard.form.title": "Creation of a gallery",
     "dashboard.form.name": "Name of the gallery",
     "dashboard.form.description": "Description of the gallery",
@@ -167,6 +171,8 @@
     "vestibule.movies": "Movies",
     "vestibule.pics": "Photos",
 
-    "close": "Close"
+    "close": "Close",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
   }
   
