@@ -79,11 +79,6 @@ export class AuthService {
     return !( date.getTime() + 3 * 3600 > (new Date().getTime()) );
   }
 
-  // Get the User Conditions
-  getCGU() {
-    return this.httpService.get(API_ROUTES.cgu);
-  }
-
   authenticate(token: string) {
     this.setToken(token);
     this.isAuth = true;

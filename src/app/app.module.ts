@@ -25,6 +25,8 @@ import { AuthCardComponent } from './components/auth/auth-card/auth-card.compone
 import { AuthFooterComponent } from './components/auth/auth-footer/auth-footer.component';
 import { AuthNavComponent } from './components/auth/auth-nav/auth-nav.component';
 import { CsvImportFormComponent } from './components/dashboard/csv-import-form/csv-import-form.component';
+import { CguEditionFormComponent } from './components/dashboard/cgu-edition-form/cgu-edition-form.component';
+import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 import { DashboardFormComponent } from './components/dashboard/dashboard-form/dashboard-form.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GaleriesContactFormComponent } from './components/galeries/galeries-contact-form/galeries-contact-form.component';
@@ -77,6 +79,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 // SERVICES
 import { AdminGuard } from './services/admin-guard.service';
+import { AssetsService } from './services/assets.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
 import { BreakpointsService } from './services/breakpoints.service';
@@ -108,6 +111,8 @@ export function setupTranslateFactory(
     AuthCardComponent,
     AuthFooterComponent,
     AuthNavComponent,
+    CguEditionFormComponent,
+    ConfirmModalComponent,
     CsvImportFormComponent,
     DashboardFormComponent,
     FooterComponent,
@@ -168,6 +173,7 @@ export function setupTranslateFactory(
   ],
   providers: [
     AdminGuard,
+    AssetsService,
     AuthGuard,
     AuthService,
     BreakpointsService,

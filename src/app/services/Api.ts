@@ -20,6 +20,7 @@ export default {
     createGallery: '/create-gallery',
     filesNotModerated: '/files/not-moderated',
     fileUpload: '/file-upload/',
+    editCgu: '/edit-cgu',
 
     /* Members */
     members: '/members',
