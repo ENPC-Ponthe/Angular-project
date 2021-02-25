@@ -21,8 +21,8 @@ export class AdminUsefulLinksComponent implements OnInit {
 
   getUsefulLinks() {
     this.assetsService.getUsefulLinks().subscribe(
-      (res: { links }) => {
-        this.usefulLinks = res.links;
+      (res: object[]) => {
+        this.usefulLinks = res;
       },
       (error) => { console.log(error); }
     );
