@@ -15,8 +15,11 @@ form:last-child {
 
 
 input[type="submit"] {
-  	background: $BUTTON-BACKGROUND-GRADIENT;
+  background: $BUTTON-BACKGROUND-GRADIENT;
 	box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-FOCUS-LIGHT;
+  display: block;
+  margin: auto;
+  margin-top: units(1.5);
 }
 
 input[type="text"] {

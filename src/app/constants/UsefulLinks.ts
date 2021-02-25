@@ -1,5 +1,5 @@
 export default {
-    musique: {
+    links: [{
         title: 'Musiques libres de droits',
         content: [
             {
@@ -23,5 +23,5 @@ export default {
                 description: ''
             },
         ]
-    },
+    }],
 };
