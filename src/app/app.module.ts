@@ -45,6 +45,7 @@ import { LoadingSpinnerComponent } from './components/loaders/loading-spinner/lo
 import { LovePicsComponent } from './components/home/love-pics/love-pics.component';
 import { MaterialBookingFormComponent } from './components/material-booking-form/material-booking-form.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { MembersEditionFormComponent } from './components/dashboard/members-edition-form/members-edition-form.component';
 import { NavComponent } from './components/navigation/nav/nav.component';
 import { NavLinkComponent } from './components/navigation/nav-link/nav-link.component';
 import { NavigationButtonComponent } from './components/navigation-button/navigation-button.component';
@@ -129,6 +130,7 @@ export function setupTranslateFactory(
     LoadingSpinnerComponent,
     LovePicsComponent,
     MaterialBookingFormComponent,
+    MembersEditionFormComponent,
     ModalComponent,
     NavComponent,
     NavLinkComponent,

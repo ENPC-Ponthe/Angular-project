@@ -18,4 +18,10 @@ export class AssetsService {
     return this.httpService
       .post(API_ROUTES.editCgu, newCgus);
   }
+
+  // Get the team members of Ponthe
+  editMembers(newMembers: object) {
+    return this.httpService
+      .post(API_ROUTES.editMembers, newMembers);
+  }
 }
