@@ -40,6 +40,7 @@
   "dashboard.links.youtube": "Youtube",
   "dashboard.tutos.title": "Tutoriels ponthe.enpc.org",
   "dashboard.usefulLinks.title": "Liens utiles pour admins",
+  "dashboard.modalChangeValidate.title": "Veux-tu vraiment valider ces modifications ?",
   "dashboard.privateGalleries.title": "Galeries privées",
   "dashboard.privatePhotoGalleries.none": "Il n'y a pas de galerie photo privée pour le moment.",
   "dashboard.privateVideoGalleries.none": "Il n'y a pas de galerie vidéo privée pour le moment.",

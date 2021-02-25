@@ -37,8 +37,8 @@ export class CguEditionFormComponent implements OnInit {
 
   arrayToJson(articles: any) {
     let finalJson = {};
-    for (let i = 1; i < articles.length + 1; i++) {
-      finalJson[i] = articles[i];
+    for (let i = 0; i < articles.length; i++) {
+      finalJson[i + 1] = articles[i];
     }
     finalJson = { articles: finalJson };
     return finalJson;

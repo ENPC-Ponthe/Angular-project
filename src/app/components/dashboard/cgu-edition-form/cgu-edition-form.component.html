@@ -1,5 +1,5 @@
 <app-dashboard-form [title]="'dashboard.cguForm.title' | translate">
-  <form (ngSubmit)="openConfirmationModal()">
+  <form>
    <button name="add" class="add_button" (click)="addArticle(-1)">+</button><br/>
 
    <div *ngFor="let article of articles; let i = index">
@@ -27,13 +27,14 @@
        {{ 'dashboard.change.failure' | translate }}
     </p>
     <input type="submit"
-           [value]="'dashboard.cguForm.submitButton' | translate"/>
+           [value]="'dashboard.cguForm.submitButton' | translate"
+           (click)="openConfirmationModal()"/>
   </form>
 </app-dashboard-form>
 
 <app-confirm-modal
   class="confirmModal"
-  [title]="'dashboard.usefulLinks.title' | translate"
+  [title]="'dashboard.modalChangeValidate.title' | translate"
   [cancelText]="'cancel' | translate"
   [validateText]="'confirm' | translate"
   [visible]="visibleModal"
