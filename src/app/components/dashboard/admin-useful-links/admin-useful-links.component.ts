@@ -33,7 +33,7 @@ export class AdminUsefulLinksComponent implements OnInit {
       this.editMode = true;
     } else {
       this.editMode = false;
-      this.assetsService.editUsefulLinks(this.usefulLinks).subscribe(() => {});
+      this.assetsService.editUsefulLinks({ links: this.usefulLinks }).subscribe(() => {});
     }
   }
 
