@@ -1,0 +1,50 @@
+<app-dashboard-form [title]="'dashboard.membersForm.title' | translate">
+  <form>
+   <button name="add" class="addTeam_button" (click)="addTeam(0)">
+      {{ 'dashboard.membersForm.addTeam' | translate }}
+   </button>
+
+   <div *ngFor="let team of teamPonthe; let teamIndex = index">
+      <h2>Ponthé {{ team.year }}</h2>
+      <div class="content_article">
+         <div *ngFor="let member of team.members; let memberIndex = index">
+            <input type="text" name="job"
+               placeholder="Poste"
+               class="input_field content_article"
+               [value]="member"
+               (change)="updateMember(teamIndex, memberIndex, $event)"
+               id="name" />
+            <button name="remove" (click)="removeMember(teamIndex, memberIndex)">✕</button>
+         </div>
+      </div>
+      <button name="add" class="add_button" (click)="addMember(teamIndex)">
+         {{ 'dashboard.membersForm.addMember' | translate }}
+      </button>
+   </div>
+   <button name="add" class="addTeam_button" (click)="addTeam(-1)">
+      {{ 'dashboard.membersForm.addTeam' | translate }}
+   </button>
+
+    <p id="success" [class]="successEdition ? 'visible' : 'hidden'">
+       <span class="icon fa fa-check-circle fa-lg"></span>
+       {{ 'dashboard.change.success' | translate }}
+    </p>
+    <p id="failure" [class]="failureEdition ? 'visible' : 'hidden'">
+       <span class="icon fa fa-times-circle fa-lg"></span>
+       {{ 'dashboard.change.failure' | translate }}
+    </p>
+    <input type="submit"
+           [value]="'dashboard.membersForm.submitButton' | translate"
+           (click)="openConfirmationModal()"/>
+  </form>
+</app-dashboard-form>
+
+<app-confirm-modal
+  class="confirmModal"
+  [title]="'dashboard.modalChangeValidate.title' | translate"
+  [cancelText]="'cancel' | translate"
+  [validateText]="'confirm' | translate"
+  [visible]="visibleModal"
+  (closeCancel)="closeCancelModal()"
+  (closeValidate)="onSubmitMembers()">
+</app-confirm-modal>

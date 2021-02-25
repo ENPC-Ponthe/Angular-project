@@ -21,6 +21,7 @@ export default {
     filesNotModerated: '/files/not-moderated',
     fileUpload: '/file-upload/',
     editCgu: '/edit-cgu',
+    editMembers: '/edit-members',
 
     /* Members */
     members: '/members',

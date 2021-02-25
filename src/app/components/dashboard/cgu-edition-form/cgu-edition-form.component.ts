@@ -40,7 +40,7 @@ export class CguEditionFormComponent implements OnInit {
     for (let i = 0; i < articles.length; i++) {
       finalJson[i + 1] = articles[i];
     }
-    finalJson = { articles: finalJson };
+    finalJson = { cgu: { articles: finalJson } };
     return finalJson;
   }
 
