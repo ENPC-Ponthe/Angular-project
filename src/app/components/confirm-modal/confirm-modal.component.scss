@@ -80,6 +80,10 @@ $MODERATION-PADDING-MOBILE: units(2);
 #moderation > h1, #moderation > footer {
   margin-left: -$MODERATION-PADDING;
   margin-right: -$MODERATION-PADDING;
+  padding: 0 units(2);
+  text-align: left;
+  text-transform: none;
+  letter-spacing: 0.035em;
 
   @include sm {
     margin-left: -$MODERATION-PADDING-MOBILE;
@@ -122,7 +126,6 @@ $MODERATION-PADDING-MOBILE: units(2);
   box-shadow: none !important;
   opacity: 1 !important;
   float: left;
-  margin-left: units(2) !important;
 }
 .close:hover {
   color: color(DARK) !important;
