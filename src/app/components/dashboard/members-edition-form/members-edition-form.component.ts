@@ -50,30 +50,30 @@ export class MembersEditionFormComponent implements OnInit {
 
   addTeam(teamIndex: number) {
     const numberOfTeams = this.teamPonthe.length;
-    const indexOfNewTeam = teamIndex == 0 ? 0 : numberOfTeams;
-    const year = teamIndex == 0
-      ? '0' + (parseInt(this.teamPonthe[0].year) + 1).toString()
-      : '0' + (parseInt(this.teamPonthe[numberOfTeams - 1].year) - 1).toString();
+    const indexOfNewTeam = teamIndex === 0 ? 0 : numberOfTeams;
+    const year = teamIndex === 0
+      ? '0' + (Number(this.teamPonthe[0].year) + 1).toString()
+      : '0' + (Number(this.teamPonthe[numberOfTeams - 1].year) - 1).toString();
 
     const emptyTeam = {
-      year: year,
+      year,
       year_id: 'p' + year,
       members: [''],
-      prev_year_id: 'p0' + (parseInt(year) - 1).toString()
+      prev_year_id: 'p0' + (Number(year) - 1).toString()
     };
     this.teamPonthe.splice(indexOfNewTeam, 0, emptyTeam);
   }
 
   addMember(teamIndex: number) {
     const membersList = this.teamPonthe[teamIndex].members;
-    membersList.push('')
-    this.teamPonthe[teamIndex].members = membersList
+    membersList.push('');
+    this.teamPonthe[teamIndex].members = membersList;
   }
-  
+
   removeMember(teamIndex: number, memberIndex: number) {
     const membersList = this.teamPonthe[teamIndex].members;
     membersList.splice(memberIndex, 1);
-    this.teamPonthe[teamIndex].members = membersList
+    this.teamPonthe[teamIndex].members = membersList;
     if (membersList.length === 0) {
       this.teamPonthe.splice(teamIndex, 1);
     }
