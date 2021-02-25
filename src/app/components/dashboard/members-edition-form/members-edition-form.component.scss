@@ -13,15 +13,6 @@ form:last-child {
 	margin-bottom: 2vh;
 }
 
-#name, #description, #year_slug, #type {
-	margin-bottom: units(2);
-}
-
-form textarea, form .input_field, select {
-	background: color(WHITE);
-	color: $INPUT-TEXT-DARK-GREY;
-	max-width: 100%;
-}
 
 input[type="submit"] {
   	background: $BUTTON-BACKGROUND-GRADIENT;
@@ -29,17 +20,15 @@ input[type="submit"] {
 }
 
 input[type="text"] {
+  background: color(WHITE);
+	color: $INPUT-TEXT-DARK-GREY;
+	max-width: 100%;
   width: calc(100% - #{$BUTTON-SIZE} - #{$MARGIN-RIGHT-BUTTON-REMOVE});
   margin-right: $MARGIN-RIGHT-BUTTON-REMOVE;
-  margin-bottom: units(1);
+  margin-bottom: units(0.5);
 	font-weight: 600;
+  font-size: font-size(MEDIUM);
   display: inline-block;
-}
-
-label {
-	color: color(DARK_GREY);
-	text-align: left;
-	font-size: font-size(MEDIUM);
 }
 
 #success, #failure {
@@ -68,17 +57,17 @@ label {
 }
 
 
-h1 {
+h2 {
   color: color(DARK_GREY);
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  text-align: center;
-  font-size: font-size(LARGE);
+  text-align: left;
   margin-bottom: units(1);
   overflow: hidden;
   text-transform: inherit;
   padding-left: units(1);
   padding-right: units(1);
+  padding-top: units(1.5);
+  margin-top: units(1);
+  border-top: 1px solid color(LIGHT_GREY);
 
   @include sm {
     font-size: font-size(SMALL) !important;
@@ -110,11 +99,20 @@ button:hover {
   background-color: color(LIGHT_GREY) !important;
 }
 
-.add_button {
-	border-radius: 100%;
-}
-
 .add_button, .addTeam_button {
   width: 60%;
   border-radius: units(1.5);
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  font-size: font-size(MEDIUM);
+}
+
+.addTeam_button {
+  background-color: color(DARK) !important;
+  color: color(WHITE) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.addTeam_button:hover {
+  background-color: color(LIGHT_GREY) !important;
+  color: color(DARK) !important;
 }
