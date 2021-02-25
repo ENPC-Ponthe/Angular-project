@@ -12,7 +12,7 @@ export class AdminUsefulLinksComponent implements OnInit {
 
   @Input() visible: boolean;
   @Output() close = new EventEmitter<{}>();
-  
+
   constructor(private assetsService: AssetsService) { }
 
   ngOnInit(): void {
