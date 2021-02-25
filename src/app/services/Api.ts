@@ -22,6 +22,8 @@ export default {
     fileUpload: '/file-upload/',
     editCgu: '/edit-cgu',
     editMembers: '/edit-members',
+    getUsefulLinks: '/useful-links',
+    editUsefulLinks: '/edit-useful-links',
 
     /* Members */
     members: '/members',

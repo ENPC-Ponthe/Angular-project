@@ -38,6 +38,8 @@
   "dashboard.csv_account_creation.submit": "Créer les comptes",
   "dashboard.links.tutorials": "Tutoriels",
   "dashboard.links.usefulLinks": "Liens utiles",
+  "dashboard.links.usefulLinks.addLink": "+ Ajouter un lien",
+  "dashboard.links.usefulLinks.addSubject": "+ Ajouter une thématique",
   "dashboard.links.moderation": "Modérer",
   "dashboard.links.slack": "Slack",
   "dashboard.links.trello": "Trello",
@@ -172,6 +174,7 @@
   "vestibule.movies": "Films",
   "vestibule.pics": "Photos",
 
+  "edit": "Editer",
   "close": "Fermer",
   "cancel": "Annuler",
   "confirm": "Confirmer"

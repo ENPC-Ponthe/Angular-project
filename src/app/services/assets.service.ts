@@ -24,4 +24,14 @@ export class AssetsService {
     return this.httpService
       .post(API_ROUTES.editMembers, newMembers);
   }
+
+  // Get admin useful links
+  getUsefulLinks() {
+    return this.httpService.get(API_ROUTES.getUsefulLinks);
+  }
+
+  editUsefulLinks(newUsefulLinks: object) {
+    return this.httpService
+      .post(API_ROUTES.editUsefulLinks, newUsefulLinks);
+  }
 }

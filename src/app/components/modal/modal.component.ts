@@ -23,13 +23,19 @@ const OVERLAY_OPACITY = 0.65;
 })
 export class ModalComponent implements OnInit {
   @Input() title: string;
+  @Input() editText: string;
   @Input() closeText: string;
   @Input() visible: boolean;
+  @Output() edit = new EventEmitter<{}>();
   @Output() close = new EventEmitter<{}>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  editModal() {
+    this.edit.next();
   }
 
   onCloseModal() {
