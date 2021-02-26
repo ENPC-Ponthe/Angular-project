@@ -6,7 +6,7 @@ import {
   PATH_NOT_FOUND_IMAGE,
 } from './constants/Images';
 import { LINKS, BUTTON_LINKS_ADMIN } from './constants/ExternalLinks';
-import { LANGUAGES, FLAGS_BY_LANG } from './constants/Languages';
+import { FLAGS_BY_LANG } from './constants/Languages';
 import { BREAKPOINTS } from './constants/Breakpoints';
 
 export const CAS_BASE_URL = 'https://cas.enpc.fr/cas/login?service=';
@@ -53,7 +53,6 @@ export {
   PATH_NOT_FOUND_IMAGE,
   LINKS,
   BUTTON_LINKS_ADMIN,
-  LANGUAGES,
   FLAGS_BY_LANG,
   BREAKPOINTS,
   AVAILABLE_PROMOTIONS,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TranslateService } from '../../services/translate.service';
-import { LANGUAGES, FLAGS_BY_LANG } from '../../Constants';
+import { TranslateService, SUPPORTED_LANGUAGES } from '../../services/translate.service';
+import { FLAGS_BY_LANG } from '../../Constants';
 
 @Component({
   selector: 'app-language-selection',
@@ -11,20 +11,20 @@ import { LANGUAGES, FLAGS_BY_LANG } from '../../Constants';
 
 export class LanguageSelectionComponent implements OnInit {
 
-  languages = LANGUAGES;
+  languages = SUPPORTED_LANGUAGES;
   flagsByLanguage = FLAGS_BY_LANG;
 
-  selectedLanguage = 'fr';
+  selectedLanguage: string;
   showFlags = false;
 
   constructor(private translate: TranslateService) { }
 
   ngOnInit() {
-    this.selectedLanguage = this.translate.selectedLanguage;
+    this.selectedLanguage = this.translate.getLanguage();
   }
 
   setLang(lang: string) {
-    this.translate.use(lang);
+    this.translate.changeLanguage(lang);
     this.selectedLanguage = lang;
   }
 

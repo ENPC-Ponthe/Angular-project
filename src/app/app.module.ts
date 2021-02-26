@@ -92,7 +92,7 @@ import { MessagesService } from './services/messages.service';
 import { PicsService } from './services/pics.service';
 import { PwaService } from './services/Pwa.service';
 import { ReactionsService } from './services/reactions.service';
-import { TranslateService } from './services/translate.service';
+import { TranslateService, SUPPORTED_LANGUAGES } from './services/translate.service';
 import { TranslatePipe } from './services/translate.pipe';
 import { UserService } from './services/user.service';
 import { VideoService } from './services/video.service';
@@ -100,6 +100,12 @@ import { VideoService } from './services/video.service';
 
 export function setupTranslateFactory(
   service: TranslateService): () => void {
+  const navigatorLanguage = navigator.language;
+  for (const language of SUPPORTED_LANGUAGES) {
+    if (navigatorLanguage.includes(language)) {
+      return () => service.use(language);
+    }
+  }
   return () => service.use('fr');
 }
 
