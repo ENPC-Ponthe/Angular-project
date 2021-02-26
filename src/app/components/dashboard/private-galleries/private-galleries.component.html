@@ -1,5 +1,6 @@
 <!-- Photos -->
 <div id="main">
+  <h2 class="galleryTitle">{{ 'dashboard.privatePhotoGalleries.title' | translate }}</h2>
   <article *ngFor="let event of galeriesService.privatePhotoEvents"
            class="thumb">
     <a [routerLink]="routes.pics + '/' + event.slug" [attr.aria-label]="event.name">
@@ -18,6 +19,7 @@
 
 <!-- Videos -->
 <div id="main">
+  <h2 class="galleryTitle">{{ 'dashboard.privateVideoGalleries.title' | translate }}</h2>
   <article *ngFor="let movie of galeriesService.privateVideoEvents"
            class="thumb">
     <a [routerLink]="routes.videos + '/' + movie.slug" [attr.aria-label]="movie.name">

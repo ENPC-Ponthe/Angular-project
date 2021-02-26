@@ -1,8 +1,16 @@
+<div id="window_selection">
+  <div *ngFor="let tab of availableTabs"
+    [class]="selectedTab === tab.name ? 'window_tab_selected' : 'window_tab'"
+    (click)="changeTab(tab.name)">
+    {{ tab.title | translate }}
+  </div>
+</div>
+
 <!-- Intro -->
 <section id="intro" class="main style1 dark fullscreen">
 
   <!-- Adminstration area -->
-  <div class="content" id="admin_area">
+  <div *ngIf="selectedTab === 'manage'" class="content" id="admin_area">
     <header id="admin_header">
       <h2>{{ 'dashboard.header.title' | translate }}</h2>
     </header>
@@ -36,11 +44,14 @@
       </span>
     </div>
   </div>
-
-  <h3 id="private_galleries_title">{{ 'dashboard.privateGalleries.title' | translate }}</h3>
+  
+  <div *ngIf="selectedTab === 'private-galleries'">
+    <h3 id="private_galleries_title">{{ 'dashboard.privateGalleries.title' | translate }}</h3>
+    <app-private-galleries id="privateGalleries"></app-private-galleries>
+  </div>
 </section>
 
-<app-private-galleries></app-private-galleries>
+
 
 <app-tutorials [visible]="tutorialsVisible" (close)="displayTutorials()"></app-tutorials>
 

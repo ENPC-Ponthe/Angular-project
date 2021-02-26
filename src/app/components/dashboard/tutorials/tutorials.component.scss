@@ -89,6 +89,11 @@ button:hover {
     display: block;
     margin: auto;
     margin-bottom: units(2);
+
+    @include sm {
+        font-size: font-size(SMALL);
+        width: 80%;
+    }
 }
 
 .add_button {

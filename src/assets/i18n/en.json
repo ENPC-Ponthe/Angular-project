@@ -17,6 +17,8 @@
   
     "crush.noCrush.title": "Here you'll find your favorite pictures. So far, you haven't liked any of them. To see them appear here, go to the galleries and add reactions to the pictures. :)",
 
+    "dashboard.tabs.privateGalleries": "Private galleries",
+    "dashboard.tabs.manage": "Manage",
     "dashboard.header.title": "Administration area",
     "dashboard.cguForm.title": "Modification of the TOS",
     "dashboard.cguForm.submitButton": "Validate the TOS",
@@ -50,7 +52,9 @@
     "dashboard.usefulLinks.title": "Useful links for admins",
     "dashboard.modalChangeValidate.title": "Do you approve these changes ?",
     "dashboard.privateGalleries.title": "Private galleries",
+    "dashboard.privatePhotoGalleries.title": "Photo Galleries",
     "dashboard.privatePhotoGalleries.none": "There is no private photo gallery for the moment.",
+    "dashboard.privateVideoGalleries.title": "Video Galleries",
     "dashboard.privateVideoGalleries.none": "There is no private video gallery for the moment.",
 
     "event.deleteGallery.galleryWillBeDeleted": "This gallery is about to be deleted. Click a second time on \"Delete gallery\" to validate the action.",
