@@ -34,4 +34,14 @@ export class AssetsService {
     return this.httpService
       .post(API_ROUTES.editUsefulLinks, newUsefulLinks);
   }
+
+  // Get admin tutorials
+  getAdminTutorials() {
+  return this.httpService.get(API_ROUTES.getAdminTutorials);
+  }
+
+  editAdminTutorials(newTutorials: object) {
+    return this.httpService
+      .post(API_ROUTES.editAdminTutorials, newTutorials);
+  }
 }

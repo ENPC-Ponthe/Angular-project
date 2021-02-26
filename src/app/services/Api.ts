@@ -24,6 +24,8 @@ export default {
     editMembers: '/edit-members',
     getUsefulLinks: '/useful-links',
     editUsefulLinks: '/edit-useful-links',
+    getAdminTutorials: '/admin-tutorials',
+    editAdminTutorials: '/edit-admin-tutorials',
 
     /* Members */
     members: '/members',

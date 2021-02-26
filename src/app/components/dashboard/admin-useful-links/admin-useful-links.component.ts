@@ -54,7 +54,7 @@ export class AdminUsefulLinksComponent implements OnInit {
   }
 
   addSubject(subjectIndex: number) {
-    const indexOfNewSubject = subjectIndex === 0 ? 0 : this.usefulLinks.length;
+    const indexOfNewSubject = subjectIndex === 0 ? 0 : subjectIndex;
 
     const emptySubject = {
       title: '',

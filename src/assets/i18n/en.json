@@ -45,6 +45,8 @@
     "dashboard.links.trello": "Trello",
     "dashboard.links.youtube": "Youtube",
     "dashboard.tutos.title": "Tutorials ponthe.enpc.org",
+    "dashboard.tutos.addCategory": "+ Add a category",
+    "dashboard.tutos.addTutorial": "+ Add a tutorial",
     "dashboard.usefulLinks.title": "Useful links for admins",
     "dashboard.modalChangeValidate.title": "Do you approve these changes ?",
     "dashboard.privateGalleries.title": "Private galleries",
