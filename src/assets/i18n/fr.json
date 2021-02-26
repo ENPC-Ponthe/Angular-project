@@ -17,6 +17,8 @@
 
   "crush.noCrush.title": "Tu trouveras ici tes photos préférées. Pour l'instant, tu n'en a pas aimées. Pour en voir apparaître ici, va dans les galeries et ajoute des réactions sur les photos. :)",
 
+  "dashboard.tabs.privateGalleries": "Galeries privées",
+  "dashboard.tabs.manage": "Gestion",
   "dashboard.header.title": "Zone d'administration",
   "dashboard.cguForm.title": "Modification des CGU",
   "dashboard.cguForm.submitButton": "Valider les CGU",
@@ -50,7 +52,9 @@
   "dashboard.usefulLinks.title": "Liens utiles pour admins",
   "dashboard.modalChangeValidate.title": "Veux-tu vraiment valider ces modifications ?",
   "dashboard.privateGalleries.title": "Galeries privées",
+  "dashboard.privatePhotoGalleries.title": "Galeries Photo",
   "dashboard.privatePhotoGalleries.none": "Il n'y a pas de galerie photo privée pour le moment.",
+  "dashboard.privateVideoGalleries.title": "Galeries Vidéo",
   "dashboard.privateVideoGalleries.none": "Il n'y a pas de galerie vidéo privée pour le moment.",
 
   "event.deleteGallery.galleryWillBeDeleted": "Cette galerie est sur le point d'être supprimée. Cliquer une deuxième fois sur 'Supprimer la galerie' pour valider l'action.",

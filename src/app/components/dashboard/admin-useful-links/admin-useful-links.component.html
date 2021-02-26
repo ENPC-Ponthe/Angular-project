@@ -28,7 +28,7 @@
         <div *ngFor="let link of subject.content; let linkIndex = index">
           <input type="text" name="url"
             placeholder="Url"
-            class="input_field content_article"
+            class="input_field content_article url_input"
             [value]="link.url"
             (change)="updateLink(subjectIndex, linkIndex, $event)" />
           <input type="text" name="title"
@@ -36,7 +36,9 @@
             class="input_field content_article"
             [value]="link.title"
             (change)="updateTitle(subjectIndex, linkIndex, $event)" />
-          <button name="remove" (click)="removeLink(subjectIndex, linkIndex)">✕</button>
+          <button name="remove"
+            class="removeButton"
+            (click)="removeLink(subjectIndex, linkIndex)">✕</button>
           <textarea type="text" name="description" rows="2"
             placeholder="Description"
             class="input_field content_article"

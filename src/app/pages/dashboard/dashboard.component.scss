@@ -3,11 +3,44 @@
 
 $INTRO-MARGIN-TOP-LARGE: 3em;
 $INTRO-MARGIN-TOP-MOBILE: 4em;
+$NUMBER-TABS: 2;
+
+
+/* Top tabs */
+#window_selection {
+	display: flex;
+	position: absolute;
+	z-index: 1;
+}
+
+.window_tab, .window_tab_selected {
+	width: calc(100vw / #{$NUMBER-TABS});
+	text-align: center;
+	font-size: font-size(LARGE);
+	font-weight: 600;
+	height: units(4.5);
+	line-height: units(4);
+	transition: background ease 0.2s, color ease 0.2s, border-radius ease 0.15s;
+}
+.window_tab:hover, .window_tab_selected:hover {
+	cursor: pointer;
+}
+
+.window_tab {
+	background: none;
+	color: color(WHITE);
+}
+.window_tab_selected {
+	background: color(WHITE);
+	color: color(DARK);
+	border-radius: 0 0 units(2) units(2);
+}
+
 
 /* Intro */
 #intro {
 	margin-top : $INTRO-MARGIN-TOP-LARGE;
-	height : calc(80vh - #{$INTRO-MARGIN-TOP-LARGE});
+	height : calc(100vh - #{$INTRO-MARGIN-TOP-LARGE});
 	background: $INTRO-IMAGE;
 	background-size: 256px 256px, cover;
 	background-attachment: fixed, fixed;
@@ -16,13 +49,13 @@ $INTRO-MARGIN-TOP-MOBILE: 4em;
 
 	@include sm {
 		margin-top: $INTRO-MARGIN-TOP-MOBILE;
-		height: calc(130vh - #{$INTRO-MARGIN-TOP-MOBILE});
+		height: calc(130vh - #{$INTRO-MARGIN-TOP-MOBILE} - 2 * #{units(12)});
 	}
 }
 
 #admin_area {
 	position: absolute;
-	top: 5vh;
+	top: 10vh;
 	width: 90vw;
 }
 
@@ -50,6 +83,8 @@ $INTRO-MARGIN-TOP-MOBILE: 4em;
 
 	@include sm {
 		width: 60vw;
+		margin-left: 0;
+		margin-bottom: 5vh;
 	}
 }
 
@@ -94,12 +129,24 @@ button {
 
 #private_galleries_title {
 	position: absolute;
-	bottom: units(4);
-	font-size: 1.7em;
+	top: 12vh;
+	left: 0;
+	width: 100vw;
+	font-size: 3.5em;
+
+	@include sm {
+		font-size: 2.5em;
+	}
 }
 
 .main.style1 h2 {
 	@include sm {
 		font-size: 2.5em;
 	}
+}
+
+#privateGalleries {
+	position: absolute;
+	left: 0;
+	top: 22.5vh;
 }

@@ -86,6 +86,11 @@ button:hover {
     display: block;
     margin: auto;
     margin-bottom: units(2);
+
+    @include sm {
+        font-size: font-size(SMALL);
+        width: 80%;
+    }
 }
 
 .add_button {
@@ -115,6 +120,18 @@ input[type="text"] {
     font-weight: 600;
     font-size: font-size(MEDIUM);
     display: inline-block;
+    
+    @include sm {
+        width: calc(100% - #{$BUTTON-SIZE} - #{$MARGIN-RIGHT-BUTTON-REMOVE}) !important;
+    }
+}
+
+.removeButton {
+    @include sm {
+        float: right;
+        height: units(3) + 2 * $BUTTON-SIZE;
+        margin-top: -(units(1.5) + $BUTTON-SIZE);
+    }
 }
 
 textarea {
