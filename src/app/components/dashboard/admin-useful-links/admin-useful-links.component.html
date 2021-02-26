@@ -17,6 +17,7 @@
           <p>{{ link.description }}</p>
         </div>
       </div>
+
       <div *ngIf="editMode" class="subject">
         <input type="text"
           class="title_input section_title"
@@ -52,3 +53,13 @@
     </div>
   </div>
 </app-modal>
+
+<app-confirm-modal
+  class="confirmModal"
+  [title]="'dashboard.modalChangeValidate.title' | translate"
+  [cancelText]="'cancel' | translate"
+  [validateText]="'confirm' | translate"
+  [visible]="visibleConfirmModal"
+  (closeCancel)="closeConfirmModal()"
+  (closeValidate)="onSubmitUsefulLinks()">
+</app-confirm-modal>
