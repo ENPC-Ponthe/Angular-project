@@ -131,7 +131,12 @@
 	@include sm {
 		width: 100% !important;
 	}
+
+  @media (prefers-color-scheme: dark) {
+    background: color(DARK_GREY);
+    color: color(WHITE);
   }
+}
   
   .style2 .content p {
 	  @include sm {

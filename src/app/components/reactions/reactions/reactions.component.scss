@@ -67,4 +67,8 @@ h4 {
     @include sm-landscape {
         display: none;
     }
+
+    @media (prefers-color-scheme: dark) {
+        color: color(WHITE);
+    }
 }

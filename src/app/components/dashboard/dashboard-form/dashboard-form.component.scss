@@ -5,8 +5,12 @@
 	padding: 2vh 2vw 2vh 2vw;
 	background: $DASHBOARD-FORM-BACKGROUND;
 	border-radius: $DASHBOARD-FORM-BORDER-RADIUS;
-  margin-bottom: 2vh;
+  	margin-bottom: 2vh;
 	box-shadow: $DASHBOARD-FORM-BOX-SHADOW $DASHBOARD-FORM-BOX-SHADOW-SHIFT-BASE;
+
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+	}
 }
 
 h3 {
@@ -18,9 +22,20 @@ h3 {
 	@include sm {
 		font-size: 1.15em;
 	}
+
+	@media (prefers-color-scheme: dark) {
+		color: color(WHITE);
+	}
 }
 
 h3:hover {
 	text-decoration: underline;
 	cursor: pointer;
+}
+
+label {
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+		color: color(WHITE);
+	}
 }

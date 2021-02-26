@@ -1,6 +1,17 @@
 @import url("../../../../assets/assets_h/css/main.css");
 @import "../../../PontheStyle.scss";
 
+textarea {
+	@media (prefers-color-scheme: dark) {
+		color: color(WHITE);
+	}
+}
+textarea::placeholder {
+	@media (prefers-color-scheme: dark) {
+		color: color(LIGHT_GREY);
+	}
+}
+
 input {
   background: linear-gradient(30deg, red, yellow);
 }

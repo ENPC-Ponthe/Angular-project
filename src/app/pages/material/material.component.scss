@@ -5,9 +5,19 @@
   @include sm {
     padding: 5em 10px 3em 10px;
   }
+
+  @media (prefers-color-scheme: dark) {
+    background: color(DARK_GREY);
+    color: color(WHITE);
+  }
 }
 
 #contact .box {
   border-radius: $FORM-BORDER-RADIUS;
   box-shadow: $BOX-SHADOW-FORM-BASE $BOX-SHADOW-FORM-SHIFT-BASE;
+
+  @media (prefers-color-scheme: dark) {
+    background: color(DARK_GREY);
+    color: color(WHITE);
+  }
 }

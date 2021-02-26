@@ -17,7 +17,19 @@ form textarea, form .input_field, select {
 	background: color(WHITE);
 	color: $INPUT-TEXT-DARK-GREY;
 	max-width: 100%;
+
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+		color: color(WHITE);
+	}
 }
+
+textarea::placeholder, .input_field::placeholder {
+	@media (prefers-color-scheme: dark) {
+		color: color(LIGHT_GREY);
+	}
+}
+
 
 input[type="submit"] {
   	background: $BUTTON-BACKGROUND-GRADIENT;
@@ -28,6 +40,10 @@ label {
 	color: color(DARK_GREY);
 	text-align: left;
 	font-size: font-size(MEDIUM);
+
+	@media (prefers-color-scheme: dark) {
+		color: color(WHITE);
+	}
 }
 
 #success, #failure {

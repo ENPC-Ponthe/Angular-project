@@ -9,6 +9,10 @@
   height: calc(100vh - 7em);
   width: 100vw;
   background-color: color(HOME_GREY);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: color(DARK_GREY);
+  }
 }
 
 $CONTENT-WIDTH-LARGE: 91vw;
@@ -82,5 +86,6 @@ $CONTENT-MAX-HEIGHT-SMALL-LANDSCAPE: 73vh;
     top: 25vh;
     width: 4vw;
     right: 1.5vw;
+    left: auto;
   }
 }

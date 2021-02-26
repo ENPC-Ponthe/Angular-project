@@ -12,6 +12,10 @@ $NUMBER-TABS: 2;
 	position: absolute;
 	z-index: 1;
 	border-bottom: 1px solid color(WHITE);
+
+	@media (prefers-color-scheme: dark) {
+		border-bottom: 1px solid color(DARK_GREY);
+	}
 }
 
 .window_tab, .window_tab_selected {
@@ -35,6 +39,11 @@ $NUMBER-TABS: 2;
 	background: color(WHITE);
 	color: color(DARK);
 	border-radius: 0 0 units(2) units(2);
+
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+		color: color(WHITE);
+	}
 }
 
 
@@ -116,6 +125,11 @@ button {
 	color: color(DARK_DARK_GREY);
 	padding: units(0.5);
 	transition: border 0.2s ease, box-shadow 0.2s ease, padding 0.2s ease;
+
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+		color: color(WHITE);
+	}
 }
 #tutos:hover {
 	border: units(0.5) solid color(DARK_DARK_GREY);
