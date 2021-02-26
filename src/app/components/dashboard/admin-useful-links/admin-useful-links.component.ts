@@ -9,6 +9,7 @@ import { AssetsService } from 'src/app/services/assets.service';
 export class AdminUsefulLinksComponent implements OnInit {
   usefulLinks = [];
   editMode = false;
+  visibleConfirmModal = false;
 
   @Input() visible: boolean;
   @Output() close = new EventEmitter<{}>();
@@ -28,12 +29,12 @@ export class AdminUsefulLinksComponent implements OnInit {
     );
   }
 
+
   editConfirmModal() {
     if (this.editMode === false) {
       this.editMode = true;
     } else {
-      this.editMode = false;
-      this.assetsService.editUsefulLinks({ links: this.usefulLinks }).subscribe(() => {});
+      this.visibleConfirmModal = true;
     }
   }
 
@@ -92,9 +93,13 @@ export class AdminUsefulLinksComponent implements OnInit {
     this.close.next();
   }
 
-  // 3 - Fetch liste liens
-  // 4 - Update liste liens
-  // 6 - Back get / update liens
-  // 7 - Confirmation modal
-  // 8 - Remove constants UsefulLinks
+  closeConfirmModal() {
+    this.visibleConfirmModal = false;
+  }
+
+  onSubmitUsefulLinks() {
+    this.assetsService.editUsefulLinks({ links: this.usefulLinks }).subscribe(() => {});
+    this.visibleConfirmModal = false;
+    this.editMode = false;
+  }
 }
