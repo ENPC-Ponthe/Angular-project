@@ -25,6 +25,8 @@ import { AuthCardComponent } from './components/auth/auth-card/auth-card.compone
 import { AuthFooterComponent } from './components/auth/auth-footer/auth-footer.component';
 import { AuthNavComponent } from './components/auth/auth-nav/auth-nav.component';
 import { CsvImportFormComponent } from './components/dashboard/csv-import-form/csv-import-form.component';
+import { CguEditionFormComponent } from './components/dashboard/cgu-edition-form/cgu-edition-form.component';
+import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 import { DashboardFormComponent } from './components/dashboard/dashboard-form/dashboard-form.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GaleriesContactFormComponent } from './components/galeries/galeries-contact-form/galeries-contact-form.component';
@@ -43,6 +45,7 @@ import { LoadingSpinnerComponent } from './components/loaders/loading-spinner/lo
 import { LovePicsComponent } from './components/home/love-pics/love-pics.component';
 import { MaterialBookingFormComponent } from './components/material-booking-form/material-booking-form.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { MembersEditionFormComponent } from './components/dashboard/members-edition-form/members-edition-form.component';
 import { NavComponent } from './components/navigation/nav/nav.component';
 import { NavLinkComponent } from './components/navigation/nav-link/nav-link.component';
 import { NavigationButtonComponent } from './components/navigation-button/navigation-button.component';
@@ -77,6 +80,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 // SERVICES
 import { AdminGuard } from './services/admin-guard.service';
+import { AssetsService } from './services/assets.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
 import { BreakpointsService } from './services/breakpoints.service';
@@ -88,7 +92,7 @@ import { MessagesService } from './services/messages.service';
 import { PicsService } from './services/pics.service';
 import { PwaService } from './services/Pwa.service';
 import { ReactionsService } from './services/reactions.service';
-import { TranslateService } from './services/translate.service';
+import { TranslateService, SUPPORTED_LANGUAGES } from './services/translate.service';
 import { TranslatePipe } from './services/translate.pipe';
 import { UserService } from './services/user.service';
 import { VideoService } from './services/video.service';
@@ -96,6 +100,12 @@ import { VideoService } from './services/video.service';
 
 export function setupTranslateFactory(
   service: TranslateService): () => void {
+  const navigatorLanguage = navigator.language;
+  for (const language of SUPPORTED_LANGUAGES) {
+    if (navigatorLanguage.includes(language)) {
+      return () => service.use(language);
+    }
+  }
   return () => service.use('fr');
 }
 
@@ -108,6 +118,8 @@ export function setupTranslateFactory(
     AuthCardComponent,
     AuthFooterComponent,
     AuthNavComponent,
+    CguEditionFormComponent,
+    ConfirmModalComponent,
     CsvImportFormComponent,
     DashboardFormComponent,
     FooterComponent,
@@ -124,6 +136,7 @@ export function setupTranslateFactory(
     LoadingSpinnerComponent,
     LovePicsComponent,
     MaterialBookingFormComponent,
+    MembersEditionFormComponent,
     ModalComponent,
     NavComponent,
     NavLinkComponent,
@@ -168,6 +181,7 @@ export function setupTranslateFactory(
   ],
   providers: [
     AdminGuard,
+    AssetsService,
     AuthGuard,
     AuthService,
     BreakpointsService,

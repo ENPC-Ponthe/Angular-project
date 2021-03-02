@@ -27,6 +27,11 @@
   @include sm-landscape {
     height: 2em;
   }
+
+  @media (prefers-color-scheme: dark) {
+    background: color(DARK_GREY);
+    color: color(WHITE);
+  }
 }
 
 #header a #logo {
@@ -140,7 +145,7 @@
 
 #header-mobile {
   @include sm {
-    font-family: "Roboto", "sans-serif";
+    font-family: "Source Sans Pro", "sans-serif";
     font-weight: 300;
     font-size: 1.5em;
     letter-spacing: 0.025em;
@@ -155,7 +160,13 @@
     overflow: auto;
     z-index: 5;
     transition: background 0.3s ease-in-out;
+
+    @media (prefers-color-scheme: dark) {
+      background: color(DARK_GREY);
+      color: color(WHITE);
+    }
   }
+
 }
 
 #header-mobile ul {

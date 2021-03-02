@@ -17,6 +17,11 @@ $GALLERY-PICS-MARGIN: units(1);
 		@include sm {
 			margin-top: 4em;
 			height : calc(100vh - 4em);
+
+			@media (prefers-color-scheme: dark) {
+				margin-top: 3.8em;
+				height : calc(100vh - 3.8em);
+			}
 		}
 	}
 
@@ -45,6 +50,10 @@ $GALLERY-PICS-MARGIN: units(1);
 /* 3 Last events */
 #latest-events {
 	background: color(HOME_GREY);
+
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+	}
 }
 
 #one, #two, #three {
@@ -61,6 +70,10 @@ $GALLERY-PICS-MARGIN: units(1);
 	padding-top: units(3);
 	padding-bottom: units(3);
 	background: color(HOME_GREY);
+
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+	}
 }
 
 #no-gallery {
@@ -73,17 +86,28 @@ $GALLERY-PICS-MARGIN: units(1);
 	text-align: center;
 	@include font-size(XXLARGE);
 	@include color(DARK_DARK_GREY)
+
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+		color: color(WHITE);
+	}
 }
 
 /* Contact form */
-	#contact > .content > #home-form-hidden {
-		opacity: 1;
-		transform: none;
+#contact {
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+		color: color(WHITE);
 	}
-	#contact > .content > #home-form-hidden {
-		opacity: 0;
-		transform: translateY(75vh);
-	}
+}
+#contact > .content > #home-form-hidden {
+	opacity: 1;
+	transform: none;
+}
+#contact > .content > #home-form-hidden {
+	opacity: 0;
+	transform: translateY(75vh);
+}
 
 .right > .box {
 	right: -20px;
@@ -110,6 +134,11 @@ $GALLERY-PICS-MARGIN: units(1);
 #contact .box {
 	border-radius: $FORM-BORDER-RADIUS;
 	box-shadow: $BOX-SHADOW-FORM-BASE $BOX-SHADOW-FORM-SHIFT-BASE;
+
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+		color: color(WHITE);
+	}
 }
 
 .main.style1 {

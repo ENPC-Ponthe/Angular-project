@@ -17,7 +17,17 @@
   
     "crush.noCrush.title": "Here you'll find your favorite pictures. So far, you haven't liked any of them. To see them appear here, go to the galleries and add reactions to the pictures. :)",
 
+    "dashboard.tabs.privateGalleries": "Private galleries",
+    "dashboard.tabs.manage": "Manage",
     "dashboard.header.title": "Administration area",
+    "dashboard.cguForm.title": "Modification of the TOS",
+    "dashboard.cguForm.submitButton": "Validate the TOS",
+    "dashboard.membersForm.title": "Modify the Ponthé members",
+    "dashboard.membersForm.addTeam": "+ Add a team",
+    "dashboard.membersForm.addMember": "+ Add a member",
+    "dashboard.membersForm.submitButton": "Validate the list",
+    "dashboard.change.success": "Successful modifications",
+    "dashboard.change.failure": "Modification failure",
     "dashboard.form.title": "Creation of a gallery",
     "dashboard.form.name": "Name of the gallery",
     "dashboard.form.description": "Description of the gallery",
@@ -30,14 +40,21 @@
     "dashboard.csv_account_creation.submit": "Create accounts",
     "dashboard.links.tutorials": "Tutorials",
     "dashboard.links.usefulLinks": "Useful links",
+    "dashboard.links.usefulLinks.addLink": "+ Add a link",
+    "dashboard.links.usefulLinks.addSubject": "+ Add a subject",
     "dashboard.links.moderation": "Moderate",
     "dashboard.links.slack": "Slack",
     "dashboard.links.trello": "Trello",
     "dashboard.links.youtube": "Youtube",
     "dashboard.tutos.title": "Tutorials ponthe.enpc.org",
+    "dashboard.tutos.addCategory": "+ Add a category",
+    "dashboard.tutos.addTutorial": "+ Add a tutorial",
     "dashboard.usefulLinks.title": "Useful links for admins",
+    "dashboard.modalChangeValidate.title": "Do you approve these changes ?",
     "dashboard.privateGalleries.title": "Private galleries",
+    "dashboard.privatePhotoGalleries.title": "Photo Galleries",
     "dashboard.privatePhotoGalleries.none": "There is no private photo gallery for the moment.",
+    "dashboard.privateVideoGalleries.title": "Video Galleries",
     "dashboard.privateVideoGalleries.none": "There is no private video gallery for the moment.",
 
     "event.deleteGallery.galleryWillBeDeleted": "This gallery is about to be deleted. Click a second time on \"Delete gallery\" to validate the action.",
@@ -167,6 +184,9 @@
     "vestibule.movies": "Movies",
     "vestibule.pics": "Photos",
 
-    "close": "Close"
+    "edit": "Edit",
+    "close": "Close",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
   }
   

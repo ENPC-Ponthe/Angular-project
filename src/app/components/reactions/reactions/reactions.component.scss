@@ -1,6 +1,6 @@
 @import "../../../PontheStyle.scss";
 
-$SIZE-ICONS: units(6);
+$SIZE-ICONS: units(5);
 $SIZE-ICONS-MOBILE: units(4);
 
 #reactions {
@@ -63,4 +63,12 @@ h4 {
     @include font-size(LARGE);
     font-weight: bold;
     text-align: center;
+
+    @include sm-landscape {
+        display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        color: color(WHITE);
+    }
 }

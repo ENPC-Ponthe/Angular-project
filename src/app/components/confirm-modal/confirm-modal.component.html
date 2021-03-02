@@ -1,0 +1,15 @@
+<div *ngIf="visible" id="overlay" (click)="onCloseModalCancel()" @overlay></div>
+<div id="moderation" *ngIf="visible" @modal>
+  <h1>{{ title }}</h1>
+
+  <footer>
+    <button class="close" type="button" name="button" (click)="onCloseModalCancel()"
+      [attr.aria-label]="cancelText">
+      {{ cancelText }}
+    </button>
+    <button class="validate" type="button" name="button" (click)="onCloseModalValidate()"
+      [attr.aria-label]="validateText">
+      {{ validateText }}
+    </button>
+  </footer>
+</div>

@@ -7,9 +7,9 @@ import { fadeOut, fadeIn, unfoldIn, unfoldOut } from 'src/app/constants/Animatio
 const OVERLAY_OPACITY = 0.65;
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss'],
+  selector: 'app-confirm-modal',
+  templateUrl: './confirm-modal.component.html',
+  styleUrls: ['./confirm-modal.component.scss'],
   animations: [
     trigger('modal', [
       transition(':enter', [unfoldIn('0.75s')]),
@@ -21,31 +21,31 @@ const OVERLAY_OPACITY = 0.65;
     ])
   ]
 })
-export class ModalComponent implements OnInit {
+export class ConfirmModalComponent implements OnInit {
   @Input() title: string;
-  @Input() editText: string;
-  @Input() closeText: string;
+  @Input() cancelText: string;
+  @Input() validateText: string;
   @Input() visible: boolean;
-  @Output() edit = new EventEmitter<{}>();
-  @Output() close = new EventEmitter<{}>();
+  @Output() closeValidate = new EventEmitter<{}>();
+  @Output() closeCancel = new EventEmitter<{}>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  editModal() {
-    this.edit.next();
+  onCloseModalCancel() {
+    this.closeCancel.next();
   }
 
-  onCloseModal() {
-    this.close.next();
+  onCloseModalValidate() {
+    this.closeValidate.next();
   }
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (this.visible && event.code === KEY_CODE.ESCAPE) {
-      this.onCloseModal();
+      this.onCloseModalCancel();
     }
   }
 }

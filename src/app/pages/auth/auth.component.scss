@@ -180,3 +180,12 @@ video {
 	font-weight: 600;
 	font-size: font-size(LARGE);
 }
+
+.darkBackground {
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: black;
+}

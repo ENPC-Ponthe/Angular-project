@@ -5,8 +5,20 @@ input {
   background: linear-gradient(30deg, red, yellow);
 }
 
+input, textarea {
+	@media (prefers-color-scheme: dark) {
+		color: color(WHITE);
+	  }
+}
+
 input:focus, textarea:focus {
   box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-FOCUS-LIGHT;
+}
+
+input::placeholder, textarea::placeholder {
+	@media (prefers-color-scheme: dark) {
+		color: color(LIGHT_GREY);
+	}
 }
 
 label {
@@ -14,6 +26,10 @@ label {
 	text-align: left;
   font-size: font-size(XLARGE);
   margin-bottom: units(0.5);
+
+  @media (prefers-color-scheme: dark) {
+    color: color(WHITE);
+  }
 }
 
 #success, #failure {
@@ -81,6 +97,10 @@ label {
 	background: color(LIGHT_GREY);
 	box-shadow: box-shadow(LIGHT);
 	cursor: pointer;
+
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+	}
 }
 
 .itemPic {

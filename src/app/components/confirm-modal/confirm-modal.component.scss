@@ -4,11 +4,10 @@
 h1 {
   color: color(DARK_GREY);
   font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.035em;
-  padding-bottom: units(1);
+  font-weight: 500;
+  padding-bottom: units(2);
+  margin-bottom: 0;
   text-align: center;
-  border-bottom: 1px solid color(LIGHT_GREY);
   font-size: font-size(LARGE);
 
   @include sm {
@@ -18,6 +17,7 @@ h1 {
 
 button {
   border-radius: units(3);
+  text-transform: none;
   box-shadow: none;
   border: 1px solid color(DARK);
   margin-bottom: units(1.5);
@@ -56,16 +56,17 @@ button:hover {
   width: units(5);
 }
 
-$MODERATION-PADDING: units(3);
+$MODERATION-PADDING: units(2);
 $MODERATION-PADDING-MOBILE: units(2);
+$MODAL-WIDTH: 50vw;
 #moderation {
   position: fixed;
-  top: 15vh;
-  left: 20vw;
-  width: 60vw;
+  top: 35vh;
+  left: calc((100vw - #{$MODAL-WIDTH}) / 2);
+  width: $MODAL-WIDTH;
   z-index: 3;
   background: color(WHITE);
-  padding: $MODERATION-PADDING - units(1) $MODERATION-PADDING;
+  padding: $MODERATION-PADDING $MODERATION-PADDING;
   border-radius: units(4);
   margin: auto;
   transition: visibility 0.3s ease;
@@ -80,6 +81,10 @@ $MODERATION-PADDING-MOBILE: units(2);
 #moderation > h1, #moderation > footer {
   margin-left: -$MODERATION-PADDING;
   margin-right: -$MODERATION-PADDING;
+  padding: 0 units(2);
+  text-align: left;
+  text-transform: none;
+  letter-spacing: 0.035em;
 
   @include sm {
     margin-left: -$MODERATION-PADDING-MOBILE;
@@ -99,11 +104,10 @@ $MODERATION-PADDING-MOBILE: units(2);
 }
 
 #moderation > footer {
-  padding-top: units(1);
+  padding-top: units(2);
   padding-right: $MODERATION-PADDING;
   text-align: center;
   width: calc(100% + 2 * #{$MODERATION-PADDING});
-  border-top: 1px solid color(LIGHT_GREY);
 
   @include sm {
     padding-right: units(1);
@@ -111,7 +115,7 @@ $MODERATION-PADDING-MOBILE: units(2);
   }
 }
 
-.close, .edit {
+.close {
   color: color(DARK) !important;
   background-color: color(WHITE) !important;
   font-family: "Roboto", sans-serif;
@@ -122,19 +126,37 @@ $MODERATION-PADDING-MOBILE: units(2);
   transition: background 0.3s ease;
   box-shadow: none !important;
   opacity: 1 !important;
+  float: left;
 }
-.close:hover, .edit:hover {
+.close:hover {
   color: color(DARK) !important;
   background-color: color(LIGHT_GREY) !important;
   box-shadow: none !important;
 }
-.close:focus, .close:active, .edit:focus, .edit:active {
+.close:focus, .close:active {
   color: color(DARK) !important;
 }
 
-.edit {
-  float: left;
-  margin-left: units(2) !important;
+.validate {
+  color: color(WHITE) !important;
+  background-color: color(DARK_GREY) !important;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  border-radius: units(3);
+  margin: 0 !important;
+  border: none !important;
+  transition: background 0.3s ease;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  float: right;
+}
+.validate:hover {
+  color: color(WHITE) !important;
+  background-color: color(DARK_DARK_GREY) !important;
+  box-shadow: none !important;
+}
+.validate:focus, .validate:active {
+  color: color(DARK) !important;
 }
 
 #bodyModeration {

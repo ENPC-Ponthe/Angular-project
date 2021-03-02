@@ -1,6 +1,10 @@
 @import url("../../../../assets/assets_g/css/main.css");
 @import "../../../PontheStyle.scss";
 
+#main {
+	background: none;
+}
+
 #main .thumb > .image {
 	-webkit-tap-highlight-color: color(WHITE);
 	background-position: center;
@@ -37,10 +41,33 @@
 }
 
 #no_private_gallery {
-	color: color(DARK_DARK_GREY);
+	color: color(WHITE);
 	font-size: font-size(XLARGE);
 	text-align: center;
 	margin-top: units(2);
 	text-transform: inherit;
 	font-weight: bold;
+
+	@include sm {
+		padding: 0 units(2.5);
+	}
+}
+
+.galleryTitle {
+	font-weight: 600;
+	text-transform: capitalize;
+	letter-spacing: -0.015em;
+	font-size: 2em;
+	margin: 0;
+	display: block;
+	width: 100vw;
+	left: 0;
+	text-align: left;
+	padding-left: 6vw;
+
+	@include sm {
+		font-size: 1.75em;
+		padding: 0;
+		text-align: center;
+	}
 }

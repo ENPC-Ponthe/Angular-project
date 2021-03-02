@@ -1,0 +1,43 @@
+<app-dashboard-form [title]="'dashboard.cguForm.title' | translate">
+  <form>
+   <button name="add" class="add_button" (click)="addArticle(-1)">+</button><br/>
+
+   <div *ngFor="let article of articles; let i = index">
+      <div class="content_article">
+         <input type="text" name="title"
+            placeholder="Titre"
+            class="input_field"
+            [value]="article.title"
+            (change)="updateTitle(i, $event)"
+            id="name" />
+         <textarea name="content" rows="1"
+                  placeholder="Contenu de l'article"
+                  [value]="article.body"
+                  (change)="updateContent(i, $event)"></textarea>
+      </div>
+      <button name="remove" (click)="removeArticle(i)">✕</button>
+      <button name="add" class="add_button" (click)="addArticle(i)">+</button>
+   </div>
+    <p id="success" [class]="successEdition ? 'visible' : 'hidden'">
+       <span class="icon fa fa-check-circle fa-lg"></span>
+       {{ 'dashboard.change.success' | translate }}
+    </p>
+    <p id="failure" [class]="failureEdition ? 'visible' : 'hidden'">
+       <span class="icon fa fa-times-circle fa-lg"></span>
+       {{ 'dashboard.change.failure' | translate }}
+    </p>
+    <input type="submit"
+           [value]="'dashboard.cguForm.submitButton' | translate"
+           (click)="openConfirmationModal()"/>
+  </form>
+</app-dashboard-form>
+
+<app-confirm-modal
+  class="confirmModal"
+  [title]="'dashboard.modalChangeValidate.title' | translate"
+  [cancelText]="'cancel' | translate"
+  [validateText]="'confirm' | translate"
+  [visible]="visibleModal"
+  (closeCancel)="closeCancelModal()"
+  (closeValidate)="onSubmitEvent()">
+</app-confirm-modal>

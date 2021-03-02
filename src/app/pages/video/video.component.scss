@@ -9,27 +9,31 @@
   height: calc(100vh - 7em);
   width: 100vw;
   background-color: color(HOME_GREY);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: color(DARK_GREY);
+  }
 }
 
-$CONTENT-WIDTH-LARGE: 75vw;
-$CONTENT-LEFT-LARGE: calc((100vw - #{$CONTENT-WIDTH-LARGE}) / 2);
-$CONTENT-MAX-HEIGHT-LARGE: 75vh;
-$CONTENT-TOP-LARGE: 10vh;
+$CONTENT-WIDTH-LARGE: 91vw;
+$CONTENT-LEFT-LARGE: 1.5vw;
+$CONTENT-MAX-HEIGHT-LARGE: 85vh;
+$CONTENT-TOP-LARGE: 8vh;
 
 $CONTENT-TOP-MEDIUM: 8vh;
-$CONTENT-WIDTH-MEDIUM: 80vw;
+$CONTENT-WIDTH-MEDIUM: 96vw;
 $CONTENT-LEFT-MEDIUM: calc((100vw - #{$CONTENT-WIDTH-MEDIUM}) / 2);
-$CONTENT-MAX-HEIGHT-MEDIUM: 75vh;  
+$CONTENT-MAX-HEIGHT-MEDIUM: 75vh;
 
-$CONTENT-TOP-SMALL: 13vh;
-$CONTENT-WIDTH-SMALL: 80vw;
+$CONTENT-TOP-SMALL: 12vh;
+$CONTENT-WIDTH-SMALL: 94vw;
 $CONTENT-LEFT-SMALL: calc((100vw - #{$CONTENT-WIDTH-SMALL}) / 2);
 $CONTENT-MAX-HEIGHT-SMALL: 66vh;
 
-$CONTENT-TOP-SMALL-LANDSCAPE: 16.5vh;
-$CONTENT-WIDTH-SMALL-LANDSCAPE: 70vw;
-$CONTENT-LEFT-SMALL-LANDSCAPE: calc((100vw - #{$CONTENT-WIDTH-SMALL-LANDSCAPE}) / 2);
-$CONTENT-MAX-HEIGHT-SMALL-LANDSCAPE: 58vh;  
+$CONTENT-TOP-SMALL-LANDSCAPE: 14vh;
+$CONTENT-WIDTH-SMALL-LANDSCAPE: 92.5vw;
+$CONTENT-LEFT-SMALL-LANDSCAPE: 1vw;
+$CONTENT-MAX-HEIGHT-SMALL-LANDSCAPE: 73vh;
 
 #video {
   position: absolute;
@@ -55,6 +59,8 @@ $CONTENT-MAX-HEIGHT-SMALL-LANDSCAPE: 58vh;
   @include md {
     top: $CONTENT-TOP-MEDIUM;
     max-height: $CONTENT-MAX-HEIGHT-MEDIUM;
+    width: $CONTENT-WIDTH-MEDIUM;
+    left: $CONTENT-LEFT-MEDIUM;
   }
 }
 
@@ -62,16 +68,24 @@ $CONTENT-MAX-HEIGHT-SMALL-LANDSCAPE: 58vh;
   position: absolute;
   left: $CONTENT-LEFT-LARGE;
   width: $CONTENT-WIDTH-LARGE;
-  top: calc(#{$CONTENT-TOP-LARGE} + #{$CONTENT-MAX-HEIGHT-LARGE} + 1vh);
   text-align: center;
 
   @include sm {
     top: calc(#{$CONTENT-TOP-SMALL} + #{$CONTENT-MAX-HEIGHT-SMALL} + 1vh);
   }
   @include sm-landscape {
-    top: calc(#{$CONTENT-TOP-SMALL-LANDSCAPE} + #{$CONTENT-MAX-HEIGHT-SMALL-LANDSCAPE} + 1vh);
+    top: 30vh;
+    width: 4vw;
+    right: 1.5vw;
+    left: auto;
   }
   @include md {
     top: calc(#{$CONTENT-TOP-MEDIUM} + #{$CONTENT-MAX-HEIGHT-MEDIUM} + 1vh);
+  }
+  @include lgAndAbove {
+    top: 25vh;
+    width: 4vw;
+    right: 1.5vw;
+    left: auto;
   }
 }

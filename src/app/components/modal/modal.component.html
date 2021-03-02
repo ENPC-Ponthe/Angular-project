@@ -7,6 +7,10 @@
   </div>
 
   <footer>
+    <button *ngIf="editText" class="edit" type="button" name="button" (click)="editModal()"
+      [attr.aria-label]="editText">
+      {{ editText }}
+    </button>
     <button class="close" type="button" name="button" (click)="onCloseModal()"
       [attr.aria-label]="closeText">
       {{ closeText }}

@@ -6,6 +6,11 @@ $GALLERY-PICS-MARGIN: units(1);
 
 #coeur {
 	flex-direction: column;
+
+	@media (prefers-color-scheme: dark) {
+		background: color(DARK_GREY);
+		color: color(WHITE);
+	}
 }
 
 h2:hover {

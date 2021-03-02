@@ -2,12 +2,12 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { CguComponent } from './cgu.component';
-import { AuthService } from '../../services/auth.service';
+import { AssetsService } from '../../services/assets.service';
 
 describe('CguComponent', () => {
   let component: CguComponent;
   let fixture: ComponentFixture<CguComponent>;
-  const spyAuthService = jasmine.createSpyObj('spyAuthService', ['getCGU']);
+  const spyAssetsService = jasmine.createSpyObj('spyAssetsService', ['getCGU']);
   const fakeCGU = {
     articles: {
       1: {
@@ -20,15 +20,15 @@ describe('CguComponent', () => {
       },
     },
   };
-  spyAuthService.getCGU.and.returnValue(of(fakeCGU));
+  spyAssetsService.getCGU.and.returnValue(of(fakeCGU));
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CguComponent ],
       providers: [
         {
-          provide: AuthService,
-          useValue: spyAuthService,
+          provide: AssetsService,
+          useValue: spyAssetsService,
         },
       ],
       schemas: [ NO_ERRORS_SCHEMA ]
