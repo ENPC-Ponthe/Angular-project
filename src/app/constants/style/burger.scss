@@ -33,6 +33,10 @@ button:hover {
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
 	background-color: color(DARK_DARK_GREY);
+
+	@media (prefers-color-scheme: dark) {
+		background-color: color(WHITE) !important;
+	}
 }
   
 .hamburger-box {
@@ -56,6 +60,10 @@ button:hover {
 	transition-property: transform;
 	transition-duration: 0.15s;
 	transition-timing-function: ease;
+
+	@media (prefers-color-scheme: dark) {
+		background-color: color(WHITE) !important;
+	}
 }
 .hamburger-inner::before, .hamburger-inner::after {
 	content: "";
