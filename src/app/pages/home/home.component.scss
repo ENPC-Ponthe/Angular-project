@@ -17,6 +17,11 @@ $GALLERY-PICS-MARGIN: units(1);
 		@include sm {
 			margin-top: 4em;
 			height : calc(100vh - 4em);
+
+			@media (prefers-color-scheme: dark) {
+				margin-top: 3.8em;
+				height : calc(100vh - 3.8em);
+			}
 		}
 	}
 

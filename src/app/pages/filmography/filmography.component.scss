@@ -17,6 +17,10 @@ $SPACER-HEIGHT: 4em;
 
   @include sm {
 	  margin-top: units(10);
+
+	  @media (prefers-color-scheme: dark) {
+		margin-top: 3.8em;
+	}
   }
 }
 

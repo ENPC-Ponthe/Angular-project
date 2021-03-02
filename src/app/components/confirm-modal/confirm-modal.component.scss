@@ -58,11 +58,12 @@ button:hover {
 
 $MODERATION-PADDING: units(2);
 $MODERATION-PADDING-MOBILE: units(2);
+$MODAL-WIDTH: 50vw;
 #moderation {
   position: fixed;
-  top: 15vh;
-  left: 20vw;
-  width: 50vw;
+  top: 35vh;
+  left: calc((100vw - #{$MODAL-WIDTH}) / 2);
+  width: $MODAL-WIDTH;
   z-index: 3;
   background: color(WHITE);
   padding: $MODERATION-PADDING $MODERATION-PADDING;
