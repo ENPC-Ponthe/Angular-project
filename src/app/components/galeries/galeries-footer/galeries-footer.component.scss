@@ -9,6 +9,18 @@
   }
 }
 
+#menu-button, #download-button {
+  vertical-align: middle;
+  padding: 0 !important;
+  cursor: pointer;
+}
+
+#download-button {
+  &:before {
+    color: color(WHITE) !important;
+  }
+}
+
 .footer-panel {
   transition: transform 0.4s ease, opacity 0.4s ease;
 }

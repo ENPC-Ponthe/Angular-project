@@ -6,9 +6,9 @@
   </ul>
 </div>
 <ngx-file-picker #uploader
-  [totalMaxSize]="1000"
+  [totalMaxSize]="10000"
   [fileMaxCount]="250"
-  [fileMaxSize]="1000"
+  [fileMaxSize]="10000"
   [uploadType]="'multi'"
   (validationError)= "onValidationError($event)"
   [adapter]="adapter"

@@ -3,6 +3,7 @@ import { state, trigger, style, transition } from '@angular/animations';
 
 import { routesAppFromRoot, photosSubpath, videosSubpath } from '../../../Routes';
 import { LINKS } from '../../../Constants';
+import { GaleriesService } from 'src/app/services/galeries.service';
 
 @Component({
   selector: 'app-galeries-footer',
@@ -10,9 +11,9 @@ import { LINKS } from '../../../Constants';
   styleUrls: ['./galeries-footer.component.scss'],
   animations: [
     trigger('footerTrigger', [
-      state('visible', style({opacity: 1, transform : 'translateY(2vh)'})),
-      state('hidden', style({opacity : 0})),
-      transition('* => *', [] ),
+      state('visible', style({ opacity: 1, transform: 'translateY(2vh)' })),
+      state('hidden', style({ opacity: 0 })),
+      transition('* => *', []),
     ])
   ]
 })
@@ -22,7 +23,7 @@ export class GaleriesFooterComponent implements OnInit {
   @Input() resumeEvent: string;
   footerState = 'hidden';
 
-  constructor() {
+  constructor(private galeriesService: GaleriesService) {
   }
 
   ngOnInit() {
@@ -32,7 +33,7 @@ export class GaleriesFooterComponent implements OnInit {
     this.footerState = (this.footerState === 'hidden' ? 'visible' : 'hidden');
   }
 
-  getFooterTitleRedirection() {
+  getFooterTitleRedirection() {
     const currentUrl = window.location.pathname.split('/');
     const currentGalleryType = currentUrl[currentUrl.length - 2];
     if (currentGalleryType === photosSubpath) {
@@ -41,5 +42,10 @@ export class GaleriesFooterComponent implements OnInit {
       return routesAppFromRoot.videos;
     }
     return routesAppFromRoot.galeries;
+  }
+
+  downloadArchive() {
+    const gallery_slug = window.location.pathname.split('/').reverse()[0]
+    return this.galeriesService.downloadArchive(gallery_slug);
   }
 }

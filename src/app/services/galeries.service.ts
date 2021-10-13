@@ -29,7 +29,7 @@ export class GaleriesService {
   page = 1;
   isLoadingMoreEvents = false;
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService) { }
 
   // Determine whether the gallery is public or private
   isPublicOrPrivate(routeGallery: string) {
@@ -49,7 +49,7 @@ export class GaleriesService {
 
   // Get the image associated to some event
   getEventByName(event: string, page = 1, pageSize = DEFAULT_PAGE_SIZE) {
-    return this.httpService.post(API_ROUTES.getImages + event, {'image-slug': event, page, page_size: pageSize});
+    return this.httpService.post(API_ROUTES.getImages + event, { 'image-slug': event, page, page_size: pageSize });
   }
 
   // Get the list of all events
@@ -108,6 +108,10 @@ export class GaleriesService {
     }
   }
 
+  downloadArchive(event: string) {
+    return this.httpService.post(API_ROUTES.downloadArchive, { gallery_slug: event }).toPromise();
+  }
+
   // Get a random image for some event
   getImage(event: string) {
     return this.httpService.get(API_ROUTES.getRandomImage + event);
@@ -115,17 +119,17 @@ export class GaleriesService {
 
   // Turn a gallery to private
   makePrivate(slug: string) {
-    return this.httpService.post(API_ROUTES.makePrivate, {gallery_slugs : [slug]});
+    return this.httpService.post(API_ROUTES.makePrivate, { gallery_slugs: [slug] });
   }
 
   // Turn a gallery to public
   makePublic(slug: string) {
-    return this.httpService.post(API_ROUTES.makePublic, {gallery_slugs : [slug]});
+    return this.httpService.post(API_ROUTES.makePublic, { gallery_slugs: [slug] });
   }
 
   // Get the full picture (not the thumbnail) associated to some path
   getFullImage(path: string) {
-    return this.httpService.post(API_ROUTES.getFullImage, {file_path : path});
+    return this.httpService.post(API_ROUTES.getFullImage, { file_path: path });
   }
 
   //// DASHBOARD METHODS
@@ -151,14 +155,14 @@ export class GaleriesService {
   }
 
   loadMoreEvents() {
-  if (this.page * DEFAULT_PAGE_SIZE < this.numberOfPublicEvents && !this.isLoadingMoreEvents) {
+    if (this.page * DEFAULT_PAGE_SIZE < this.numberOfPublicEvents && !this.isLoadingMoreEvents) {
       this.isLoadingMoreEvents = true;
       this.getAllEvents(this.page + 1, DEFAULT_PAGE_SIZE)
         .then(
           (res: GetAllGalleriesResponse) => {
             const { galleries } = res;
             this.galeriesEvents = this.galeriesEvents.concat(galleries);
-            this.page ++;
+            this.page++;
             this.isLoadingMoreEvents = false;
           },
           (error) => { }

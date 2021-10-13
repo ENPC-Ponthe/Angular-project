@@ -3,9 +3,14 @@
   <h1>
     <a [routerLink]="getFooterTitleRedirection()" [attr.aria-label]="nameEvent"><strong>{{ nameEvent }}</strong></a>
   </h1>
-  <nav (click)="changeStateFooter()">
+  <nav>
     <ul>
-      <li><a class="icon fa-info-circle" style="cursor: pointer" [attr.aria-label]="'galeries.footer.title' | translate">{{ 'galeries.footer.title' | translate }}</a></li>
+      <li (click)="changeStateFooter()"><a class="icon fa-info-circle" id="menu-button"
+          [attr.aria-label]="'galeries.footer.title' | translate">{{
+          'galeries.footer.title' | translate }}</a></li>
+      <li><a (click)="downloadArchive()" id="download-button" class="icon fa fa-download fa-2x"
+          aria-label="download button"></a>
+      </li>
     </ul>
   </nav>
 </header>
@@ -28,7 +33,7 @@
               <span class="label">{{ link.name }}</span>
             </a>
           </li>
-				</ul>
+        </ul>
       </section>
       <p class="copyright">
         &copy; {{ 'galeries.about.copyright' | translate }}
