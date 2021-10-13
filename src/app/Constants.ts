@@ -17,7 +17,7 @@ export const EXTENSION_MAILS_ENPC = '@eleves.enpc.fr';
 // Change this value for allowing older promotions.
 const FIRST_PROMO = 13;
 // Update the current promotion every year
-const CURRENT_PROMO = 22;
+const CURRENT_PROMO = 24;
 
 const AVAILABLE_PROMOTIONS = [];
 for (let promo = FIRST_PROMO; promo <= CURRENT_PROMO; promo++) {
