@@ -45,7 +45,7 @@ export class GaleriesFooterComponent implements OnInit {
   }
 
   downloadArchive() {
-    const gallery_slug = window.location.pathname.split('/').reverse()[0]
-    return this.galeriesService.downloadArchive(gallery_slug);
+    const gallerySlug = window.location.pathname.split('/').reverse()[0];
+    return this.galeriesService.downloadArchive(gallerySlug);
   }
 }
