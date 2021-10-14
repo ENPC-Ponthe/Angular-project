@@ -30,9 +30,9 @@ export class UploadComponent implements OnInit, OnDestroy {
   filesUploading = [];
 
   constructor(private httpService: HttpService,
-    private videoService: VideoService,
-    private httpClient: HttpClient,
-    private activeRoute: ActivatedRoute) { }
+              private videoService: VideoService,
+              private httpClient: HttpClient,
+              private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
     const selectedRoute = this.activeRoute.snapshot.params.event;
