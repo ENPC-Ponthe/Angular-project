@@ -39,6 +39,15 @@ export class HttpService {
     return this.httpClient.post(environment.apiUrl + path, body, httpOptions);
   }
 
+  // Méthode post
+  postDownloadBlob(path: string, body: any) {
+    const httpOptions = {
+      headers: this.getHeaderFromToken(),
+      responseType: 'blob' as 'json'
+    };
+    return this.httpClient.post(environment.apiUrl + path, body, httpOptions);
+  }
+
   // Méthode post pour des fichiers
   postFiles(path: string, body: any) {
     const httpOptions = {
