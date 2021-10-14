@@ -109,9 +109,6 @@ export class GaleriesService {
   }
 
   downloadArchive(event: string) {
-    console.log('Response', this.httpService.postDownloadBlob(
-      API_ROUTES.downloadArchive, { gallery_slug: event })
-    );
     return this.httpService.postDownloadBlob(API_ROUTES.downloadArchive, { gallery_slug: event });
   }
 

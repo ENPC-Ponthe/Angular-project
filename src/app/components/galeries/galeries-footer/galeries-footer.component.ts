@@ -48,6 +48,6 @@ export class GaleriesFooterComponent implements OnInit {
   downloadArchive() {
     const gallerySlug = window.location.pathname.split('/').reverse()[0];
     this.galeriesService.downloadArchive(gallerySlug)
-      .subscribe((blob: Blob) => { console.log('BLOB', blob); saveAs(blob, `${gallerySlug}.zip`); });
+      .subscribe((blob: Blob) => saveAs(blob, `${gallerySlug}.zip`));
   }
 }

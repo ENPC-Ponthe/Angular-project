@@ -30,9 +30,9 @@ export class UploadComponent implements OnInit, OnDestroy {
   filesUploading = [];
 
   constructor(private httpService: HttpService,
-              private videoService: VideoService,
-              private httpClient: HttpClient,
-              private activeRoute: ActivatedRoute) { }
+    private videoService: VideoService,
+    private httpClient: HttpClient,
+    private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
     const selectedRoute = this.activeRoute.snapshot.params.event;
@@ -56,14 +56,14 @@ export class UploadComponent implements OnInit, OnDestroy {
   }
 
   onValidationError(e: ValidationError) {
-    console.log(e);
+    // console.log(e);
   }
   onUploadSuccess(e: FilePreviewModel) {
-   console.log(e);
-   console.log(this.myFiles);
+    //  console.log(e);
+    //  console.log(this.myFiles);
   }
   onRemoveSuccess(e: FilePreviewModel) {
-    console.log(e);
+    // console.log(e);
   }
   onFileAdded(file: FilePreviewModel) {
     this.myFiles.push(file);

@@ -50,41 +50,34 @@ export class DemoFilePickerAdapter extends FilePickerAdapter {
   }
 
   public uploadFile(fileItem: FilePreviewModel) {
-    console.log('enters upload function');
-    console.log('file', fileItem);
     this.filesUploading[fileItem.fileName] = true;
     this.updateFilesToUpload(this.numberOfFilesToUpload + 1);
     const form = new FormData();
     form.append('file', fileItem.file);
-    console.log('form file', form.get('file'));
 
     const api = this.getApiUrlForUpload();
-    console.log('api route', api);
     const httpOptions = new HttpHeaders({
-        'Access-Control-Allow-Origin': '*',
-        Authorization: 'Bearer ' + this.httpService.token,
-        enctype: 'multipart/form-data',
-        timeout: `${30 * 60 * 1000}`,
-      });
-    console.log('http options', httpOptions);
-    const req = new HttpRequest('POST', api, form, {headers: httpOptions, reportProgress: true});
-    console.log('req', req);
+      'Access-Control-Allow-Origin': '*',
+      Authorization: 'Bearer ' + this.httpService.token,
+      enctype: 'multipart/form-data',
+      timeout: `${30 * 60 * 1000}`,
+    });
+    const req = new HttpRequest('POST', api, form, { headers: httpOptions, reportProgress: true });
     return this.http.request(req)
-    .pipe(
-      map( (res: HttpEvent<any>) => {
-        console.log('res', res);
-        if (res.type === HttpEventType.Response) {
-          delete this.filesUploading[fileItem.fileName];
-          this.updateFilesUploaded(this.numberOfFilesUploaded + 1);
-          return res.body.id;
-        } else {
-          return res;
-        }
-      })
-    );
+      .pipe(
+        map((res: HttpEvent<any>) => {
+          if (res.type === HttpEventType.Response) {
+            delete this.filesUploading[fileItem.fileName];
+            this.updateFilesUploaded(this.numberOfFilesUploaded + 1);
+            return res.body.id;
+          } else {
+            return res;
+          }
+        })
+      );
   }
 
   public removeFile(fileItem: FilePreviewModel): Observable<any> {
-    return this.http.post(environment.apiUrl, {id: fileItem.fileId});
+    return this.http.post(environment.apiUrl, { id: fileItem.fileId });
   }
 }
