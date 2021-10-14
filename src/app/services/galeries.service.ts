@@ -109,7 +109,10 @@ export class GaleriesService {
   }
 
   downloadArchive(event: string) {
-    return this.httpService.post(API_ROUTES.downloadArchive, { gallery_slug: event }).toPromise();
+    console.log('Response', this.httpService.postDownloadBlob(
+      API_ROUTES.downloadArchive, { gallery_slug: event })
+    );
+    return this.httpService.postDownloadBlob(API_ROUTES.downloadArchive, { gallery_slug: event });
   }
 
   // Get a random image for some event

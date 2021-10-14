@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { state, trigger, style, transition } from '@angular/animations';
+import { saveAs } from 'file-saver';
 
 import { routesAppFromRoot, photosSubpath, videosSubpath } from '../../../Routes';
 import { LINKS } from '../../../Constants';
@@ -46,6 +47,7 @@ export class GaleriesFooterComponent implements OnInit {
 
   downloadArchive() {
     const gallerySlug = window.location.pathname.split('/').reverse()[0];
-    return this.galeriesService.downloadArchive(gallerySlug);
+    this.galeriesService.downloadArchive(gallerySlug)
+      .subscribe((blob: Blob) => { console.log('BLOB', blob); saveAs(blob, `${gallerySlug}.zip`); });
   }
 }
