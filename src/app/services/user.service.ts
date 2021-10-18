@@ -7,7 +7,7 @@ import API_ROUTES from './Api';
 @Injectable()
 export class UserService {
 
-  constructor(private httpService: HttpService ) {}
+  constructor(private httpService: HttpService) { }
 
   addUser(user: User) {
     return this.httpService.post(API_ROUTES.register, user);
@@ -15,5 +15,13 @@ export class UserService {
 
   resetUser(form: object) {
     return this.httpService.post(API_ROUTES.reset, form);
+  }
+
+  setNewPassword(form: object) {
+    return this.httpService.post(API_ROUTES.setNewPassword, form);
+  }
+
+  confirmEmail(form: object) {
+    return this.httpService.post(API_ROUTES.confirmEmail, form);
   }
 }

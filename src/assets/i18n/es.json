@@ -174,7 +174,21 @@
     "reset.form.email.extension": "@eleves.enpc.fr",
     "reset.form.submitButton": "Enviar el correo electrónico de reinicio",
     "reset.sentEmail": "Se le envió un correo electrónico!",
-  
+
+    "setNewPassword.header.title": "Establecer la nueva contraseña",
+    "setNewPassword.header.subtitle": "Si tiene algún problema para restablecer su contraseña o si tiene alguna pregunta sobre el club, puede enviar un correo electrónico a <em>ponthe@liste.enpc.fr</em>",
+    "setNewPassword.form.password.label": "Contraseña",
+    "setNewPassword.form.confirmPassword.label": "Confirmación de la contraseña",
+    "setNewPassword.form.submitButton": "Confirmar la contraseña",
+    "setNewPassword.confirmed": "Contraseña validada !",
+    "setNewPassword.failed": "Se ha producido un error. Vuelva a intentarlo más tarde o póngase en contacto con el equipo de Ponthé.",
+    "setNewPassword.unmatched": "La contraseña y su confirmación no coinciden.",
+
+    "confirmEmail.title": "Confirmación de la dirección de correo electrónico",
+    "confirmEmail.subtitle": "La dirección de correo electrónico está siendo validada y será redirigida automáticamente a la página de autenticación. Si tiene algún problema con la confirmación de la cuenta o preguntas sobre el club, puede enviar un correo electrónico a <em>ponthe@liste.enpc.fr</em>",
+    "confirmEmail.confirmed": "Correo confirmado !",
+    "confirmEmail.failed": "El correo electrónico no pudo ser confirmado. La cuenta no existe, el periodo de confirmación de 24 horas ha expirado o se ha producido otro error.",
+
     "signup.successSignup": "Usted se ha registrado con éxito, ahora puede validar su registro en sus correos electrónicos",
     "signup.error": "Usted cometió un error, verifique su correo electrónico y contraseña",
 

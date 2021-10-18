@@ -1,0 +1,16 @@
+<body class="is-preload">
+  <app-auth-card [title]="'confirmEmail.title' | translate">
+    <p [innerHTML]="'confirmEmail.subtitle' | translate" id="inner-text"></p>
+  </app-auth-card>
+
+  <app-alert [visible]="alertSuccessVisible" [title]="'confirmEmail.confirmed' | translate" (close)="closeAlert()">
+  </app-alert>
+  <app-alert [visible]="alertFailureVisible" [title]="'confirmEmail.failed' | translate" (close)="closeAlert()">
+  </app-alert>
+
+  <!-- Footer -->
+  <app-auth-footer></app-auth-footer>
+
+  <!-- Background animation -->
+  <app-auth-bg-slider class="bg"></app-auth-bg-slider>
+</body>

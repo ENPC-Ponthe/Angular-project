@@ -9,6 +9,8 @@ export const routesApp = {
   newAccount: 'new-account',
   cgu: 'cgu',
   reset: 'reset',
+  newPassword: 'set-new-password',
+  confirmEmail: 'confirm-email',
   home: 'home',
   galeries: galeriesRoot,
   pics: galeriesRoot + '/' + photosSubpath,

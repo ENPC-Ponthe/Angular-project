@@ -174,7 +174,21 @@
     "reset.form.email.extension": "@eleves.enpc.fr",
     "reset.form.submitButton": "Send the reset email",
     "reset.sentEmail": "An email was sent to you!",
-  
+
+    "setNewPassword.header.title": "Setting the new password",
+    "setNewPassword.header.subtitle": "If you have any problems resetting your password or have questions about the club, you can send an email to <em>ponthe@liste.enpc.fr</em>",
+    "setNewPassword.form.password.label": "Password",
+    "setNewPassword.form.confirmPassword.label": "Confirm your password",
+    "setNewPassword.form.submitButton": "Confirm password",
+    "setNewPassword.confirmed": "Password validated !",
+    "setNewPassword.failed": "An error has occurred. Please try again later or contact the Ponthé team.",
+    "setNewPassword.unmatched": "The password and its confirmation do not match.",
+
+    "confirmEmail.title": "Confirmation of e-mail address",
+    "confirmEmail.subtitle": "The email address is being validated and will automatically redirect to the authentication page. For any problem on the account confirmation or for questions about the club, you can send an email to <em>ponthe@liste.enpc.fr</em>",
+    "confirmEmail.confirmed": "Mail confirmed !",
+    "confirmEmail.failed": "The email could not be confirmed. The account does not exist, the 24-hour confirmation period has expired or another error has occurred.",
+
     "signup.successSignup": "You have successfully registered, you can now validate your registration in your emails",
     "signup.error": "You made a mistake, check your email and password",
 
