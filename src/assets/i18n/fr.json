@@ -171,6 +171,20 @@
   "reset.form.submitButton": "Envoyer le mail de réinitialisation",
   "reset.sentEmail": "Un mail t'a été envoyé !",
 
+  "setNewPassword.header.title": "Définition du nouveau mot de passe",
+  "setNewPassword.header.subtitle": "Pour tout problème sur la réinitialisation de mot de passe ou pour des questions concernant le club, tu peux envoyer un mail à <em>ponthe@liste.enpc.fr</em>",
+  "setNewPassword.form.password.label": "Mot de passe",
+  "setNewPassword.form.confirmPassword.label": "Confirmation du mot de passe",
+  "setNewPassword.form.submitButton": "Valider le mot de passe",
+  "setNewPassword.confirmed": "Mot de passe validé !",
+  "setNewPassword.failed": "Une erreur est survenue. Réessaie plus tard ou bien contacte le Ponthé.",
+  "setNewPassword.unmatched": "Le mot de passe et sa confirmation ne correspondent pas.",
+
+  "confirmEmail.title": "Confirmation de l'adresse mail",
+  "confirmEmail.subtitle": "L'adresse mail est en cours de validation et redirigera automatiquement vers la page d'authentification. Pour tout problème sur la confirmation de compte ou pour des questions concernant le club, tu peux envoyer un mail à <em>ponthe@liste.enpc.fr</em>",
+  "confirmEmail.confirmed": "Mail confirmé !",
+  "confirmEmail.failed": "Le mail n'a pas pu être confirmé. Le compte n'existe pas, le délai de confirmation de 24h est dépassé ou bien une autre erreur est survenue.",
+
   "signup.successSignup": "Tu as bien réussi à t'inscrire, tu peux maintenant valider ton inscription dans tes mails",
   "signup.error": "Tu as fait une erreur, vérifie ton email et ton mot de passe",
 

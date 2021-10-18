@@ -9,6 +9,8 @@ export default {
     login: '/login',
     register: '/register',
     reset: '/reset/',
+    confirmEmail: '/confirm-email',
+    setNewPassword: '/set-new-password',
 
     /* Home */
     getLatestGalleries: '/get-latest-galleries',

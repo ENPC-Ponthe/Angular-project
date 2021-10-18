@@ -66,6 +66,8 @@ import { NewAccountComponent } from './pages/new-account/new-account.component';
 import { CguComponent } from './pages/cgu/cgu.component';
 import { CrushComponent } from './pages/crush/crush.component';
 import { ResetComponent } from './pages/reset/reset.component';
+import { NewPasswordComponent } from './pages/new-password/new-password.component';
+import { ConfirmEmailComponent } from './pages/confirm-email/confirm-email.component';
 import { HomeComponent } from './pages/home/home.component';
 import { VestibuleComponent } from './pages/vestibule/vestibule.component';
 import { GaleriesComponent } from './pages/galeries/galeries.component';
@@ -153,6 +155,7 @@ export function setupTranslateFactory(
     VideoViewerComponent,
     AuthComponent,
     CguComponent,
+    ConfirmEmailComponent,
     CrushComponent,
     DashboardComponent,
     EventComponent,
@@ -163,6 +166,7 @@ export function setupTranslateFactory(
     MembersComponent,
     ModerationComponent,
     NewAccountComponent,
+    NewPasswordComponent,
     NotfoundComponent,
     ResetComponent,
     VestibuleComponent,
