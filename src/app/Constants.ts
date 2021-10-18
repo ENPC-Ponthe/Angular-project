@@ -42,7 +42,7 @@ for (let year = FIRST_YEAR_EVENTS; year <= CURRENT_YEAR; year++) {
 SCHOOL_YEARS_SLUGS.reverse();
 YEARS_SLUGS.reverse();
 
-export const GALLERY_TYPES = ['Photo', 'Video'];
+export const GALLERY_TYPES = ['PHOTO', 'VIDEO'];
 
 
 export {
