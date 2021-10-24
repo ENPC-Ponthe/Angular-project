@@ -2,19 +2,22 @@ const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
 
-function createWindow () {
+function createWindow() {
   // Cree la fenetre du navigateur.
   const win = new BrowserWindow({
     width: 1280,
     height: 800,
+    backgroundColor: '#fc3',
+    icon: path.join(__dirname, 'dist/galeries-ponthe/assets/images/logo.png'),
     webPreferences: {
       nodeIntegration: true
-    }
+    },
   })
 
   // and load the index.html of the app.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'dist/galeries-ponthe/index.html'),
+    // pathname: path.join(__dirname, 'dist/galeries-ponthe/index.html'),
+    pathname: path.join(__dirname, 'src/index.html'),
     protocol: 'file:',
     slashes: true
   }))
@@ -32,9 +35,10 @@ app.whenReady().then(createWindow)
 app.on('window-all-closed', () => {
   // Sur macOS, il est commun pour une application et leur barre de menu
   // de rester active tant que l'utilisateur ne quitte pas explicitement avec Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+  // if (process.platform !== 'darwin') {
+  //   app.quit()
+  // }
+  app.quit()
 })
 
 app.on('activate', () => {

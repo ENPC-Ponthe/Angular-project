@@ -1,6 +1,10 @@
 {
   "name": "galeries-ponthe",
+  "productName": "Galeries Ponthé",
   "main": "main.js",
+  "version": "0.1.0",
+  "author": "Ponthé team",
+  "description": "Galeries Ponthé, le site du Ponthé, club audiovisuel étudiant de l'Ecole Nationale des Ponts et Chaussées (ENPC), où vous pourrez retrouver toutes les photos, vidéos et souvenirs capturés par le Ponthé. C'est la mémoire de la vie associative de l'Ecole des Ponts ParisTech.",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,9 +13,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron .",
-    "electron-build": "ng build --prod && electron .",
-    "electron-linux": "electron-packager . --platform=linux",
-    "electron-windows": "electron-packager . --platform=win32"
+    "electron-build": "ng build --prod --base-href ./ && electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/images/logo.icns --prune=true --out=../release-builds",
+    "package-linux": "electron-packager . 'Galeries Ponthé' --overwrite --asar --platform=linux --arch=x64 --icon=src/assets/images/logo.png --prune=true --out=../release-builds",
+    "package-windows": "electron-packager . 'Galeries Ponthé' --overwrite --asar --platform=win32 --arch=x64 --icon=src/assets/images/fav-logo.ico --prune=true --out=../release-builds --version-string.CompanyName=Ponthé --version-string.FileDescription=CE --version-string.ProductName=\"Galeries Ponthé\""
   },
   "private": true,
   "dependencies": {
