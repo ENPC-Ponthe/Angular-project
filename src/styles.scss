@@ -221,7 +221,7 @@ button.down {
 	height: 5em;
 	line-height: 4.5em;
 	padding: 0;
-	background-image: url("/assets/assets_h/css/images/dark-arrow.svg");
+	background-image: url("/assets/images/site/dark-arrow.svg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	text-indent: -10em;
@@ -296,7 +296,7 @@ input[type="submit"].style2.down,
 input[type="reset"].style2.down,
 .button.style2.down,
 button.style2.down {
-	background-image: url("/assets/assets_h/css/images/arrow.svg");
+	background-image: url("/assets/images/site/arrow.svg");
 }
 
 /* Form */
@@ -485,7 +485,7 @@ textarea {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: url("/assets/assets_h/css/images/overlay.png");
+	background: url("/assets/images/site/overlay.png");
 }
 
 .image img {
@@ -1266,7 +1266,7 @@ footer {
 }
 
 .main.dark .button.style2.down {
-	background-image: url("/assets/assets_h/css/images/dark-arrow.svg");
+	background-image: url("/assets/images/site/dark-arrow.svg");
 }
 
 body.is-touch .main {
