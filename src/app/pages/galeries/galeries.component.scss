@@ -53,3 +53,15 @@ body {
 	text-transform: inherit;
 	@include font-size(XLARGE);
 }
+
+h2 {
+	font-weight: 400;
+	font-family: "Source Sans Pro";
+	bottom: 1em;
+	left: 1em;
+	font-size: 0.8em;
+}
+
+h2 > a {
+	border: none;
+}

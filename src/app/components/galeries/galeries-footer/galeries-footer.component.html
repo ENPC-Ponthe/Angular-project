@@ -1,22 +1,22 @@
 <!-- Header, displayed on the bottom -->
-<header id="header" id="event-panel">
+<div id="header" id="event-panel">
   <h1>
     <a [routerLink]="getFooterTitleRedirection()" [attr.aria-label]="nameEvent"><strong>{{ nameEvent }}</strong></a>
   </h1>
   <nav>
     <ul>
-      <li (click)="changeStateFooter()"><a class="icon fa-info-circle" id="menu-button"
-          [attr.aria-label]="'galeries.footer.title' | translate">{{
-          'galeries.footer.title' | translate }}</a></li>
-      <li><a (click)="downloadArchive()" id="download-button" class="icon fa fa-download fa-2x"
+      <li><a (click)="downloadArchive()" id="download-button" class="icon-gallery fa fa-download fa-2x"
           aria-label="download button"></a>
       </li>
+      <li (click)="changeStateFooter()"><a class="icon-gallery" id="menu-button"
+          [attr.aria-label]="'galeries.footer.title' | translate">{{
+          'galeries.footer.title' | translate }}</a></li>
     </ul>
   </nav>
-</header>
+</div>
 
 <!-- Footer, revealed when clicking on "A propos de l'album" -->
-<footer id="footer" class="panel" [@footerTrigger]="footerState">
+<div id="gallery-footer" class="panel" [@footerTrigger]="footerState">
   <div class="inner split">
 
     <!-- General information on the album -->
@@ -29,7 +29,7 @@
         <h2>{{ 'galeries.about.title' | translate }}</h2>
         <ul class="icons">
           <li *ngFor="let link of links">
-            <a href="{{ link.href }}" class="icon {{ link.class }}" [attr.aria-label]="link.name">
+            <a href="{{ link.href }}" class="icon-gallery {{ link.class }}" [attr.aria-label]="link.name">
               <span class="label">{{ link.name }}</span>
             </a>
           </li>
@@ -43,4 +43,4 @@
     <!-- Contact form -->
     <app-galeries-contact-form></app-galeries-contact-form>
   </div>
-</footer>
+</div>

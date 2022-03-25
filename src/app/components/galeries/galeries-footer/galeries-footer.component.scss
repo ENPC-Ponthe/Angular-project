@@ -9,6 +9,10 @@
   }
 }
 
+#event-panel > nav {
+  @include font-size(MEDIUM);
+}
+
 #menu-button, #download-button {
   vertical-align: middle;
   padding: 0 !important;
@@ -19,6 +23,8 @@
   &:before {
     color: color(WHITE) !important;
   }
+
+  font-size: 1.6em;
 }
 
 .footer-panel {
