@@ -5,7 +5,9 @@ label.auth {
 	display: block;
 	font-size: 0.9em;
 	font-weight: 700;
-	margin: 0 0 1em 0;
+	margin: 0;
+	line-height: 1.25em;
+	margin-bottom: 2px;
 }
 
 @-moz-keyframes focus {
@@ -178,6 +180,15 @@ input[type="password"].auth,
 input[type="email"].auth,
 select.auth {
 	height: 2.75em;
+}
+
+input[type="text"].auth,
+input[type="password"].auth,
+input[type="email"].auth {
+	width: calc(100% - 2 * 1em - 2 * 2px) !important;
+}
+select.auth {
+	height: units(6);
 }
 
 textarea.auth {

@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
-
 /* Type */
 
 section, input, select, textarea, form {
@@ -159,4 +157,22 @@ ul li {
 		margin: 0 0 1em 0;
 	}
 
+}
+
+/* Email field with Ponts email */
+#email-after {
+    position: relative;
+    display: flex;
+}
+#email-after input {
+    padding-right: 112px;
+    text-align: end;
+}
+#email-after:before {
+    position: absolute;
+    top: 6px;
+    content:"@eleves.enpc.fr";
+    right: 5px;
+    padding-right: 5px;
+    font-size: font-size(MEDIUM);
 }

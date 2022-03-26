@@ -1,8 +1,9 @@
-@import url("../../../../assets/assets_c/css/main.css");
+@import "auth/auth_general";
 @import "../../../PontheStyle.scss";
 
 $MAX-WIDTH-CARD-MOBILE: 70vw;
 $MAX-WIDTH-CARD-TABLET: 60vw;
+$MAX-WIDTH-CARD-DESKTOP: 40vw;
 
 #auth-card {
 	padding: units(5);
@@ -24,6 +25,8 @@ $MAX-WIDTH-CARD-TABLET: 60vw;
 
 /* Header */
 #header {
+	max-width: $MAX-WIDTH-CARD-DESKTOP !important;
+
 	@include sm {
 		max-width: $MAX-WIDTH-CARD-MOBILE !important;
 	}
@@ -66,14 +69,11 @@ $MAX-WIDTH-CARD-TABLET: 60vw;
 
 input, select {
 	box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-NONE;
+	width: 100% !important;
 
 	@include sm {
 		margin-bottom: units(1) !important;
-		width: 100% !important;
 		font-size: font-size(MEDIUM) !important;
-	}
-	@include md {
-		width: 100% !important;
 	}
 }
 
@@ -83,6 +83,7 @@ input:focus, select:focus {
 
 form {
 	margin: 0;
+	max-width: $MAX-WIDTH-CARD-DESKTOP !important;
 
 	@include sm {
 		max-width: $MAX-WIDTH-CARD-MOBILE !important;
@@ -95,23 +96,23 @@ form {
 label {
 	transition: color 0.5s ease;
 	font-size: font-size(MEDIUM) !important;
-
-	@include sm {
-		font-size: font-size(MEDIUM) !important;
-	}
 }
 #auth-card:hover label {
 	color: color(DARK_DARK_GREY) !important;
 }
 
 p {
-	max-width: 60vw;
 	transition: color 0.5s ease;
 	line-height: 1.5em;
 	font-size: 1.25em !important;
+	max-width: $MAX-WIDTH-CARD-DESKTOP !important;
 
 	@include sm {
 		font-size: 1.1em !important;
+		max-width: $MAX-WIDTH-CARD-MOBILE !important;
+	}
+	@include md {
+		max-width: $MAX-WIDTH-CARD-TABLET !important;
 	}
 }
 
@@ -124,7 +125,6 @@ input[type="email"],
 input[type="text"],
 select {
 	color: rgba(255, 255, 255, 0.75);
-	font-family: "Roboto", sans-serif;
 	font-size: font-size(MEDIUM) !important;
 	font-weight: 400;
 	letter-spacing: -0.01em;
@@ -144,7 +144,6 @@ input[type="submit"] {
 select {
 	display: inline-block !important;
 	height: 59px;
-	// width: 60% !important;
 }
 
 #auth-card:hover input[type="password"],
@@ -177,4 +176,4 @@ input[type="text"]::placeholder {
 	color: rgba(57, 69, 75, 0.5) !important;
 }
 
-@import "../../../../scss/auth_input";
+@import "auth/auth_input";

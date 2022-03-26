@@ -1,4 +1,4 @@
-@import url("../../../assets/assets_c/css/main.css");
+@import "auth/auth_general";
 @import "../../PontheStyle.scss";
 
 #inner-text {
@@ -7,6 +7,8 @@
 
 form {
 	margin: 0;
+	display: grid !important;
+  	grid-gap: units(1.25) units(2);
 
 	@include sm {
 		grid-gap: units(2);
@@ -31,47 +33,38 @@ form {
 }
 
 #email {
-	@include md {
-		grid-row: 1;
-		margin-bottom: units(2.5);
-	}
+	grid-column: 1;
+  	grid-row: 1;
 }
 
-#email label {
+.label-email {
 	margin-bottom: units(0.5);
 }
 
 #email input[type="text"] {
 	display: inline-block;
-	margin-right: units(2);
 
 	@include sm {
 		width: 50% !important;
 	}
-	@include md {
-		width: 55% !important;
-	}
-}
-#email p {
-	margin: 0;
-	display: inline-block;
-	font-size: font-size(MEDIUM) !important;
-
-	@include sm {
-		font-size: font-size(SMALL) !important;
-	}
 }
 
 #submit {
-	margin-left: units(5);
-	margin-bottom: units(1);
+	height: units(6);
+	grid-column: 2;
+  	grid-row: 1;
 	
 	@include md {
-		grid-row: 2;
 		margin: 0;
 	}
 }
 
 .bg {
 	z-index: 1 !important;
+}
+
+#auth-card {
+	@include lg {
+		width: 20vw;
+	}
 }

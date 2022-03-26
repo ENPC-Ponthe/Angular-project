@@ -4,12 +4,19 @@
 
     <!-- Signup Form -->
     <form class="signup-form" [formGroup]="resetForm" (ngSubmit)="onSubmitForm()">
-      <div id="email">
+      <div class="field" id="email">
+        <label for="email-input" class="auth label-email">{{ 'reset.form.email.placeholder' | translate }}</label>
+        <label id="email-after">
+          <input id="email-input" class="auth" type="text" name="email" placeholder="prenom.nom"
+            formControlName="email" />
+        </label>
+      </div>
+      <!-- <div id="email">
         <label for="email-input" class="auth">{{ 'reset.form.email.placeholder' | translate }}</label>
         <input id="email-input" class="auth" type="text" name="email" placeholder="prenom.nom"
           formControlName="email" />
         <p>{{ 'reset.form.email.extension' | translate }}</p>
-      </div>
+      </div> -->
       <input id="submit" class="auth" type="submit" [value]="'reset.form.submitButton' | translate"
         [disabled]="resetForm.invalid" />
     </form>

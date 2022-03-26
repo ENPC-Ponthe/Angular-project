@@ -1,12 +1,9 @@
-@import url("../../../assets/assets_c/css/main.css");
+@import "auth/auth_general";
 @import "../../PontheStyle.scss";
 
 .signup-form input {
 	box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-NONE;
-
-	@include md {
-		margin: 0 !important;
-	}
+	margin: 0 !important;
 }
 
 .signup-form input[type=email],
@@ -30,38 +27,31 @@ form {
 		grid-gap: units(2);
 		align-items: normal;
 	}
+	@include lg {
+		display: grid !important;
+		grid-gap: units(2);
+		align-items: normal;
+	}
 }
 
 #sso {
 	font-weight: 600;
 	font-size: 1.25em;
-	margin-top: units(4);
+	margin-top: units(2);
 }
 #sso a {
-	@include sm {
-		color: color(YELLOW) !important;
-	}
-	@include md {
-		color: color(YELLOW) !important;
-	}
+	border-bottom: none;
+	color: color(YELLOW) !important;
 }
 #sso a:hover {
 	text-decoration: underline;
 }
 
 #app-auth-card {
+	z-index: 3;
+
 	@include sm {
 		margin-top: units(3);
-		z-index: 3;
-	}
-	@include md {
-		z-index: 3;
-	}
-}
-
-#submit {
-	@include lg {
-		height: units(7);
 	}
 }
 
@@ -96,21 +86,24 @@ form {
 		width: 100vw;
 		overflow: hidden;
 	}
+	@include lg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100vw;
+		overflow: hidden;
+	}
 }
 
 #auth-footer {
-	@include sm {
-		z-index: 3;
-	}
-	@include md {
-		z-index: 3;
-	}
+	z-index: 3;
 }
 
 video {
 	top: 0;
 	right: 0;
-	min-height: 100vh;
+	height: 100vh;
 	min-width: 100vw;
 
 	@include sm {
