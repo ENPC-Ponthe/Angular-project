@@ -1,14 +1,6 @@
 @import url("../../../assets/assets_c/css/main.css");
 @import "../../PontheStyle.scss";
 
-body {
-  margin-top: -5em;
-
-  @include sm {
-    margin-top: -2em;
-  }
-}
-
 form {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr);
@@ -129,6 +121,10 @@ input {
   @include md {
     width: 35% !important;
   }
+
+}
+#email input[type="text"]:after {
+  content: "@eleves.enpc.fr";
 }
 
 p {
@@ -142,16 +138,7 @@ p {
   margin: 0;
   display: inline-block;
   width: $AUTH-EMAIL-WIDTH;
-
-  @include sm {
-    font-size: font-size(MEDIUM) !important;
-  }
-  @include md {
-    font-size: font-size(MEDIUM) !important;
-  }
-  @include lg {
-    font-size: font-size(LARGE) !important;
-  }
+  font-size: font-size(MEDIUM) !important;
 }
 
 a {
@@ -169,7 +156,7 @@ a {
     overflow: scroll;
   }
   @include md {
-    max-height: 55vh;
+    max-height: 75vh;
     overflow: scroll;
   }
 }

@@ -5,8 +5,8 @@ $MAX-WIDTH-CARD-MOBILE: 70vw;
 $MAX-WIDTH-CARD-TABLET: 60vw;
 
 #auth-card {
-	padding: units(6);
-	border-radius: units(6);
+	padding: units(5);
+	border-radius: units(5);
 	width: max-content;
 	margin: auto;
 	transition: background 0.5s ease, box-shadow 0.5s ease !important;
@@ -22,6 +22,7 @@ $MAX-WIDTH-CARD-TABLET: 60vw;
 	box-shadow: $BOX-SHADOW-CARD;
 }
 
+/* Header */
 #header {
 	@include sm {
 		max-width: $MAX-WIDTH-CARD-MOBILE !important;
@@ -34,6 +35,33 @@ $MAX-WIDTH-CARD-TABLET: 60vw;
 #header h1 {
 	color: color(YELLOW);
 	text-shadow: $AUTH-TEXT-SHADOW;
+	font-size: 3em;
+	margin: 0 0 0.25em 0;
+}
+
+#header p {
+	font-size: 1.35em;
+	line-height: 1.65em;
+}
+
+#header a {
+	color: inherit;
+}
+
+@media screen and (max-width: 736px) {
+	#header h1 {
+		font-size: 2em;
+	}
+
+	#header p {
+		font-size: 1em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#header {
+		margin: 0 0 1em 0;
+	}
 }
 
 input, select {
@@ -65,9 +93,8 @@ form {
 }
 
 label {
-	font-size: font-size(XLARGE);
 	transition: color 0.5s ease;
-	font-size: font-size(LARGE) !important;
+	font-size: font-size(MEDIUM) !important;
 
 	@include sm {
 		font-size: font-size(MEDIUM) !important;
@@ -98,7 +125,7 @@ input[type="text"],
 select {
 	color: rgba(255, 255, 255, 0.75);
 	font-family: "Roboto", sans-serif;
-	font-size: font-size(XLARGE) !important;
+	font-size: font-size(MEDIUM) !important;
 	font-weight: 400;
 	letter-spacing: -0.01em;
 	line-height: 1.65em;
@@ -149,3 +176,5 @@ input[type="text"]::placeholder {
 #auth-card:hover input[type="text"]::placeholder {
 	color: rgba(57, 69, 75, 0.5) !important;
 }
+
+@import "../../../../scss/auth_input";

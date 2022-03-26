@@ -2,7 +2,7 @@
 
 /* Type */
 
-input, select, textarea, section, #event-panel, #footer, .privee {
+input, textarea, section, #event-panel {
 	color: #a0a0a1;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
 	font-size: 1em;
@@ -12,7 +12,7 @@ input, select, textarea, section, #event-panel, #footer, .privee {
 }
 
 @media screen and (max-width: 1680px) {
-	input, select, textarea {
+	input, textarea {
 		font-size: 11pt;
 	}
 }
@@ -45,7 +45,7 @@ p {
 	margin: 0 0 2em 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
 	color: #ffffff;
 	font-weight: 300;
 	letter-spacing: 0.1em;
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a, h2 a, h3 a {
 	color: inherit;
 	text-decoration: none;
 }
@@ -71,18 +71,6 @@ h3 {
 	font-size: 1.1em;
 }
 
-h4 {
-	font-size: 1em;
-}
-
-h5 {
-	font-size: 0.9em;
-}
-
-h6 {
-	font-size: 0.7em;
-}
-
 @media screen and (max-width: 736px) {
 	h2 {
 		font-size: 1em;
@@ -90,18 +78,6 @@ h6 {
 
 	h3 {
 		font-size: 0.9em;
-	}
-
-	h4 {
-		font-size: 0.8em;
-	}
-
-	h5 {
-		font-size: 0.7em;
-	}
-
-	h6 {
-		font-size: 0.7em;
 	}
 }
 
@@ -331,12 +307,6 @@ label {
 }
 
 input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-input[type="search"],
-input[type="url"],
-select,
 textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -354,130 +324,21 @@ textarea {
 }
 
 input[type="text"]:invalid,
-input[type="password"]:invalid,
-input[type="email"]:invalid,
-input[type="tel"]:invalid,
-input[type="search"]:invalid,
-input[type="url"]:invalid,
-select:invalid,
 textarea:invalid {
 	box-shadow: none;
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-input[type="search"]:focus,
-input[type="url"]:focus,
-select:focus,
 textarea:focus {
 	box-shadow: inset 0 0 0 2px #fc3;
 }
 
-select {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%2336383c' /%3E%3C/svg%3E");
-	background-size: 1.25rem;
-	background-repeat: no-repeat;
-	background-position: calc(100% - 1rem) center;
-	height: 2.75em;
-	padding-right: 2.75em;
-	text-overflow: ellipsis;
-}
-
-select option {
-	color: #ffffff;
-	background: #242629;
-}
-
-select:focus::-ms-value {
-	background-color: transparent;
-}
-
-select::-ms-expand {
-	display: none;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-input[type="search"],
-input[type="url"],
-select {
+input[type="text"] {
 	height: 2.75em;
 }
 
 textarea {
 	padding: 0.75em 1em;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	-ms-appearance: none;
-	appearance: none;
-	display: block;
-	float: left;
-	margin-right: -2em;
-	opacity: 0;
-	width: 1em;
-	z-index: -1;
-}
-
-input[type="checkbox"]+label,
-input[type="radio"]+label {
-	text-decoration: none;
-	color: #a0a0a1;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 1em;
-	font-weight: 300;
-	padding-left: 2.4em;
-	padding-right: 0.75em;
-	position: relative;
-}
-
-input[type="checkbox"]+label:before,
-input[type="radio"]+label:before {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: normal;
-	text-transform: none !important;
-}
-
-input[type="checkbox"]+label:before,
-input[type="radio"]+label:before {
-	background: #34363b;
-	content: '';
-	display: inline-block;
-	height: 1.65em;
-	left: 0;
-	line-height: 1.58125em;
-	position: absolute;
-	text-align: center;
-	top: 0;
-	width: 1.65em;
-}
-
-input[type="checkbox"]:checked+label:before,
-input[type="radio"]:checked+label:before {
-	background: #34a58e;
-	border-color: #34a58e;
-	color: #ffffff;
-	content: '\f00c';
-}
-
-input[type="checkbox"]:focus+label:before,
-input[type="radio"]:focus+label:before {
-	box-shadow: 0 0 0 2px #34a58e;
-}
-
-input[type="radio"]+label:before {
-	border-radius: 100%;
 }
 
 ::-webkit-input-placeholder {
