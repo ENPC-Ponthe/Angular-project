@@ -7,7 +7,9 @@ form {
   grid-gap: units(1.25) units(2);
 
   @include sm {
-    grid-gap: units(1);
+    grid-gap: units(1) 0;
+    grid-template-columns: none;
+    grid-template-rows: repeat(1, 1fr);
   }
 }
 
@@ -22,58 +24,37 @@ input {
 .signup-form {
   margin: 0;
   margin-top: units(1);
-
-  @include sm {
-    display: flex !important;
-  }
 }
 .signup-form > * {
   margin: 0;
 }
 
-#firstName {
-  grid-column: 1;
-  grid-row: 1;
-}
 #lastName {
-  grid-column: 2;
-  grid-row: 1;
+  @include sm {
+    grid-row: 2;
+  }
 }
 #email {
-  grid-column: 1;
-  grid-row: 2;
-  
   @include sm {
-    grid-column: 3;
-    grid-row: 1;
+    grid-row: 3;
   }
 }
 #email input {
   width: calc(70vw / 4 - units(25)) !important;
 }
 #promotion {
-  grid-column: 2;
-  grid-row: 2;
-
   @include sm {
-    grid-column: 4;
-    grid-row: 1;
+    grid-row: 4;
   }
 }
 #password {
-  grid-column: 1;
-  grid-row: 3;
-
   @include sm {
-    grid-row: 2;
+    grid-row: 5;
   }
 }
 #confirmPassword {
-  grid-column: 2;
-  grid-row: 3;
-  
   @include sm {
-    grid-row: 2;
+    grid-row: 6;
   }
 }
 #submit {
@@ -82,34 +63,17 @@ input {
   margin-top: units(0.5);
 
   @include sm {
-    grid-row: 2;
+    grid-row: 7;
   }
 }
 
 #email input[type="text"] {
   display: inline-block;
   width: 100% !important;
-
-  @include sm {
-    width: 50% !important;
-  }
 }
 
 p {
   margin-bottom: units(1);
-
-  @include md {
-    font-size: font-size(MEDIUM) !important;
-  }
-  @include lg {
-    font-size: font-size(MEDIUM) !important;
-  }
-}
-#email p {
-  margin: 0;
-  display: inline-block;
-  width: $AUTH-EMAIL-WIDTH;
-  font-size: font-size(MEDIUM) !important;
 }
 
 a {
@@ -122,16 +86,11 @@ a:hover {
   text-decoration: underline;
 }
 
-.bg {
-  z-index: 1 !important;
-}
-
 #app-auth-card {
   max-height: 75vh;
   overflow: scroll;
 
   @include sm {
-    margin-top: units(8);
     max-height: 65vh;
     overflow: scroll;
   }

@@ -1,7 +1,7 @@
 @import "auth/auth_general";
 @import "../../../PontheStyle.scss";
 
-$MAX-WIDTH-CARD-MOBILE: 70vw;
+$MAX-WIDTH-CARD-MOBILE: 75vw;
 $MAX-WIDTH-CARD-TABLET: 60vw;
 $MAX-WIDTH-CARD-DESKTOP: 40vw;
 
@@ -24,7 +24,8 @@ $MAX-WIDTH-CARD-DESKTOP: 40vw;
 }
 
 /* Header */
-#header {
+#header, form {
+	margin: 0;
 	max-width: $MAX-WIDTH-CARD-DESKTOP !important;
 
 	@include sm {
@@ -53,17 +54,11 @@ $MAX-WIDTH-CARD-DESKTOP: 40vw;
 
 @media screen and (max-width: 736px) {
 	#header h1 {
-		font-size: 2em;
+		font-size: 1.5em;
 	}
 
 	#header p {
 		font-size: 1em;
-	}
-}
-
-@media screen and (max-width: 480px) {
-	#header {
-		margin: 0 0 1em 0;
 	}
 }
 
@@ -72,25 +67,12 @@ input, select {
 	width: 100% !important;
 
 	@include sm {
-		margin-bottom: units(1) !important;
 		font-size: font-size(MEDIUM) !important;
 	}
 }
 
 input:focus, select:focus {
 	box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-FOCUS;
-}
-
-form {
-	margin: 0;
-	max-width: $MAX-WIDTH-CARD-DESKTOP !important;
-
-	@include sm {
-		max-width: $MAX-WIDTH-CARD-MOBILE !important;
-	}
-	@include md {
-		max-width: $MAX-WIDTH-CARD-TABLET !important;
-	}
 }
 
 label {
@@ -108,7 +90,6 @@ p {
 	max-width: $MAX-WIDTH-CARD-DESKTOP !important;
 
 	@include sm {
-		font-size: 1.1em !important;
 		max-width: $MAX-WIDTH-CARD-MOBILE !important;
 	}
 	@include md {

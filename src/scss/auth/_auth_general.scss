@@ -1,3 +1,5 @@
+@import "../../app/PontheStyle.scss";
+
 /* Type */
 
 section, input, select, textarea, form {
@@ -136,6 +138,12 @@ header h6+p {
 	line-height: 1.5em;
 }
 
+p {
+	@include sm {
+		font-size: 14px !important;
+	}
+}
+
 /* List */
 
 ul {
@@ -175,4 +183,9 @@ ul li {
     right: 5px;
     padding-right: 5px;
     font-size: font-size(MEDIUM);
+}
+
+/* Background pictures */
+.bg {
+	z-index: 1 !important;
 }

@@ -11,22 +11,15 @@ form {
   	grid-gap: units(1.25) units(2);
 
 	@include sm {
-		grid-gap: units(2);
+		grid-gap: units(1);
 	}
 }
 
 .signup-form {
 	margin: 0;
-	align-items: flex-end;
-
-	@include sm {
-		display: flex !important;
-		margin-bottom: 0.5em;
-	}
-	@include md {
-		display: grid !important;
-		grid-template-rows: repeat(1, 1fr);
-	}
+	display: grid !important;
+	align-items: end;
+	grid-template-rows: repeat(1, 1fr);
 }
 .signup-form > * {
 	margin: 0;
@@ -41,26 +34,17 @@ form {
 	margin-bottom: units(0.5);
 }
 
-#email input[type="text"] {
-	display: inline-block;
-
-	@include sm {
-		width: 50% !important;
-	}
-}
-
 #submit {
 	height: units(6);
 	grid-column: 2;
   	grid-row: 1;
+	margin: 0;
 	
-	@include md {
-		margin: 0;
+	@include sm {
+		grid-column: 1;
+		grid-row: 2;
+		font-size: 14px !important;
 	}
-}
-
-.bg {
-	z-index: 1 !important;
 }
 
 #auth-card {

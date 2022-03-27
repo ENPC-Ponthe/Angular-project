@@ -60,17 +60,25 @@ ul.auth-icons li a {
   position: fixed;
 }
 #auth-footer {
-	font-size: font-size(MEDIUM);
+	font-size: font-size(MEDIUM) !important;
 }
 
 #auth-footer .auth-icons {
 	margin: 0 0 0.5em 0;
+
+	@include sm {
+		margin: 0;
+	}
 }
 
 #auth-footer .copyright {
 	font-size: 14px;
 	list-style: none;
 	padding: 0;
+
+	@include sm {
+		font-size: 12px !important;
+	}
 }
 
 #auth-footer .copyright:before {

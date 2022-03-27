@@ -16,20 +16,12 @@
 }
 form {
 	margin: 0;
-	align-items: flex-end;
+	display: grid !important;
+	grid-gap: units(2);
+	align-items: normal;
 
-	@include sm {
-		align-items: normal;
-	}
-
-	@include md {
-		display: grid !important;
-		grid-gap: units(2);
-		align-items: normal;
-	}
 	@include lg {
 		display: flex !important;
-		grid-gap: units(2);
 		align-items: end;
 	}
 }
@@ -44,6 +36,10 @@ form {
 	font-weight: 600;
 	font-size: 1.25em;
 	margin-top: units(2);
+
+	@include sm {
+		font-size: 1em;
+	}
 }
 #sso a {
 	border-bottom: none;
@@ -53,12 +49,8 @@ form {
 	text-decoration: underline;
 }
 
-#app-auth-card {
+#app-auth-card, #auth-footer {
 	z-index: 3;
-
-	@include sm {
-		margin-top: units(3);
-	}
 }
 
 .field {
@@ -76,34 +68,12 @@ form {
 }
 
 #video-wrapper {
-	@include sm {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100vh;
-		width: 100vw;
-		overflow: hidden;
-	}
-	@include md {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100vh;
-		width: 100vw;
-		overflow: hidden;
-	}
-	@include lg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100vh;
-		width: 100vw;
-		overflow: hidden;
-	}
-}
-
-#auth-footer {
-	z-index: 3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
 }
 
 video {
@@ -113,7 +83,6 @@ video {
 	min-width: 100vw;
 
 	@include sm {
-		height: 100vh;
 		width: auto;
 		left: -100vw;
 	}

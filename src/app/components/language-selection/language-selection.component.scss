@@ -15,6 +15,11 @@ $NUMBER-OF-LANGUAGES-TO-ANIMATE: $NUMBER-OF-LANGUAGES - 1;
     position: fixed;
     bottom: units(4);
     right: units(6);
+
+    @include sm {
+        bottom: units(3.5);
+        right: units(2.5);
+    }
 }
 
 #flags-section:hover {

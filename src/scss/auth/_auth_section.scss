@@ -19,6 +19,10 @@ section.auth {
 	padding: 0;
 	align-items: center;
 	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	z-index: 1;
+	top: 0;
 }
 
 @media screen and (max-width: 480px) {
@@ -48,12 +52,4 @@ section.auth.is-preload *, section.auth.is-preload *:before, section.auth.is-pre
 section.auth>* {
 	position: relative;
 	z-index: 2;
-}
-
-@media screen and (max-width: 360px) {
-
-	section.auth {
-		padding: 5em 1.25em 1.25em 1.25em;
-	}
-
 }
