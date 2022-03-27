@@ -24,8 +24,8 @@ export class NewAccountComponent implements OnInit {
   alertErrorVisible = false;
 
   constructor(private formBuilder: FormBuilder,
-              private userService: UserService,
-              private router: Router) {
+    private userService: UserService,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -35,24 +35,26 @@ export class NewAccountComponent implements OnInit {
   // Initialisation of the form when the page is initially loaded
   initForm() {
     this.userForm = this.formBuilder.group({
-      firstname : ['', Validators.required],
-      lastname : ['', Validators.required],
-      email : ['', Validators.required],
-      promotion : ['', Validators.required],
-      password : ['', Validators.required],
-      confirmation_password : ['', Validators.required],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: ['', Validators.required],
+      extension: ['eleves.enpc.fr', Validators.required],
+      promotion: ['', Validators.required],
+      password: ['', Validators.required],
+      confirmation_password: ['', Validators.required],
     });
   }
 
   // Submission of the registration form
   onSubmitForm() {
+    this.userForm.value.email += "@" + this.userForm.value.extension;
     const formValue = this.userForm.value;
     const newUser = new User(formValue.firstname,
-                             formValue.lastname,
-                             formValue.email,
-                             formValue.promotion,
-                             formValue.password,
-                             formValue.confirmation_password);
+      formValue.lastname,
+      formValue.email,
+      formValue.promotion,
+      formValue.password,
+      formValue.confirmation_password);
     this.userService.addUser(newUser).subscribe(
       (res) => {
         this.alertSuccessVisible = true;

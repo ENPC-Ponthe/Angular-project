@@ -28,9 +28,15 @@ form {
 		align-items: normal;
 	}
 	@include lg {
-		display: grid !important;
+		display: flex !important;
 		grid-gap: units(2);
-		align-items: normal;
+		align-items: end;
+	}
+}
+
+#submit {
+	@include lg {
+		height: units(6);
 	}
 }
 

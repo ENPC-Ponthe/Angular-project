@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 
 import { UserService } from '../../services/user.service';
 import { routesAppFromRoot } from '../../Routes';
-import { EXTENSION_MAILS_ENPC } from '../../Constants';
 
 @Component({
   selector: 'app-reset',
@@ -20,8 +19,8 @@ export class ResetComponent implements OnInit {
   alertVisible = false;
 
   constructor(private formBuilder: FormBuilder,
-              private router: Router,
-              private userService: UserService) {
+    private router: Router,
+    private userService: UserService) {
   }
 
   ngOnInit() {
@@ -31,13 +30,14 @@ export class ResetComponent implements OnInit {
   // Initialisation of the form when the page is initially loaded
   initForm() {
     this.resetForm = this.formBuilder.group({
-      email : ['', Validators.required]
+      email: ['', Validators.required],
+      extension: ['eleves.enpc.fr', Validators.required]
     });
   }
 
   // Submission of the reset form
   onSubmitForm() {
-    this.resetForm.value.email = this.resetForm.value.email + EXTENSION_MAILS_ENPC;
+    this.resetForm.value.email += "@" + this.resetForm.value.extension;
     this.userService.resetUser(this.resetForm.value).subscribe(
       (res) => { this.alertVisible = true; },
       (error) => { }

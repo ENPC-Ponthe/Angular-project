@@ -1,6 +1,6 @@
 @import "../../PontheStyle.scss";
 
-$FLAG-SIZE: 1.25em;
+$FLAG-SIZE: units(3);
 $SECTION-PADDING: units(0.25);
 $SECTION-MARGIN: units(0.25);
 $NUMBER-OF-LANGUAGES-TO-ANIMATE: $NUMBER-OF-LANGUAGES - 1;
@@ -12,7 +12,9 @@ $NUMBER-OF-LANGUAGES-TO-ANIMATE: $NUMBER-OF-LANGUAGES - 1;
     transition: height 0.5s ease;
     display: flex;
     flex-direction: column-reverse;
-    position: absolute;
+    position: fixed;
+    bottom: units(4);
+    right: units(6);
 }
 
 #flags-section:hover {

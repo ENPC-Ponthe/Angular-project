@@ -2,10 +2,13 @@
 	<app-auth-card [title]="'auth.title' | translate" id="app-auth-card">
 		<!-- Signup Form -->
 		<form class="signup-form" [formGroup]="userForm" (ngSubmit)="onSignIn()">
-			<div class="field">
-				<label for="email" class="auth">{{ 'auth.form.id' | translate }}</label>
-				<input id="email" class="auth" type="email" name="email" placeholder="prenom.nom@eleves.enpc.fr"
-					formControlName="email" />
+			<div class="field" id="email">
+				<label for="email-input" class="auth label-email">{{ 'reset.form.email.placeholder' | translate
+					}}</label>
+				<label id="email-after">
+					<input id="email-input" class="auth" type="text" name="email" placeholder="prenom.nom"
+						formControlName="email" />
+				</label>
 			</div>
 			<div class="field">
 				<label for="password" class="auth">{{ 'auth.form.password' | translate }}</label>

@@ -24,9 +24,9 @@ export class AuthComponent implements OnInit {
   routes = routesAppFromRoot;
 
   constructor(public authService: AuthService,
-              public breakpointsService: BreakpointsService,
-              public Pwa: PwaService,
-              private formBuilder: FormBuilder) {
+    public breakpointsService: BreakpointsService,
+    public Pwa: PwaService,
+    private formBuilder: FormBuilder) {
   }
 
   ngOnInit() {
@@ -40,13 +40,15 @@ export class AuthComponent implements OnInit {
   // Initialisation of the form when the page is initially loaded
   initForm() {
     this.userForm = this.formBuilder.group({
-      email : ['', Validators.required],
-      password : ['', Validators.required]
+      email: ['', Validators.required],
+      extension: ['eleves.enpc.fr', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
   // Submission of the form
   onSignIn() {
+    this.userForm.value.email += "@" + this.userForm.value.extension;
     this.authService.signIn(this.userForm.value);
   }
 
