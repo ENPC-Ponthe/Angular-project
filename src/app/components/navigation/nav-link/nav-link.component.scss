@@ -1,5 +1,9 @@
 @import "../../../PontheStyle.scss";
 
+$NAV-HEIGHT: units(8);
+$NAV-BORDER-BOTTOM: 2px;
+$NAV-MOBILE-TAB-HEIGHT: units(8);
+
 li {
   display: inline-block;
   margin-left: 0.5em;
@@ -10,14 +14,22 @@ li a {
   display: block;
   color: inherit;
   text-decoration: none;
-  height: 3em;
-  line-height: 3em;
-  padding: 0 0.5em 0 0.5em;
+  height: $NAV-HEIGHT;
+  line-height: $NAV-HEIGHT;
+  margin: 0 0.5em;
   outline: 0;
+
+  @include sm {
+    margin: 0;
+  }
 
   @media (prefers-color-scheme: dark) {
     color: color(WHITE);
   }
+}
+li a:hover {
+  border-bottom: $NAV-BORDER-BOTTOM color(DARK_GREY) solid;
+  height: calc(#{$NAV-HEIGHT} - #{$NAV-BORDER-BOTTOM});
 }
 
 .svg_links {
@@ -41,10 +53,11 @@ li a {
 li {
   @include sm {
     display: flex;
-    height: units(11.5);
+    height: $NAV-MOBILE-TAB-HEIGHT;
     padding-top: units(1.5);
     padding-bottom: units(1.5);
     border-bottom: 1px solid #c3c3c3;
+    width: 100%;
   }
 }
 
@@ -72,7 +85,7 @@ img {
 
 .mobile-a img {
   margin: 0;
-  margin-right: units(2);
+  margin-right: units(1.5);
   height: 100%;
   width: 23vw;
 
@@ -84,4 +97,5 @@ img {
 
 .mobile-a h3 {
   letter-spacing: -0.025em;
+  line-height: $NAV-MOBILE-TAB-HEIGHT;
 }
