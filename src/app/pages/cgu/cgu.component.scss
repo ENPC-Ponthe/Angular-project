@@ -1,26 +1,45 @@
 @import "../../PontheStyle.scss";
 
 section, #cgu-title {
-  margin: 3.5em;
+  margin: 2em 3.5em;
 }
 
 section {
   text-align: justify;
 
   @include sm {
-    margin: 2em;
+    margin: 1.5em;
+  }
+}
+
+h2 {
+  font-size: 2em;
+  
+  @include sm {
+    font-size: 1.5em;
+  }
+}
+
+p {
+  font-size: font-size(XLARGE);
+
+  @include sm {
+    font-size: font-size(MEDIUM);
+    line-height: 1.5em;
   }
 }
 
 #cgu-title {
   margin-top: 3em;
-  margin-bottom: 2.5em;
+  margin-bottom: 1.5em;
   text-align: center;
   color: color(YELLOW);
   text-decoration: underline;
+  font-size: 2em;
 
   @include sm {
     margin: 0;
     margin-top: units(10);
+    font-size: 1.5em;
   }
 }
