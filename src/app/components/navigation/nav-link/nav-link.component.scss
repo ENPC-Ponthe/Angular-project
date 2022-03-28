@@ -1,9 +1,5 @@
 @import "../../../PontheStyle.scss";
 
-$NAV-HEIGHT: units(8);
-$NAV-BORDER-BOTTOM: 2px;
-$NAV-MOBILE-TAB-HEIGHT: units(8);
-
 li {
   display: inline-block;
   margin-left: 0.5em;
@@ -28,11 +24,11 @@ li a {
   }
 }
 li a:hover {
-  border-bottom: $NAV-BORDER-BOTTOM color(DARK_GREY) solid;
-  height: calc(#{$NAV-HEIGHT} - #{$NAV-BORDER-BOTTOM});
+  border-bottom: $NAV-BORDER-BOTTOM-HOVER color(DARK_GREY) solid;
+  height: calc(#{$NAV-HEIGHT} - #{$NAV-BORDER-BOTTOM-HOVER});
 
   @media (prefers-color-scheme: dark) {
-    border-bottom: $NAV-BORDER-BOTTOM color(WHITE) solid;
+    border-bottom: $NAV-BORDER-BOTTOM-HOVER color(WHITE) solid;
   }
 }
 

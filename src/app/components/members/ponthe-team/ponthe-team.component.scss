@@ -58,10 +58,6 @@
   }
 }
 
-.style2 .content {
-  opacity: 0.95;
-}
-
 .right_arrow, .left_arrow, #closer {
   position: absolute;
   cursor: pointer;
@@ -83,53 +79,17 @@
   margin-right: units(12);
 }
 
-
-@media screen and (max-width: 1920px) {
-  .style2 .content {
-    width: 30% !important;
-  }
-}
-
-@media screen and (max-width: 1650px) {
-  .style2 .content {
-    width: 35% !important;
-    padding: 2em 1em 2em 2em;
-  }
-
-  .style2 .content p {
-    margin-bottom: 0.6em;
-    font-size: font-size(MEDIUM);
-    line-height: 1.35em;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .style2 .content {
-    width: 35% !important;
-    padding: 2em 1em 2em 2em;
-  }
-
-  .style2 .content p {
-    margin-bottom: 0.6em;
-    font-size: font-size(MEDIUM);
-    line-height: 1.35em;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .style2 .content {
-    width: 40% !important;
-  }
-
-  .style2 .content p {
-    line-height: 1.5em;
-  }
-}
-
 .style2 .content {
+  opacity: 0.95;
+  width: 20% !important;
+
 	@include sm {
 		width: 100% !important;
 	}
+  @include md {
+    padding: 1.5em;
+    width: 35% !important;
+  }
 
   @media (prefers-color-scheme: dark) {
     background: color(DARK_GREY);
@@ -137,16 +97,15 @@
   }
 }
   
-  .style2 .content p {
-	  @include sm {
-		  line-height: 1.35em;
-		  font-size: font-size(LARGE);
-	  }
+.style2 .content p {
+  margin-bottom: 0.6em;
+  font-size: font-size(MEDIUM);
+  line-height: 1.5em;
+
+  @include sm {
+    margin-bottom: 0.5em;
+    line-height: 1.25em;
+    font-size: font-size(LARGE);
   }
-  
-  .main.style1 {
-	  @include sm {
-		  padding: 0.6em 15px 0.6em 15px;
-	  }
-  }
+}
   

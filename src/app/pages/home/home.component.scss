@@ -1,29 +1,10 @@
 @import "../../PontheStyle.scss";
+@import "home/home_intro";
 
 $ARTICLE-BOX-RADIUS: units(2.5);
 $GALLERY-PICS-MARGIN: units(1);
 
 /* Intro */
-	#intro {
-		margin-top : 3em;
-		height : calc(100vh - 3em);
-		background: $INTRO-IMAGE;
-		@include background-size((256px 256px, cover));
-		background-attachment: fixed, fixed;
-		background-position: top left, bottom center;
-		background-repeat: repeat, no-repeat;
-
-		@include sm {
-			margin-top: 4em;
-			height : calc(100vh - 4em);
-
-			@media (prefers-color-scheme: dark) {
-				margin-top: 3.8em;
-				height : calc(100vh - 3.8em);
-			}
-		}
-	}
-
 	#intro header {
 		@include sm {
 			margin-top: 1em;
@@ -38,12 +19,6 @@ $GALLERY-PICS-MARGIN: units(1);
 	}
 	#intro-none {
 		opacity: 0;
-	}
-
-	#intro p {
-		@include sm {
-			@include font-size(LARGE);
-		}
 	}
 
 /* 3 Last events */
@@ -110,10 +85,18 @@ $GALLERY-PICS-MARGIN: units(1);
 
 .right > .box {
 	right: -20px;
+
+	@include sm {
+		right: 0;
+	}
 }
 
 .left > .box {
 	left: -20px;
+
+	@include sm {
+		left: 0;
+	}
 }
 
 .content .box .style2 {
@@ -137,11 +120,5 @@ $GALLERY-PICS-MARGIN: units(1);
 	@media (prefers-color-scheme: dark) {
 		background: color(DARK_GREY);
 		color: color(WHITE);
-	}
-}
-
-.main.style1 {
-	@include sm {
-		padding: 0.6em 15px 0.6em 15px;
 	}
 }

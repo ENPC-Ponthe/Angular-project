@@ -40,7 +40,7 @@
 		style="position:absolute; z-index:1"></video>
 
 	<div id="bandeau" *ngIf="Pwa.promptEvent">
-		<button id="installation" (click)="installPwa()" [attr.aria-label]="'install.install' | translate">
+		<button id="installation" class="auth" (click)="installPwa()" [attr.aria-label]="'install.install' | translate">
 			{{ 'install.install' | translate }}
 		</button>
 	</div>

@@ -220,8 +220,8 @@ textarea.auth {
 input[type="submit"].auth,
 input[type="reset"].auth,
 input[type="button"].auth,
-button,
-.button {
+button.auth,
+.button.auth {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	-ms-appearance: none;
@@ -248,16 +248,16 @@ button,
 input[type="submit"].auth:hover,
 input[type="reset"].auth:hover,
 input[type="button"].auth:hover,
-button:hover,
-.button:hover {
+button.auth:hover,
+.button.auth:hover {
 	background-color: #ffd558;
 }
 
 input[type="submit"].auth:active,
 input[type="reset"].auth:active,
 input[type="button"].auth:active,
-button:active,
-.button:active {
+button.auth:active,
+.button.auth:active {
 	background-color: #ffde7b;
 }
 
