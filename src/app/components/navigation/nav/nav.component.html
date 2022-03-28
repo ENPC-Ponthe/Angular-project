@@ -22,7 +22,10 @@
         <app-nav-link [route]="routes.material" [name]="'nav.matos' | translate" [imgSrc]="svgMatos"></app-nav-link>
         <app-nav-link (click)="onSignOut()" [route]="routes.auth" [name]="'nav.logout' | translate"
           [imgSrc]="svgLogout"></app-nav-link>
+        <li>
+        </li>
       </ul>
+      <app-language-selection id="languages" [openUp]="false"></app-language-selection>
     </nav>
   </header>
 

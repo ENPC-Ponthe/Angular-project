@@ -116,7 +116,14 @@ ul.auth-icons li a {
 	display: flex;
 	flex-direction: column-reverse;
 	position: absolute;
-	bottom: 2.5em;
+	position: fixed;
+    bottom: units(4);
+    right: units(6);
+
+    @include sm {
+        bottom: units(3.5);
+        right: units(2.5);
+    }
 }
 
 @media screen and (max-width: 1680px) {

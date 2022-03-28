@@ -104,6 +104,7 @@ $NAV-HEIGHT: units(8);
   height: $NAV-HEIGHT;
   display: flex;
   align-items: center;
+  margin-right: units(4.5);
 }
 
 app-nav-link {
@@ -256,4 +257,10 @@ app-nav-link {
   #header-mobile h1 a {
     font-size: 1.05em;
   }
+}
+
+#languages {
+  top: units(2.5);
+  right: units(0.5);
+  position: absolute;
 }

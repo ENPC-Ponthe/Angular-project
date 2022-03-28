@@ -11,15 +11,13 @@ $NUMBER-OF-LANGUAGES-TO-ANIMATE: $NUMBER-OF-LANGUAGES - 1;
     height: calc(#{$FLAG-SIZE} + 2 * #{$SECTION-PADDING});
     transition: height 0.5s ease;
     display: flex;
-    flex-direction: column-reverse;
-    position: fixed;
-    bottom: units(4);
-    right: units(6);
+}
 
-    @include sm {
-        bottom: units(3.5);
-        right: units(2.5);
-    }
+.open-up {
+    flex-direction: column-reverse;
+}
+.open-down {
+    flex-direction: column;
 }
 
 #flags-section:hover {

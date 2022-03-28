@@ -30,6 +30,10 @@ li a {
 li a:hover {
   border-bottom: $NAV-BORDER-BOTTOM color(DARK_GREY) solid;
   height: calc(#{$NAV-HEIGHT} - #{$NAV-BORDER-BOTTOM});
+
+  @media (prefers-color-scheme: dark) {
+    border-bottom: $NAV-BORDER-BOTTOM color(WHITE) solid;
+  }
 }
 
 .svg_links {

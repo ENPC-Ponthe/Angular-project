@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer *ngIf="isOnline" id="footer">
-  <app-language-selection id="languages"></app-language-selection>
+  <app-language-selection *ngIf="breakpointsService.isMobile" id="languages" [openUp]="false"></app-language-selection>
   <!-- Icons -->
   <app-icon-links></app-icon-links>
   <!-- Menu -->
