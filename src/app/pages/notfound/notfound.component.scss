@@ -1,6 +1,22 @@
+@import "../../PontheStyle.scss";
+
+$PADDING-VERTICAL: units(12);
+$FOOTER-HEIGHT-MOBILE: units(12.5);
+$FOOTER-HEIGHT-TABLET: units(15.5);
+$FOOTER-HEIGHT-DESKTOP: units(10);
+
 section {
-  margin-top: 3.5em;
+  margin-top: $NAV-HEIGHT;
   margin-bottom: 0;
+  padding: $PADDING-VERTICAL units(2);
+  height: calc(100vh - #{$NAV-HEIGHT} - 2 * #{$PADDING-VERTICAL} - #{$FOOTER-HEIGHT-DESKTOP});
+
+  @include sm {
+    height: calc(100vh - #{$NAV-HEIGHT} - 2 * #{$PADDING-VERTICAL} - #{$FOOTER-HEIGHT-MOBILE});
+  }
+  @include md {
+    height: calc(100vh - #{$NAV-HEIGHT} - 2 * #{$PADDING-VERTICAL} - #{$FOOTER-HEIGHT-TABLET});
+  }
 }
 
 img {
