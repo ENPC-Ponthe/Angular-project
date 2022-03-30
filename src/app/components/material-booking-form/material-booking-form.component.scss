@@ -2,6 +2,11 @@
 
 input[type="submit"] {
   background: linear-gradient(30deg, red, yellow);
+  cursor: pointer;
+
+  @include sm {
+	  padding: 0;
+  }
 }
 
 input, textarea {
@@ -23,8 +28,9 @@ input::placeholder, textarea::placeholder {
 label {
 	color: color(DARK_GREY);
 	text-align: left;
-  font-size: font-size(XLARGE);
-  margin-bottom: units(0.5);
+	font-size: font-size(XLARGE);
+	margin-bottom: units(0.5);
+	font-weight: 300;
 
   @media (prefers-color-scheme: dark) {
     color: color(WHITE);
@@ -59,11 +65,7 @@ label {
 #container {
 	width: 100%;
 	overflow-x: scroll;
-	margin: 0 1.5em;
-
-	@include sm {
-		margin: 0 units(2);
-	}
+	margin: 0;
 }
 
 #items {
@@ -149,5 +151,24 @@ label {
 	}
 	@include md {
 		padding: units(1);
+	}
+}
+
+.fields {
+	width: 100%;
+	margin: 0;
+}
+
+form > .fields > .field {
+	padding: 0;
+}
+
+.actions.special {
+	margin-top: units(2);
+}
+
+form {
+	@include sm {
+		margin: 0;
 	}
 }
