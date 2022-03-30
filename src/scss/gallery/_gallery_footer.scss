@@ -72,13 +72,13 @@ ul.actions li {
 
 /* Icon of the gallery */
 
-.icon-gallery {
+.icon {
 	text-decoration: none;
 	border-bottom: none;
 	position: relative;
 }
 
-.icon-gallery:after {
+.icon:after {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	font-family: FontAwesome;
@@ -87,7 +87,7 @@ ul.actions li {
 	text-transform: none !important;
 }
 
-.icon-gallery>.label {
+.icon>.label {
 	display: none;
 }
 
