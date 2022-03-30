@@ -4,15 +4,14 @@ import { Router } from '@angular/router';
 import { BreakpointsService } from 'src/app/services/breakpoints.service';
 
 @Component({
-  selector: 'app-nav-link',
-  templateUrl: './nav-link.component.html',
-  styleUrls: ['./nav-link.component.scss']
+  selector: 'app-subnav-link',
+  templateUrl: './subnav-link.component.html',
+  styleUrls: ['./subnav-link.component.scss']
 })
-export class NavLinkComponent implements OnInit {
+export class SubnavLinkComponent implements OnInit {
 
   @Input() route: string;
-  @Input() imgSrc: string;
-  @Input() name: string;
+  @Input() title: string;
   isHovered = false;
 
   constructor(private router: Router,

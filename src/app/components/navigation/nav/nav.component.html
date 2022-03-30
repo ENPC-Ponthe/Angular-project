@@ -14,6 +14,8 @@
     <nav *ngIf="!breakpointsService.isMobile">
       <ul>
         <app-nav-link [route]="routes.galeries" [name]="'nav.galeries' | translate" [imgSrc]="svgGaleries">
+          <app-subnav-link [route]="routes.pics" [title]="'vestibule.pics'"></app-subnav-link>
+          <app-subnav-link [route]="routes.videos" [title]="'vestibule.movies'"></app-subnav-link>
         </app-nav-link>
         <app-nav-link [route]="routes.crush" [name]="'nav.crush' | translate" [imgSrc]="svgGaleries"></app-nav-link>
         <app-nav-link *ngIf="isAdmin()" [route]="routes.dashboard" [name]="'nav.dashboard' | translate"

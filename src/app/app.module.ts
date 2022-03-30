@@ -55,6 +55,7 @@ import { PontheTeamComponent } from './components/members/ponthe-team/ponthe-tea
 import { ReactionIconComponent } from './components/reactions/reaction-icon/reaction-icon.component';
 import { ReactionsComponent } from './components/reactions/reactions/reactions.component';
 import { ReactionsVideosComponent } from './components/reactions/reactions-videos/reactions-videos.component';
+import { SubnavLinkComponent } from './components/navigation/subnav-link/subnav-link.component';
 import { TutorialSubjectComponent } from './components/dashboard/tutorial-subject/tutorial-subject.component';
 import { TutorialsComponent } from './components/dashboard/tutorials/tutorials.component';
 import { UploadComponent } from './components/upload/upload.component';
@@ -149,6 +150,7 @@ export function setupTranslateFactory(
     ReactionIconComponent,
     ReactionsComponent,
     ReactionsVideosComponent,
+    SubnavLinkComponent,
     TutorialSubjectComponent,
     TutorialsComponent,
     UploadComponent,

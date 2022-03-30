@@ -10,10 +10,12 @@ li a {
   display: block;
   color: inherit;
   text-decoration: none;
-  height: $NAV-HEIGHT;
   line-height: $NAV-HEIGHT;
   margin: 0 0.5em;
   outline: 0;
+  height: calc(#{$NAV-HEIGHT} - #{$NAV-BORDER-BOTTOM-HOVER});
+  border-bottom: $NAV-BORDER-BOTTOM-HOVER color(TRANSPARENT) solid;
+  transition: border-bottom 0.15s ease;
 
   @include sm {
     margin: 0;
@@ -25,7 +27,6 @@ li a {
 }
 li a:hover {
   border-bottom: $NAV-BORDER-BOTTOM-HOVER color(DARK_GREY) solid;
-  height: calc(#{$NAV-HEIGHT} - #{$NAV-BORDER-BOTTOM-HOVER});
 
   @media (prefers-color-scheme: dark) {
     border-bottom: $NAV-BORDER-BOTTOM-HOVER color(WHITE) solid;
@@ -98,4 +99,31 @@ img {
 .mobile-a h3 {
   letter-spacing: -0.025em;
   line-height: $NAV-MOBILE-TAB-HEIGHT;
+}
+
+.subnav {
+  position: absolute;
+  top: $NAV-HEIGHT;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0 units(1) units(1) units(1);
+  border-radius: 0 0 units(1) units(1);
+  transform: translateY(-50vh);
+
+  @media (prefers-color-scheme: dark) {
+    background: color(DARK_GREY)
+  }
+}
+
+.hovered.subnav {
+  transform: translateY(0vh);
+}
+
+.subnav:empty {
+  display: none;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
