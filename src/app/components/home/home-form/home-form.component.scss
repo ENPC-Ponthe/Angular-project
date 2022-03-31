@@ -1,10 +1,26 @@
 @import "../../../PontheStyle.scss";
 
-textarea {
+$PADDING-FIELD-TEXTAREA: 1.5em;
+$PADDING-TEXTAREA: 1em;
+
+form {
+	margin: 0;
+}
+
+form>.fields>.field {
+	width: calc(100% - 2 * #{$PADDING-FIELD-TEXTAREA});
+	padding: $PADDING-FIELD-TEXTAREA $PADDING-FIELD-TEXTAREA 0 $PADDING-FIELD-TEXTAREA;
+}
+
+textarea {
+	width: calc(100% - 2 * #{$PADDING-TEXTAREA});
+	padding: $PADDING-TEXTAREA $PADDING-TEXTAREA 0 $PADDING-TEXTAREA;
+
 	@media (prefers-color-scheme: dark) {
 		color: color(WHITE);
 	}
 }
+
 textarea::placeholder {
 	@media (prefers-color-scheme: dark) {
 		color: color(LIGHT_GREY);
@@ -12,10 +28,15 @@ textarea::placeholder {
 }
 
 input {
-  background: linear-gradient(30deg, red, yellow);
+	background: linear-gradient(30deg, red, yellow);
+
+	@include sm {
+		padding: 0;
+	}
 }
 
-#success, #failure {
+#success,
+#failure {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 600;
 	font-size: font-size(MEDIUM);
@@ -23,12 +44,16 @@ input {
 	display: block;
 	transition: visibility 0.3s ease;
 }
-#success::before, #failure::before {
+
+#success::before,
+#failure::before {
 	padding-right: units(1);
 }
+
 #success {
 	color: color(SUCCESS);
 }
+
 #failure {
 	color: color(FAILURE);
 }

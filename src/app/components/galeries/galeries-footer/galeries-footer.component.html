@@ -5,8 +5,8 @@
   </h1>
   <nav>
     <ul>
-      <li><a (click)="downloadArchive()" id="download-button" class="icon-gallery fa fa-download fa-2x"
-          aria-label="download button"></a>
+      <li *ngIf="!breakpointsService.isMobile"><a (click)="downloadArchive()" id="download-button"
+          class="icon-gallery fa fa-download fa-2x" aria-label="download button"></a>
       </li>
       <li (click)="changeStateFooter()"><a class="icon-gallery" id="menu-button"
           [attr.aria-label]="'galeries.footer.title' | translate">{{

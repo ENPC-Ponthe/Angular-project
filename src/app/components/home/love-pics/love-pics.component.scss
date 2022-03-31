@@ -27,23 +27,25 @@ h2:hover {
 }
 
 /* Love pics */
-	#gallery-pics > #visible {
-		opacity: 1;
-	}
-	#gallery-pics > #hidden-left {
-		opacity: 0;
-		transform: translateX(-14em);
-	}
-	#gallery-pics > #hidden-right {
-		opacity: 0;
-		transform: translateX(14em);
-	}
+#gallery-pics>#visible {
+	opacity: 1;
+}
 
-.right > .box {
+#gallery-pics>#hidden-left {
+	opacity: 0;
+	transform: translateX(-14em);
+}
+
+#gallery-pics>#hidden-right {
+	opacity: 0;
+	transform: translateX(14em);
+}
+
+.right>.box {
 	right: -20px;
 }
 
-.left > .box {
+.left>.box {
 	left: -20px;
 }
 
@@ -52,13 +54,13 @@ h2:hover {
 }
 
 
-#gallery-pics > article {
+#gallery-pics>article {
 	display: flex;
 	margin: $GALLERY-PICS-MARGIN;
 	max-width: calc(50% - 2 * #{$GALLERY-PICS-MARGIN});
 }
 
-#gallery-pics > article > img {
+#gallery-pics>article>img {
 	cursor: pointer;
 	border-radius: $IMAGE-RADIUS-MEDIUM-THUMBNAIL;
 
@@ -89,4 +91,12 @@ h2:hover {
 	@include sm {
 		margin-bottom: units(5);
 	}
+}
+
+.main.style3 {
+	padding: 3em 0 6em 0;
+}
+
+h3 {
+	padding: 0 5em;
 }

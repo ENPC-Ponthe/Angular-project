@@ -6,11 +6,37 @@ $DURATION-HOVER-BUTTON: 0.4s;
 
 section {
   margin-left: 5vw;
+
+  @include sm {
+    margin-left: 0;
+  }
+}
+
+form {
+  @include md {
+    margin: 0;
+  }
+
+  @include lg {
+    margin: 0;
+  }
+}
+
+form>.fields {
+  padding: 0;
+  width: 100%;
+  margin: 0 0 2em 0;
+}
+
+form>.fields>.field {
+  padding: 0;
+  width: 100%;
 }
 
 textarea {
   min-width: 35vw;
   border-radius: $BORDER-RADIUS-BUTTON;
+  width: calc(100% - 2em);
 }
 
 textarea:focus {
@@ -19,8 +45,15 @@ textarea:focus {
 
 input {
   transition: background $DURATION-HOVER-BUTTON ease,
-              color $DURATION-HOVER-BUTTON ease,
-              box-shadow $DURATION-HOVER-BUTTON ease;
+    color $DURATION-HOVER-BUTTON ease,
+    box-shadow $DURATION-HOVER-BUTTON ease;
+}
+
+#submit,
+#reset {
+  @include sm {
+    padding: 0;
+  }
 }
 
 #submit {
@@ -37,18 +70,9 @@ input {
   box-shadow: none;
 }
 
-#submit:hover, #reset:hover {
+#submit:hover,
+#reset:hover {
   background: color(DARK);
   color: color(WHITE) !important;
   box-shadow: $BOX-SHADOW-INPUT-BASE-LIGHT $BOX-SHADOW-INPUT-SHIFT-FOCUS-LIGHT;
-}
-
-@media screen and (max-width: 736px) {
-  section {
-    margin-left: 0;
-  }
-
-  textarea {
-    width: 100%;
-  }
 }

@@ -5,6 +5,7 @@ import { saveAs } from 'file-saver';
 import { routesAppFromRoot, photosSubpath, videosSubpath } from '../../../Routes';
 import { LINKS } from '../../../Constants';
 import { GaleriesService } from 'src/app/services/galeries.service';
+import { BreakpointsService } from 'src/app/services/breakpoints.service';
 
 @Component({
   selector: 'app-galeries-footer',
@@ -24,7 +25,8 @@ export class GaleriesFooterComponent implements OnInit {
   @Input() resumeEvent: string;
   footerState = 'hidden';
 
-  constructor(private galeriesService: GaleriesService) {
+  constructor(private galeriesService: GaleriesService,
+    public breakpointsService: BreakpointsService) {
   }
 
   ngOnInit() {
