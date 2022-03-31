@@ -37,8 +37,6 @@ button {
     @include sm {
         font-size: font-size(XSMALL);
     }
-
-    @include md {}
 }
 
 button:hover {
@@ -97,7 +95,7 @@ $MODERATION-MARGIN-TABLET: 20vw;
 
 #moderation>footer {
     padding-right: $MODERATION-PADDING;
-    text-align: right;
+    text-align: center;
     width: calc(100% + 2 * #{$MODERATION-PADDING});
 
     @include sm {
@@ -107,7 +105,8 @@ $MODERATION-MARGIN-TABLET: 20vw;
 }
 
 .close,
-.edit {
+.edit,
+.validate {
     color: color(DARK) !important;
     background-color: color(WHITE) !important;
     font-family: "Source Sans Pro", sans-serif;
@@ -121,20 +120,34 @@ $MODERATION-MARGIN-TABLET: 20vw;
     opacity: 1 !important;
 }
 
+.validate {
+    color: color(WHITE) !important;
+    background-color: color(DARK_GREY) !important;
+    float: right;
+}
+
 .close {
     right: units(2);
 }
 
 .close:hover,
-.edit:hover {
+.edit:hover,
+.validate:hover {
     color: color(DARK) !important;
     background-color: color(LIGHT_GREY) !important;
     box-shadow: none !important;
 }
 
+.validate:hover {
+    color: color(WHITE) !important;
+    background-color: color(DARK_DARK_GREY) !important;
+}
+
 .close:focus,
 .close:active,
 .edit:focus,
-.edit:active {
+.edit:active,
+.validate:focus,
+.validate:active {
     color: color(DARK) !important;
 }
