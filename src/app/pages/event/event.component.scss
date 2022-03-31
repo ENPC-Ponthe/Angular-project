@@ -16,8 +16,9 @@ $SIZE-REACTION-SMALL: units(4);
   }
 }
 
-html, body {
-	background: color(DARK_GREY);
+html,
+body {
+  background: color(DARK_GREY);
 }
 
 article {
@@ -25,21 +26,21 @@ article {
   display: flex;
 }
 
-#main .thumb > .image {
-	-webkit-tap-highlight-color: color(WHITE);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border: 0;
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: -20vh;
-	width: 100%;
+#main .thumb>.image {
+  -webkit-tap-highlight-color: color(WHITE);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: -20vh;
+  width: 100%;
 }
 
 #image-viewer {
-  height : 70vh;
+  height: 70vh;
 }
 
 #deleteButton {
@@ -60,7 +61,7 @@ article {
   border-radius: units(2);
 }
 
-.thumb > caption {
+.thumb>caption {
   position: absolute;
   top: 36.3vh;
   left: 2.75%;
@@ -74,8 +75,8 @@ article {
 
 #fullBackground {
   width: 100vw;
-  height: 92vh;
-  top: 8vh;
+  height: calc(100vh - #{$NAV-HEIGHT});
+  top: $NAV-HEIGHT;
   left: 0;
   background: color(DARK_GREY);
   position: fixed;
@@ -98,18 +99,22 @@ article {
   transition: width 0.5s ease-in-out;
   z-index: 1;
 }
+
 #uploadBanner:hover {
   width: 4.5em;
 }
-#uploadBanner > a {
+
+#uploadBanner>a {
   color: color(WHITE);
   transition: padding-left 0.5s ease-in-out;
   cursor: pointer;
 }
-#uploadBanner:hover > a {
+
+#uploadBanner:hover>a {
   padding-left: 0.5em;
 }
-#uploadBanner:hover > a:hover {
+
+#uploadBanner:hover>a:hover {
   color: color(LIGHT_GREY) !important;
 }
 

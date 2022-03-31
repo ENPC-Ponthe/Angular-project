@@ -3,19 +3,24 @@
 
 $SIZE-REACTION-LARGE: units(6);
 $SIZE-REACTION-SMALL: units(4);
+
 @keyframes heartbeat {
   0% {
     transform: scale(1);
   }
+
   25% {
     transform: scale(1.125);
   }
+
   40% {
     transform: scale(1);
   }
+
   60% {
     transform: scale(1.15);
   }
+
   100% {
     transform: scale(1);
   }
@@ -29,8 +34,9 @@ $SIZE-REACTION-SMALL: units(4);
   }
 }
 
-html, body {
-	background: color(DARK_GREY);
+html,
+body {
+  background: color(DARK_GREY);
 }
 
 #image-viewer {
@@ -57,15 +63,15 @@ html, body {
 }
 
 #reload-boundary {
-	width: 100vw;
-	padding: units(10);
-	background: color(DARK_GREY);
+  width: 100vw;
+  padding: units(10);
+  background: color(DARK_GREY);
 }
 
 #fullBackground {
   width: 100vw;
-  height: 92vh;
-  top: 8vh;
+  height: calc(100vh - #{$NAV-HEIGHT});
+  top: $NAV-HEIGHT;
   left: 0;
   background: color(DARK_GREY);
   position: fixed;
@@ -81,9 +87,9 @@ html, body {
   height: calc(100vh - 63px - 100px);
   margin: auto;
   padding-top: units(12);
-	font-family: "Source Sans Pro";
-	font-weight: 400;
-	text-transform: inherit;
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+  text-transform: inherit;
 
   @include sm {
     width: 70vw;
@@ -95,6 +101,7 @@ html, body {
 
 $SIZE-HEART-LARGE: units(20);
 $SIZE-HEART-SMALL: units(15);
+
 #no-crush-icon {
   display: block;
   height: $SIZE-HEART-LARGE;
@@ -110,12 +117,12 @@ $SIZE-HEART-SMALL: units(15);
 }
 
 #no-crush h3 {
-	font-family: "Source Sans Pro";
-	font-weight: 600;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
   text-transform: inherit;
   text-align: center;
   @include font-size(XLARGE);
-  
+
   @include sm {
     @include font-size(LARGE);
   }
