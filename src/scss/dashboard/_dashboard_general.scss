@@ -5,14 +5,74 @@ $MARGIN-RIGHT-BUTTON-REMOVE: units(1);
 
 $WIDTH-FIELD-FULL: calc(100% - 2 * 2px - 2 * 0.75em);
 $WIDTH-FIELD-PARTIAL: calc(100% - #{$BUTTON-SIZE} - #{$MARGIN-RIGHT-BUTTON-REMOVE} - 2 * #{units(2)});
+$WIDTH-FIELD-PARTIAL-BIG: calc(100% - #{$BUTTON-SIZE} - #{$MARGIN-RIGHT-BUTTON-REMOVE} - 2 * #{units(2)} - #{units(0.5)});
 $WIDTH-FIELD-PARTIAL-LARGE: calc(100% - #{$BUTTON-SIZE} - #{$MARGIN-RIGHT-BUTTON-REMOVE} - 2 * #{units(2)} - #{units(1)});
 
+$WIDTH-FIELD-PARTIAL-BIG-MOBILE: calc(100% - #{$BUTTON-SIZE} - #{$MARGIN-RIGHT-BUTTON-REMOVE} - 2 * #{units(2)} - #{units(1)});
+
+/* Modal container */
+#container {
+    display: flex;
+    flex-direction: column;
+    max-height: 65vh;
+    overflow: scroll;
+    width: 100%;
+
+    @include sm {
+        max-height: 80vh;
+    }
+}
+
+.subject {
+    margin-bottom: units(0);
+
+    @include sm {
+        margin-bottom: units(2);
+    }
+}
+
+.subtitle {
+    font-size: font-size(XXLARGE);
+    font-weight: bold;
+    margin-bottom: units(2);
+
+    @include sm {
+        font-size: font-size(LARGE);
+    }
+}
+
+.section_title {
+    margin-bottom: units(2) !important;
+    font-size: font-size(XLARGE) !important;
+}
+
+
+/* Modal links */
+.link::before {
+    margin-right: units(1);
+}
+
+.link {
+    margin-bottom: units(2);
+}
+
+a {
+    font-weight: 600;
+    color: color(BLUE);
+}
+
+.link p {
+    margin-left: units(2);
+}
+
+/* Fields */
 form {
     margin: 0;
 }
 
 .field_full,
-.field_partial {
+.field_partial,
+.field_partial_big {
     margin-bottom: units(1);
 }
 
@@ -22,12 +82,36 @@ form {
     max-width: $WIDTH-FIELD-FULL;
 }
 
+.field_partial,
+.field_partial_big {
+    margin-right: units(1);
+    display: inline-block;
+}
+
 .field_partial {
     width: $WIDTH-FIELD-PARTIAL;
     min-width: $WIDTH-FIELD-PARTIAL;
     max-width: $WIDTH-FIELD-PARTIAL;
-    margin-right: units(1);
-    display: inline-block;
+
+    @include lg {
+        width: $WIDTH-FIELD-PARTIAL-LARGE;
+        min-width: $WIDTH-FIELD-PARTIAL-LARGE;
+        max-width: $WIDTH-FIELD-PARTIAL-LARGE;
+    }
+}
+
+.field_partial_big {
+    @include sm {
+        width: $WIDTH-FIELD-PARTIAL-BIG-MOBILE;
+        min-width: $WIDTH-FIELD-PARTIAL-BIG-MOBILE;
+        max-width: $WIDTH-FIELD-PARTIAL-BIG-MOBILE;
+    }
+
+    @include md {
+        width: $WIDTH-FIELD-PARTIAL-BIG;
+        min-width: $WIDTH-FIELD-PARTIAL-BIG;
+        max-width: $WIDTH-FIELD-PARTIAL-BIG;
+    }
 
     @include lg {
         width: $WIDTH-FIELD-PARTIAL-LARGE;
@@ -104,6 +188,44 @@ button:hover {
     background-color: color(LIGHT_GREY) !important;
 }
 
+/* Modal edition buttons */
+.add_button,
+.addCategory_button,
+.addSubject_button {
+    width: 60%;
+    border-radius: units(1.5);
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    font-size: font-size(MEDIUM);
+    display: block;
+    margin: auto;
+    margin-bottom: units(2);
+
+    @include sm {
+        font-size: font-size(SMALL);
+        width: 80%;
+    }
+}
+
+.add_button {
+    margin: auto;
+    margin-bottom: units(2);
+}
+
+.addCategory_button,
+.addSubject_button {
+    background-color: color(DARK) !important;
+    color: color(WHITE) !important;
+    margin: auto;
+    margin-bottom: units(2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.addCategory_button:hover,
+.addSubject_button:hover {
+    background-color: color(LIGHT_GREY) !important;
+    color: color(DARK) !important;
+}
 
 /* Validation messages */
 #success,

@@ -2,7 +2,7 @@
    <form [formGroup]="eventForm" (ngSubmit)="onSubmitEvent()">
 
       <label for="name">{{ 'dashboard.form.name' | translate }}</label>
-      <input type="text" name="name" placeholder="WEI 2021" formControlName="name" class="input_field field_full" />
+      <input type="text" name="name" placeholder="WEI 2021" formControlName="name" class="field_full" />
 
       <label for="description">{{ 'dashboard.form.description' | translate }}</label>
       <textarea name="description" rows="2"

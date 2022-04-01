@@ -4,8 +4,8 @@
 
       <div *ngFor="let article of articles; let i = index">
          <div>
-            <input type="text" name="title" placeholder="Titre" class="input_field field_partial"
-               [value]="article.title" (change)="updateTitle(i, $event)" />
+            <input type="text" name="title" placeholder="Titre" class="field_partial" [value]="article.title"
+               (change)="updateTitle(i, $event)" />
             <button name="remove" (click)="removeArticle(i)">✕</button>
             <textarea name="content" rows="1" placeholder="Contenu de l'article" [value]="article.body"
                class="field_full" (change)="updateContent(i, $event)"></textarea>

@@ -1,17 +1,13 @@
-<app-modal
-  [title]="'dashboard.tutos.title' | translate"
-  [editText]="editMode ? ('confirm' | translate) : ('edit' | translate)"
-  [closeText]="'close' | translate"
-  [visible]="visible"
-  (edit)="editConfirmModal()"
-  (close)="closeTutos()">
+<app-modal [title]="'dashboard.tutos.title' | translate"
+  [editText]="editMode ? ('confirm' | translate) : ('edit' | translate)" [closeText]="'close' | translate"
+  [visible]="visible" (edit)="editConfirmModal()" (close)="closeTutos()">
   <div id="container">
     <button *ngIf="editMode" name="add" class="addCategory_button" (click)="addCategory(0)">
       {{ 'dashboard.tutos.addCategory' | translate }}
     </button>
     <div *ngFor="let category of tutorials; let categoryIndex = index">
       <div *ngIf="!editMode" class="subject">
-        <h2 [innerHTML]="category.title"></h2>
+        <h2 class="subtitle" [innerHTML]="category.title"></h2>
         <div *ngFor="let tutorial of category.content" class="link">
           <a [href]="tutorial.url">{{ tutorial.title }}</a>
           <app-tutorial-subject [tuto]="tutorial"></app-tutorial-subject>
@@ -19,42 +15,28 @@
       </div>
 
       <div *ngIf="editMode" class="subject">
-        <input type="text"
-          class="title_input section_title"
-          placeholder="Catégorie"
-          [value]="category.title"
-          (change)="updateCategory(categoryIndex, $event)"/>
+        <input type="text" class="section_title field_partial_big" placeholder="Catégorie" [value]="category.title"
+          (change)="updateCategory(categoryIndex, $event)" />
         <button name="remove" (click)="removeCategory(categoryIndex)">✕</button>
         <div *ngFor="let tutorial of category.content; let tutorialIndex = index">
-          <input type="text" name="url"
-            placeholder="Url"
-            class="input_field content_article"
-            [value]="tutorial.question"
+          <input type="text" name="url" placeholder="Url" class="field_partial" [value]="tutorial.question"
             (change)="updateQuestion(categoryIndex, tutorialIndex, $event)" />
           <button name="remove" (click)="removeTutorial(categoryIndex, tutorialIndex)">✕</button>
-          <textarea type="text" name="description" rows="3"
-            placeholder="Description"
-            class="input_field content_article"
-            [value]="tutorial.answer"
-            (change)="updateAnswer(categoryIndex, tutorialIndex, $event)"></textarea>
+          <textarea type="text" name="description" rows="3" placeholder="Description" class="field_full"
+            [value]="tutorial.answer" (change)="updateAnswer(categoryIndex, tutorialIndex, $event)"></textarea>
         </div>
         <button name="add" class="add_button" (click)="addTutorial(categoryIndex)">
           {{ 'dashboard.tutos.addTutorial' | translate }}
-       </button>
-       <button name="add" class="addCategory_button" (click)="addCategory(categoryIndex + 1)">
-         {{ 'dashboard.tutos.addCategory' | translate }}
-      </button>
+        </button>
+        <button name="add" class="addCategory_button" (click)="addCategory(categoryIndex + 1)">
+          {{ 'dashboard.tutos.addCategory' | translate }}
+        </button>
       </div>
     </div>
   </div>
 </app-modal>
 
-<app-confirm-modal
-  class="confirmModal"
-  [title]="'dashboard.modalChangeValidate.title' | translate"
-  [cancelText]="'cancel' | translate"
-  [validateText]="'confirm' | translate"
-  [visible]="visibleConfirmModal"
-  (closeCancel)="closeConfirmModal()"
-  (closeValidate)="onSubmitAdminTutorials()">
+<app-confirm-modal class="confirmModal" [title]="'dashboard.modalChangeValidate.title' | translate"
+  [cancelText]="'cancel' | translate" [validateText]="'confirm' | translate" [visible]="visibleConfirmModal"
+  (closeCancel)="closeConfirmModal()" (closeValidate)="onSubmitAdminTutorials()">
 </app-confirm-modal>

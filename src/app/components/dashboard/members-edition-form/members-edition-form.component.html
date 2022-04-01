@@ -6,10 +6,10 @@
 
       <div *ngFor="let team of teamPonthe; let teamIndex = index">
          <h2>Ponthé {{ team.year }}</h2>
-         <div class="content_article">
+         <div>
             <div *ngFor="let member of team.members; let memberIndex = index">
-               <input type="text" name="job" placeholder="Poste" class="input_field content_article field_partial"
-                  [value]="member" (change)="updateMember(teamIndex, memberIndex, $event)" />
+               <input type="text" name="job" placeholder="Poste" class="field_partial" [value]="member"
+                  (change)="updateMember(teamIndex, memberIndex, $event)" />
                <button name="remove" (click)="removeMember(teamIndex, memberIndex)">✕</button>
             </div>
          </div>

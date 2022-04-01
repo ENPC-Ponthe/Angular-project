@@ -73,12 +73,10 @@ $MODERATION-MARGIN-TABLET: 20vw;
 
 #moderation>h1,
 #moderation>footer {
-    margin-left: -$MODERATION-PADDING;
-    margin-right: -$MODERATION-PADDING;
+    margin: 0 #{-$MODERATION-PADDING};
 
     @include sm {
-        margin-left: -$MODERATION-PADDING-MOBILE;
-        margin-right: -$MODERATION-PADDING-MOBILE;
+        margin: 0 #{-$MODERATION-PADDING-MOBILE};
     }
 }
 
