@@ -49,7 +49,6 @@ import { MembersEditionFormComponent } from './components/dashboard/members-edit
 import { NavComponent } from './components/navigation/nav/nav.component';
 import { NavLinkComponent } from './components/navigation/nav-link/nav-link.component';
 import { NavigationButtonComponent } from './components/navigation-button/navigation-button.component';
-import { PicThumbComponent } from './components/pic-thumb/pic-thumb.component';
 import { PrivateGalleriesComponent } from './components/dashboard/private-galleries/private-galleries.component';
 import { PontheTeamComponent } from './components/members/ponthe-team/ponthe-team.component';
 import { ReactionIconComponent } from './components/reactions/reaction-icon/reaction-icon.component';
@@ -144,7 +143,6 @@ export function setupTranslateFactory(
     NavComponent,
     NavLinkComponent,
     NavigationButtonComponent,
-    PicThumbComponent,
     PontheTeamComponent,
     PrivateGalleriesComponent,
     ReactionIconComponent,
