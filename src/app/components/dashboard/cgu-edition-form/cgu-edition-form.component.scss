@@ -1,63 +1,9 @@
 @import "../../../PontheStyle.scss";
-
-form {
-	margin: 0;
-}
-
-form:last-child {
-	margin-bottom: 2vh;
-}
-
-#name, #description, #year_slug, #type {
-	margin-bottom: units(2);
-}
-
-form textarea, form .input_field, select {
-	background: color(WHITE);
-	color: $INPUT-TEXT-DARK-GREY;
-	max-width: 100%;
-}
-
-input[type="submit"] {
-  	background: $BUTTON-BACKGROUND-GRADIENT;
-	box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-FOCUS-LIGHT;
-}
+@import "dashboard/dashboard_general";
 
 input[type="text"] {
-	font-weight: 600;
+  font-weight: 600;
 }
-
-label {
-	color: color(DARK_GREY);
-	text-align: left;
-	font-size: font-size(MEDIUM);
-}
-
-#success, #failure {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 600;
-	font-size: font-size(MEDIUM);
-	text-align: left;
-	display: block;
-	transition: visibility 0.3s ease;
-}
-#success::before, #failure::before {
-	padding-right: units(1);
-}
-#success {
-	color: color(SUCCESS);
-}
-#failure {
-	color: color(FAILURE);
-}
-
-.visible {
-	visibility: visible;
-}
-.hidden {
-	visibility: hidden;
-}
-
 
 h1 {
   color: color(DARK_GREY);
@@ -76,45 +22,6 @@ h1 {
   }
 }
 
-$BUTTON-SIZE: units(4.5);
-button {
-  height: $BUTTON-SIZE;
-  width: $BUTTON-SIZE;
-  line-height: $BUTTON-SIZE;
-  padding: 0;
-  border-radius: units(1.5);
-  box-shadow: none;
-  border: 1px solid color(DARK);
-  margin-bottom: units(1.5);
-  color: color(DARK) !important;
-  background-color: color(WHITE) !important;
-  transition: background-color 0.3s ease, border 0.3s ease;
-
-  @include sm {
-    font-size: font-size(XSMALL);
-  }
-}
-button:hover {
-  box-shadow: none;
-  border: 1px solid color(LIGHT_GREY);
-  color: color(DARK) !important;
-  background-color: color(LIGHT_GREY) !important;
-}
-
 .add_button {
-	border-radius: 100%;
+  border-radius: 100%;
 }
-
-$MARGIN-RIGHT-BUTTON-REMOVE: units(1);
-.content_article {
-	width: calc(100% - #{$BUTTON-SIZE} - #{$MARGIN-RIGHT-BUTTON-REMOVE});
-	display: inline-block;
-	margin-right: $MARGIN-RIGHT-BUTTON-REMOVE;
-	margin-bottom: units(1);
-}
-
-// .confirmModal {
-// 	position: fixed;
-// 	top: 0;
-// 	left: 0;
-// }

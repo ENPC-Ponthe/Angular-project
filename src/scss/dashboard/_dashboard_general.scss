@@ -1,0 +1,138 @@
+@import "../../../PontheStyle.scss";
+
+$BUTTON-SIZE: units(4.5);
+$MARGIN-RIGHT-BUTTON-REMOVE: units(1);
+
+$WIDTH-FIELD-FULL: calc(100% - 2 * 2px - 2 * 0.75em);
+$WIDTH-FIELD-PARTIAL: calc(100% - #{$BUTTON-SIZE} - #{$MARGIN-RIGHT-BUTTON-REMOVE} - 2 * #{units(2)});
+$WIDTH-FIELD-PARTIAL-LARGE: calc(100% - #{$BUTTON-SIZE} - #{$MARGIN-RIGHT-BUTTON-REMOVE} - 2 * #{units(2)} - #{units(1)});
+
+form {
+    margin: 0;
+}
+
+.field_full,
+.field_partial {
+    margin-bottom: units(1);
+}
+
+.field_full {
+    width: $WIDTH-FIELD-FULL;
+    min-width: $WIDTH-FIELD-FULL;
+    max-width: $WIDTH-FIELD-FULL;
+}
+
+.field_partial {
+    width: $WIDTH-FIELD-PARTIAL;
+    min-width: $WIDTH-FIELD-PARTIAL;
+    max-width: $WIDTH-FIELD-PARTIAL;
+    margin-right: units(1);
+    display: inline-block;
+
+    @include lg {
+        width: $WIDTH-FIELD-PARTIAL-LARGE;
+        min-width: $WIDTH-FIELD-PARTIAL-LARGE;
+        max-width: $WIDTH-FIELD-PARTIAL-LARGE;
+    }
+}
+
+input,
+textarea,
+select {
+    background: color(WHITE);
+    color: $INPUT-TEXT-DARK-GREY;
+    max-width: 100%;
+
+    @media (prefers-color-scheme: dark) {
+        background: color(DARK_GREY);
+        color: color(WHITE);
+    }
+}
+
+textarea {
+    min-height: 4em;
+}
+
+input::placeholder,
+textarea::placeholder {
+    @media (prefers-color-scheme: dark) {
+        color: color(LIGHT_GREY);
+    }
+}
+
+
+input[type="submit"] {
+    background: $BUTTON-BACKGROUND-GRADIENT;
+    box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-FOCUS-LIGHT;
+    color: color(WHITE);
+    display: block;
+    margin: auto;
+}
+
+label {
+    color: color(DARK_GREY);
+    text-align: left;
+    font-size: font-size(MEDIUM);
+
+    @media (prefers-color-scheme: dark) {
+        color: color(WHITE);
+    }
+}
+
+button {
+    height: $BUTTON-SIZE;
+    width: $BUTTON-SIZE;
+    line-height: $BUTTON-SIZE;
+    padding: 0;
+    border-radius: units(1.5);
+    box-shadow: none;
+    border: 1px solid color(DARK);
+    margin-bottom: units(1.5);
+    color: color(DARK) !important;
+    background-color: color(WHITE) !important;
+    transition: background-color 0.3s ease, border 0.3s ease;
+
+    @include sm {
+        font-size: font-size(LARGE);
+    }
+}
+
+button:hover {
+    box-shadow: none;
+    border: 1px solid color(LIGHT_GREY);
+    color: color(DARK) !important;
+    background-color: color(LIGHT_GREY) !important;
+}
+
+
+/* Validation messages */
+#success,
+#failure {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: font-size(MEDIUM);
+    text-align: left;
+    display: block;
+    transition: visibility 0.3s ease;
+}
+
+#success::before,
+#failure::before {
+    padding-right: units(1);
+}
+
+#success {
+    color: color(SUCCESS);
+}
+
+#failure {
+    color: color(FAILURE);
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
