@@ -2,33 +2,20 @@
 <div id="bg-movies" *ngIf="videoService.allFilmography.length !== 0"></div>
 
 <!-- Public movies -->
-<div id="main">
-  <article
-    *ngFor="let movie of videoService.allFilmography; let i = index"
-    class="thumb"
-  >
-    <a
-      [routerLink]="routes.videos + '/' + movie.slug"
-      [attr.aria-label]="movie.name"
-    >
+<div id="main-gallery">
+  <article *ngFor="let movie of videoService.allFilmography; let i = index" class="thumb">
+    <a [routerLink]="routes.videos + '/' + movie.slug" [attr.aria-label]="movie.name">
       <img [src]="movie.image" alt="" width="100%" class="image" />
     </a>
     <h2>
-      <a
-        [routerLink]="routes.videos + '/' + movie.slug"
-        [attr.aria-label]="movie.name"
-        >{{ movie.name }}</a
-      >
+      <a [routerLink]="routes.videos + '/' + movie.slug" [attr.aria-label]="movie.name">{{ movie.name }}</a>
     </h2>
   </article>
-  <h3
-    *ngIf="
+  <h3 *ngIf="
       !videoService.isLoadingFirstFilmography &&
       !videoService.isLoadingMoreFilmography &&
       videoService.allFilmography.length === 0
-    "
-    id="no-filmography"
-  >
+    " id="no-filmography">
     {{ "filmography.none" | translate }}
   </h3>
 </div>
@@ -37,7 +24,4 @@
   <app-loading-points></app-loading-points>
 </div>
 
-<app-loader-ponthe
-  *ngIf="videoService.isLoadingFirstFilmography"
-  @spinnerTrigger
-></app-loader-ponthe>
+<app-loader-ponthe *ngIf="videoService.isLoadingFirstFilmography" @spinnerTrigger></app-loader-ponthe>

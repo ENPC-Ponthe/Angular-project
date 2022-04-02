@@ -1,9 +1,7 @@
 <!-- Intro -->
-<section id="intro" class="main style1 dark fullscreen"
-         (mouseenter)='survoleIntro(true)'
-         (mouseleave)='survoleIntro(false)'>
-  <div class="content"
-       [id]="introVisible ? 'intro-hovered' : 'intro-none'">
+<section id="intro" class="main style1 dark fullscreen" (mouseenter)='survoleIntro(true)'
+  (mouseleave)='survoleIntro(false)'>
+  <div class="content" [id]="introVisible ? 'intro-hovered' : 'intro-none'">
     <header>
       <h2>{{ 'home.header.title' | translate }}</h2>
     </header>
@@ -20,19 +18,18 @@
   <app-loading-points></app-loading-points>
 </div>
 <div *ngIf="homeService.areLastEventsLoaded" id="latest-events">
-  <section  *ngFor="let event of homeService.lastEvents; let i = index"
-            id="{{ event.event_id }}"
-            class="main style2 {{ placement_events(i) }} dark fullscreen"
-            (mouseenter)='survoleEvent("visible", i)'
-            (mouseleave)='survoleEvent("hidden", i)'
-            [ngStyle]="{'background-image' : 'url(' + event.fond + ')', '-webkit-background-size': 'cover', 'background-size': 'cover'}">
-    <!-- <img src="../../../assets/assets_h/css/images/overlay.png" style="position: absolute; top:0; left:0; min-width:100vw; min-height: 100vh;"alt=""/> -->
-    <div [@lastEventTrigger]="currentStateEvent(i)"
-        class="content box style2">
+  <section *ngFor="let event of homeService.lastEvents; let i = index" id="{{ event.event_id }}"
+    class="main style2 {{ placement_events(i) }} dark fullscreen" (mouseenter)='survoleEvent("visible", i)'
+    (mouseleave)='survoleEvent("hidden", i)'
+    [ngStyle]="{'background-image' : 'url(' + event.fond + ')', '-webkit-background-size': 'cover', 'background-size': 'cover'}">
+    <!-- <img src="../../../assets/css/images/overlay.png" style="position: absolute; top:0; left:0; min-width:100vw; min-height: 100vh;"alt=""/> -->
+    <div [@lastEventTrigger]="currentStateEvent(i)" class="content box style2">
       <header>
-        <h2><a [routerLink]="homeService.getEventRouting(event)" [attr.aria-label]="event.name">{{ event.name }}</a></h2>
+        <h2><a [routerLink]="homeService.getEventRouting(event)" [attr.aria-label]="event.name">{{ event.name }}</a>
+        </h2>
       </header>
-      <p><a [routerLink]="homeService.getEventRouting(event)" [attr.aria-label]="event.resume">{{ event.resume }}</a></p>
+      <p><a [routerLink]="homeService.getEventRouting(event)" [attr.aria-label]="event.resume">{{ event.resume }}</a>
+      </p>
     </div>
     <a class="button style2 down anchored" (click)="clickOnNextArrow(event.next_event_id)" aria-label="Next">Next</a>
   </section>
@@ -43,9 +40,7 @@
 <app-love-pics></app-love-pics>
 
 <!-- Contact form-->
-<section id="contact" class="main style3 secondary"
-         (mouseenter)="survoleForm(true)"
-         (mouseleave)="survoleForm(false)">
+<section id="contact" class="main style3 secondary" (mouseenter)="survoleForm(true)" (mouseleave)="survoleForm(false)">
   <div class="content">
     <header>
       <h2 [innerHTML]="'home.contact.title' | translate"></h2>

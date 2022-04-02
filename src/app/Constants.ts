@@ -11,8 +11,6 @@ import { BREAKPOINTS } from './constants/Breakpoints';
 
 export const CAS_BASE_URL = 'https://cas.enpc.fr/cas/login?service=';
 
-export const EXTENSION_MAILS_ENPC = '@eleves.enpc.fr';
-
 // The oldest promotion allowed to create an account is Prom 013.
 // Change this value for allowing older promotions.
 const FIRST_PROMO = 13;

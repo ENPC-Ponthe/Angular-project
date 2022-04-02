@@ -15,15 +15,15 @@ const DURATION_ANIMATION = 3500;
     trigger('backgroundAnimation', [
       transition('hidden => visible', [
         animate(DURATION_ANIMATION, keyframes([
-          style({ opacity: 0, transform: 'translateX(0)', offset: 0 }),
-          style({ opacity: 0.5, transform: 'translateX(-1%) scale(1)', offset: 0.1 }),
-          style({ transform: 'translateX(-9%) scale(1.05)', offset: 1 }),
+          style({ opacity: 0, transform: 'translateX(0) scale(1)', offset: 0 }),
+          style({ opacity: 0.5, transform: 'translateX(-1%) scale(1.005)', offset: 0.1 }),
+          style({ transform: 'translateX(-10%) scale(1.05)', offset: 1 }),
         ]))
       ]),
       transition('visible => hidden', [
         animate(3 * DURATION_ANIMATION, keyframes([
-          style({ opacity: 0.5, transform: 'translateX(-9%) scale(1.05)', offset: 0 }),
-          style({ opacity: 0, transform: 'translateX(-10%) scale(1.06)', offset: 0.1 }),
+          style({ opacity: 0.5, transform: 'translateX(-10%) scale(1.05)', offset: 0 }),
+          style({ opacity: 0, transform: 'translateX(-12.5%) scale(1.055)', offset: 0.1 }),
           style({ opacity: 0, transform: 'translateX(0) scale(1)', offset: 1 }),
         ]))
       ]),
@@ -34,7 +34,6 @@ const DURATION_ANIMATION = 3500;
 
 export class AuthBgSliderComponent implements OnInit, OnDestroy {
   states = Array(NUMBER_AUTH_BG_PICS).fill('hidden');
-  state1 = 'hidden';
   activeImage = 0;
   sub: Subscription;
 
@@ -42,9 +41,9 @@ export class AuthBgSliderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    // this.states[NUMBER_PICS-1] = 'visible';
     this.sub = interval(DURATION_ANIMATION)
       .subscribe(() => this.changeBg());
+    setTimeout(() => this.changeBg(), 1);
   }
 
   ngOnDestroy() {
@@ -56,6 +55,5 @@ export class AuthBgSliderComponent implements OnInit, OnDestroy {
     this.states[this.activeImage] = 'hidden';
     this.activeImage = (this.activeImage + 1) % this.states.length;
     this.states[this.activeImage] = 'visible';
-    this.state1 = this.state1 === 'visible' ? 'hidden' : 'visible';
   }
 }

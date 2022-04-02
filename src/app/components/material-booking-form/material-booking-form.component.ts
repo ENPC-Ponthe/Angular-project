@@ -8,8 +8,8 @@ import { BREAKPOINTS } from 'src/app/constants/Breakpoints';
 const UNIT = 8;
 const DURATION_DISPLAYING = 6000;
 const EMPTY_FORM = {
-  device : ['', Validators.required],
-  message : ['', Validators.required],
+  device: ['', Validators.required],
+  message: ['', Validators.required],
   date: ['', Validators.required]
 };
 
@@ -39,7 +39,7 @@ export class MaterialBookingFormComponent implements OnInit {
     } else if (window.innerWidth < BREAKPOINTS.MEDIUM) {
       return this.listMatos.length * (25 * UNIT + 2 * UNIT);
     } else {
-      return this.listMatos.length * (30 * UNIT + 2 * UNIT);
+      return this.listMatos.length * (25 * UNIT + 2 * UNIT);
     }
   }
 

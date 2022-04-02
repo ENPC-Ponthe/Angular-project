@@ -1,47 +1,52 @@
-<body class="is-preload">
+<section class="auth is-preload">
 	<app-auth-card [title]="'auth.title' | translate" id="app-auth-card">
 		<!-- Signup Form -->
 		<form class="signup-form" [formGroup]="userForm" (ngSubmit)="onSignIn()">
-			<div class="field">
-				<label for="email">{{ 'auth.form.id' | translate }}</label>
-				<input id="email" type="email" name="email" placeholder="prenom.nom@eleves.enpc.fr" formControlName="email"/>
+			<div class="field" id="email">
+				<label for="email-input" class="auth label-email">{{ 'auth.form.id' | translate
+					}}</label>
+				<label id="email-after">
+					<input id="email-input" class="auth" type="text" name="email" placeholder="prenom.nom"
+						formControlName="email" />
+				</label>
 			</div>
 			<div class="field">
-				<label for="password">{{ 'auth.form.password' | translate }}</label>
-				<input id="password" type="password" name="password" placeholder="mylittlepontsny77" formControlName="password"/>
+				<label for="password" class="auth">{{ 'auth.form.password' | translate }}</label>
+				<input id="password" class="auth" type="password" name="password" placeholder="mylittlepontsny77"
+					formControlName="password" />
 			</div>
 
 			<div class="field">
-			<input id="submit" type="submit" [value]="'auth.form.submitButton' | translate" [disabled]="userForm.invalid"/>
-		</div>
+				<input id="submit" class="auth" type="submit" [value]="'auth.form.submitButton' | translate"
+					[disabled]="userForm.invalid" />
+			</div>
 		</form>
 		<div id="sso">
 			<a [href]="ssoPath" [attr.aria-label]="'auth.sso' | translate">{{ 'auth.sso' | translate }}</a>
 		</div>
 	</app-auth-card>
 
-	<app-alert
-		[visible]="authService.loginError"
-		[title]="'login.error' | translate"
-		(close)="closeAlert()"
-	></app-alert>
+	<app-alert [visible]="authService.loginError" [title]="'login.error' | translate" (close)="closeAlert()">
+	</app-alert>
 
 	<!-- Useful links -->
 	<app-auth-footer id="auth-footer"></app-auth-footer>
 
 	<!-- Background animation -->
-	<div id="video-wrapper" *ngIf="breakpointsService.isMobileOrTablet">
-		<video [src]="pathAuthVideo" loop autoplay muted playsinline style="position:absolute; z-index:1"></video>
+	<div id="video-wrapper" [style.zIndex]="videoPlaying ? 2 : 0">
+		<video [src]="pathAuthVideo" loop autoplay muted playsinline (play)="onVideoPlay()"></video>
 	</div>
-	<video *ngIf="!breakpointsService.isMobileOrTablet" [src]="pathAuthVideo" loop autoplay muted playsinline style="position:absolute; z-index:1"></video>
 
 	<div id="bandeau" *ngIf="Pwa.promptEvent">
-		<button id="installation" (click)="installPwa()" [attr.aria-label]="'install.install' | translate">
+		<button id="installation" class="auth" (click)="installPwa()" [attr.aria-label]="'install.install' | translate">
 			{{ 'install.install' | translate }}
 		</button>
 	</div>
 	<div id="bandeau-install" *ngIf="Pwa.downloading">{{ 'install.downloading' | translate }}</div>
 	<div id="bandeau-installed" *ngIf="Pwa.installed">{{ 'install.installed' | translate }}</div>
-</body>
+
+	<!-- Background animation -->
+	<app-auth-bg-slider class="bg" [style.display]="videoPlaying ? 'none' : 'block'"></app-auth-bg-slider>
+</section>
 
 <div class="darkBackground"></div>

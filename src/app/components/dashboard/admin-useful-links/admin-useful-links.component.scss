@@ -1,137 +1,18 @@
-@import url("../../../../assets/assets_h/css/main.css");
 @import "../../../PontheStyle.scss";
-
-$BUTTON-SIZE: units(4.5);
-$MARGIN-RIGHT-BUTTON-REMOVE: units(1);
-
-#container {
-    display: flex;
-    flex-direction: column;
-    max-height: 60vh;
-    overflow: scroll;
-    width: 100%;
-
-    @include sm {
-        max-height: 80vh;
-    }
-}
-
-.subject {
-    margin-bottom: units(0);
-
-    @include sm {
-        margin-bottom: units(2);
-    }
-}
-
-h2 {
-    font-size: font-size(XXLARGE);
-    font-weight: bold;
-    margin-bottom: units(2);
-
-    @include sm {
-        font-size: font-size(LARGE);
-    }
-}
+@import "dashboard/dashboard_general.scss";
 
 .link::before {
-    content: '+';
-    margin-right: units(1);
+    content: "+";
 }
 
-.link {
-    margin-bottom: units(2);
-}
-
-.link a {
-    font-weight: 600;
-    color: color(BLUE);
-}
-
-.link p {
-    margin-left: units(2);
-}
-
-
-button {
-    height: $BUTTON-SIZE;
-    width: $BUTTON-SIZE;
-    line-height: $BUTTON-SIZE;
-    padding: 0;
-    border-radius: units(1.5);
-    box-shadow: none;
-    border: 1px solid color(DARK);
-    margin-bottom: units(1.5);
-    color: color(DARK) !important;
-    background-color: color(WHITE) !important;
-    transition: background-color 0.3s ease, border 0.3s ease;
-  
-    @include sm {
-      font-size: font-size(XSMALL);
-    }
-  }
-button:hover {
-    box-shadow: none;
-    border: 1px solid color(LIGHT_GREY);
-    color: color(DARK) !important;
-    background-color: color(LIGHT_GREY) !important;
-}
-  
-.add_button, .addSubject_button {
-    width: 60%;
-    border-radius: units(1.5);
-    font-weight: 600;
-    letter-spacing: 0.025em;
-    font-size: font-size(MEDIUM);
-    display: block;
-    margin: auto;
-    margin-bottom: units(2);
-
-    @include sm {
-        font-size: font-size(SMALL);
-        width: 80%;
-    }
-}
-
-.add_button {
-    margin: auto;
-    margin-bottom: units(2);
-}
-
-.addSubject_button {
-    background-color: color(DARK) !important;
-    color: color(WHITE) !important;
-    margin: auto;
-    margin-bottom: units(2);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.addSubject_button:hover {
-    background-color: color(LIGHT_GREY) !important;
-    color: color(DARK) !important;
-}
-  
 input[type="text"] {
     background: color(WHITE);
     color: $INPUT-TEXT-DARK-GREY;
-    max-width: 100%;
-    width: 45%;
     margin-right: $MARGIN-RIGHT-BUTTON-REMOVE;
     margin-bottom: units(0.5);
     font-weight: 600;
     font-size: font-size(MEDIUM);
     display: inline-block;
-    
-    @include sm {
-        width: calc(100% - #{$BUTTON-SIZE} - #{$MARGIN-RIGHT-BUTTON-REMOVE}) !important;
-    }
-}
-
-.removeButton {
-    @include sm {
-        float: right;
-        height: units(3) + 2 * $BUTTON-SIZE;
-        margin-top: -(units(1.5) + $BUTTON-SIZE);
-    }
 }
 
 textarea {
@@ -139,10 +20,3 @@ textarea {
     max-width: 100%;
     margin-bottom: units(3);
 }
-
-.section_title {
-    margin-bottom: units(2) !important;
-    font-size: font-size(XLARGE) !important;
-    width: calc(100% - #{$BUTTON-SIZE} - #{$MARGIN-RIGHT-BUTTON-REMOVE}) !important;
-}
-  

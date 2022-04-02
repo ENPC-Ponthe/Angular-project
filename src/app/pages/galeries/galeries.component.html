@@ -1,21 +1,22 @@
 <div class="spacer"></div>
 
 <!-- Public galleries -->
-<div id="main" (mouseenter)="survoleGaleries('visible')"
-               (mouseleave)="survoleGaleries('hidden')">
-  <article *ngFor="let event of galeriesService.galeriesEvents; let i = index"
-           class="thumb"
-           [@galeriesTrigger]="galeriesState[i]">
+<div id="main-gallery" (mouseenter)="survoleGaleries('visible')" (mouseleave)="survoleGaleries('hidden')">
+  <article *ngFor="let event of galeriesService.galeriesEvents; let i = index" class="thumb"
+    [@galeriesTrigger]="galeriesState[i]">
     <a [routerLink]="routes.pics + '/' + event.slug" [attr.aria-label]="event.name">
-      <img src="{{ event.image }}" alt="" width=100%/>
+      <img src="{{ event.image }}" alt="" width=100% />
     </a>
     <h2><a [routerLink]="routes.pics + '/' + event.slug" [attr.aria-label]="event.name">{{ event.name }}</a></h2>
   </article>
-  <h3 *ngIf="!galeriesService.isLoadingMoreEvents && !galeriesService.displaySpinner && galeriesService.galeriesEvents.length === 0" id="no-gallery">{{ 'galeries.none' | translate }}</h3>
+  <h3
+    *ngIf="!galeriesService.isLoadingMoreEvents && !galeriesService.displaySpinner && galeriesService.galeriesEvents.length === 0"
+    id="no-gallery">{{ 'galeries.none' | translate }}</h3>
 </div>
 
-<div *ngIf="galeriesService.isLoadingMoreEvents" id="reload-boundary" >
+<div *ngIf="galeriesService.isLoadingMoreEvents" id="reload-boundary">
   <app-loading-points></app-loading-points>
 </div>
 
-<app-loader-ponthe *ngIf="displaySpinner" @spinnerTrigger><app-loader-ponthe>
+<app-loader-ponthe *ngIf="displaySpinner" @spinnerTrigger>
+  <app-loader-ponthe>

@@ -1,4 +1,3 @@
-@import url("../../../assets/assets_h/css/main.css");
 @import "../../PontheStyle.scss";
 
 $INTRO-MARGIN-TOP-LARGE: 3em;
@@ -12,14 +11,15 @@ $NUMBER-TABS: 2;
 	position: absolute;
 	z-index: 1;
 	border-bottom: 1px solid color(WHITE);
-	background: rgba(0,0,0,0.6);
+	background: rgba(0, 0, 0, 0.6);
 
 	@media (prefers-color-scheme: dark) {
 		border-bottom: 1px solid color(DARK_GREY);
 	}
 }
 
-.window_tab, .window_tab_selected {
+.window_tab,
+.window_tab_selected {
 	width: calc(100vw / #{$NUMBER-TABS});
 	text-align: center;
 	font-size: font-size(LARGE);
@@ -28,13 +28,16 @@ $NUMBER-TABS: 2;
 	line-height: units(4);
 	transition: background ease 0.2s, color ease 0.2s, border-radius ease 0.15s;
 }
-.window_tab:hover, .window_tab_selected:hover {
+
+.window_tab:hover,
+.window_tab_selected:hover {
 	cursor: pointer;
 }
 
 .window_tab {
 	color: color(WHITE);
 }
+
 .window_tab_selected {
 	background: color(WHITE);
 	color: color(DARK);
@@ -49,23 +52,13 @@ $NUMBER-TABS: 2;
 
 /* Intro */
 #intro {
-	margin-top : $INTRO-MARGIN-TOP-LARGE;
-	height : calc(100vh - #{$INTRO-MARGIN-TOP-LARGE});
+	margin-top: $NAV-HEIGHT;
+	height : calc(100vh - #{$NAV-HEIGHT});
 	background: $INTRO-IMAGE;
 	background-size: 256px 256px, cover;
 	background-attachment: fixed, fixed;
 	background-position: top left, bottom center;
 	background-repeat: repeat, no-repeat;
-
-	@include sm {
-		margin-top: $INTRO-MARGIN-TOP-MOBILE;
-		height: calc(130vh - #{$INTRO-MARGIN-TOP-MOBILE} - 2 * #{units(12)});
-
-		@media (prefers-color-scheme: dark) {
-			margin-top: 3.8em;
-			height : calc(100vh - 3.8em);
-		}
-	}
 }
 
 #admin_area {
@@ -78,7 +71,8 @@ $NUMBER-TABS: 2;
 	margin-bottom: 5vh;
 }
 
-#col_admin_1, #col_admin_2 {
+#col_admin_1,
+#col_admin_2 {
 	display: inline-block;
 	width: 40vw;
 	vertical-align: top;
@@ -120,7 +114,7 @@ $NUMBER-TABS: 2;
 }
 
 button {
-  background: $BUTTON-BACKGROUND-GRADIENT;
+	background: $BUTTON-BACKGROUND-GRADIENT;
 }
 
 #tutos {
@@ -136,6 +130,7 @@ button {
 		color: color(WHITE);
 	}
 }
+
 #tutos:hover {
 	border: units(0.5) solid color(DARK_DARK_GREY);
 	padding: 0;
@@ -145,17 +140,24 @@ button {
 #moderation_button {
 	width: 20vw;
 	font-weight: bold;
+	margin: auto;
+	display: block;
+
+	@include sm {
+		padding: 0;
+	}
 }
 
 #private_galleries_title {
 	position: absolute;
-	top: 12vh;
+	top: units(11);
 	left: 0;
 	width: 100vw;
 	font-size: 3.5em;
 
 	@include sm {
 		font-size: 2.5em;
+		top: units(7);
 	}
 }
 
@@ -168,5 +170,9 @@ button {
 #privateGalleries {
 	position: absolute;
 	left: 0;
-	top: 22.5vh;
+	top: units(24);
+
+	@include sm {
+		top: units(15);
+	}
 }
