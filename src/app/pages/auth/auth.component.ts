@@ -18,6 +18,7 @@ import { environment } from 'src/environments/environment';
 export class AuthComponent implements OnInit {
   pathAuthVideo = PATH_AUTH_VIDEO;
   ssoPath: string;
+  videoPlaying = false;
 
   // Authentification form defined here
   userForm: FormGroup;
@@ -58,5 +59,9 @@ export class AuthComponent implements OnInit {
 
   installPwa(): void {
     this.Pwa.installPwa();
+  }
+
+  onVideoPlay() {
+    this.videoPlaying = true;
   }
 }

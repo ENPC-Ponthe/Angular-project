@@ -33,11 +33,9 @@
 	<app-auth-footer id="auth-footer"></app-auth-footer>
 
 	<!-- Background animation -->
-	<div id="video-wrapper" *ngIf="breakpointsService.isMobileOrTablet">
-		<video [src]="pathAuthVideo" loop autoplay muted playsinline style="position:absolute; z-index:1"></video>
+	<div id="video-wrapper" [style.zIndex]="videoPlaying ? 2 : 0">
+		<video [src]="pathAuthVideo" loop autoplay muted playsinline (play)="onVideoPlay()"></video>
 	</div>
-	<video *ngIf="!breakpointsService.isMobileOrTablet" [src]="pathAuthVideo" loop autoplay muted playsinline
-		style="position:absolute; z-index:1"></video>
 
 	<div id="bandeau" *ngIf="Pwa.promptEvent">
 		<button id="installation" class="auth" (click)="installPwa()" [attr.aria-label]="'install.install' | translate">
@@ -46,6 +44,9 @@
 	</div>
 	<div id="bandeau-install" *ngIf="Pwa.downloading">{{ 'install.downloading' | translate }}</div>
 	<div id="bandeau-installed" *ngIf="Pwa.installed">{{ 'install.installed' | translate }}</div>
+
+	<!-- Background animation -->
+	<app-auth-bg-slider class="bg" [style.display]="videoPlaying ? 'none' : 'block'"></app-auth-bg-slider>
 </section>
 
 <div class="darkBackground"></div>

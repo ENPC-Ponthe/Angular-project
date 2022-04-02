@@ -14,6 +14,7 @@
 .signup-form input:focus {
 	box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-FOCUS;
 }
+
 form {
 	margin: 0;
 	display: grid !important;
@@ -22,7 +23,7 @@ form {
 
 	@include lg {
 		display: flex !important;
-		align-items: end;
+		align-items: flex-end;
 	}
 }
 
@@ -41,15 +42,18 @@ form {
 		font-size: 1em;
 	}
 }
+
 #sso a {
 	border-bottom: none;
 	color: color(YELLOW) !important;
 }
+
 #sso a:hover {
 	text-decoration: underline;
 }
 
-#app-auth-card, #auth-footer {
+#app-auth-card,
+#auth-footer {
 	z-index: 3;
 }
 
@@ -59,7 +63,7 @@ form {
 	}
 }
 
-.field > label {
+.field>label {
 	margin-bottom: units(0.5);
 
 	@include sm {
@@ -68,69 +72,62 @@ form {
 }
 
 #video-wrapper {
+	display: contents;
 	position: absolute;
-	top: 0;
-	left: 0;
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
 }
 
 video {
-	top: 0;
-	right: 0;
 	height: 100vh;
 	min-width: 100vw;
-
-	@include sm {
-		width: auto;
-		left: -100vw;
-	}
-	@include md {
-		left: -60vw;
-	}
+	z-index: 2;
+	position: absolute;
 }
 
 
 // Download app on mobile
 #bandeau {
-    position: fixed;
-    left: 5vw;
-    top: units(11);
-    width: 90vw;
-    z-index: 10;
-    border-radius: units(2);
-    box-shadow: box-shadow(LARGE);
+	position: fixed;
+	left: 5vw;
+	top: units(11);
+	width: 90vw;
+	z-index: 10;
+	border-radius: units(2);
+	box-shadow: box-shadow(LARGE);
 }
 
-#installation, #later {
-    font-weight: 600;
+#installation,
+#later {
+	font-weight: 600;
 	border-radius: units(2);
 	width: 100%;
 	font-size: font-size(MEDIUM);
 }
 
 #installation {
-    background: color(GRADIENT_RED_YELLOW);
+	background: color(GRADIENT_RED_YELLOW);
 }
 
 #later {
-    background: color(WHITE);
-    color: color(DARK_DARK_GREY) !important;
-    border: 1px solid color(DARK_DARK_GREY);
-    position: absolute;
-    right: units(1);
+	background: color(WHITE);
+	color: color(DARK_DARK_GREY) !important;
+	border: 1px solid color(DARK_DARK_GREY);
+	position: absolute;
+	right: units(1);
 }
 
-#bandeau-install, #bandeau-installed {
-    position: fixed;
-    left: 5vw;
-    top: units(10);
-    width: 90vw;
-    z-index: 10;
-    background: color(GRADIENT_RED_YELLOW);
-    padding: units(2);
-    border-radius: units(2);
+#bandeau-install,
+#bandeau-installed {
+	position: fixed;
+	left: 5vw;
+	top: units(10);
+	width: 90vw;
+	z-index: 10;
+	background: color(GRADIENT_RED_YELLOW);
+	padding: units(2);
+	border-radius: units(2);
 	box-shadow: box-shadow(LARGE);
 	color: color(WHITE) !important;
 	font-weight: 600;
