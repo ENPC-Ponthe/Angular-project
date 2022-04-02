@@ -6,10 +6,37 @@ $flag-icon-css-path: '~flag-icon-css/flags' !default;
 @import "~flag-icon-css/sass/flag-icon";
 @import "app/PontheStyle.scss";
 
-html, body, div, span, h1, h2, h3, h4, h5, h6,
-p, a, abbr, em, img, strong, ul, li, form,
-label, caption, article, aside, details, footer,
-header, nav, section, summary, audio, video {
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+abbr,
+em,
+img,
+strong,
+ul,
+li,
+form,
+label,
+caption,
+article,
+aside,
+details,
+footer,
+header,
+nav,
+section,
+summary,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -17,8 +44,13 @@ header, nav, section, summary, audio, video {
 	vertical-align: baseline;
 }
 
-article, aside, details,
-footer, header, nav, section {
+article,
+aside,
+details,
+footer,
+header,
+nav,
+section {
 	display: block;
 }
 
@@ -36,7 +68,9 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	-ms-appearance: none;
@@ -47,7 +81,9 @@ input, select, textarea {
 	width: device-width;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 	box-sizing: inherit;
 }
 
@@ -58,7 +94,13 @@ a {
 
 /* Type */
 
-input, textarea, select, section, nav, #header, #footer {
+input,
+textarea,
+select,
+section,
+nav,
+#header,
+#footer {
 	font-family: "Source Sans Pro", "sans-serif";
 	font-weight: 300;
 	font-size: 1.25em;
@@ -69,7 +111,9 @@ input, textarea, select, section, nav, #header, #footer {
 
 @media screen and (max-width: 1920px) {
 
-	input, textarea, select {
+	input,
+	textarea,
+	select {
 		font-size: 17pt;
 	}
 
@@ -77,7 +121,9 @@ input, textarea, select, section, nav, #header, #footer {
 
 @media screen and (max-width: 1680px) {
 
-	input, textarea, select {
+	input,
+	textarea,
+	select {
 		font-size: 15pt;
 	}
 
@@ -85,26 +131,40 @@ input, textarea, select, section, nav, #header, #footer {
 
 @media screen and (max-width: 1280px) {
 
-	input, textarea, select {
+	input,
+	textarea,
+	select {
 		font-size: 13pt;
 	}
 
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
 	@include sm {
 		font-size: 12pt;
 		line-height: 1.5em;
 	}
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-weight: 900;
 	color: inherit;
 	letter-spacing: -0.0325em;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
 	color: inherit;
 	text-decoration: none;
 }
@@ -123,12 +183,14 @@ h2 {
 
 }
 
-strong, b {
+strong,
+b {
 	font-weight: 900;
 	color: inherit;
 }
 
-em, i {
+em,
+i {
 	font-style: italic;
 }
 
@@ -139,7 +201,8 @@ a {
 	transition: color 0.2s ease-in-out;
 }
 
-p, ul {
+p,
+ul {
 	margin-bottom: 1em;
 }
 
@@ -1102,6 +1165,7 @@ footer {
 	}
 
 }
+
 /* Main */
 
 .main {
@@ -1296,15 +1360,10 @@ body.is-touch .main {
 	}
 }
 
-.main.style2:before, .main.style2:after {
+.main.style2:before,
+.main.style2:after {
 	@include sm {
 		display: none !important;
-	}
-}
-
-.main.style2 .button.anchored {
-	@include sm {
-		display: none;
 	}
 }
 
@@ -1375,39 +1434,33 @@ body.is-touch .main {
 	display: -ms-flex;
 	display: flex;
 	position: relative;
+
+	@include sm {
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
 }
 
 .signup-form input[type="text"],
 .signup-form input[type="password"],
 .signup-form input[type="email"] {
 	width: 18em;
+
+	@include sm {
+		width: 100%;
+	}
 }
 
 .signup-form>* {
 	margin: 0 0 0 1em;
+
+	@include sm {
+		margin: 0.25em 0 0 0;
+	}
 }
 
 .signup-form> :first-child {
 	margin: 0 0 0 0;
-}
-
-@media screen and (max-width: 750px) {
-
-	.signup-form {
-		-moz-flex-direction: column;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-	}
-
-	.signup-form input[type="type"],
-	.signup-form input[type="password"],
-	.signup-form input[type="email"] {
-		width: 100%;
-	}
-
-	.signup-form>* {
-		margin: 0.25em 0 0 0;
-	}
-
 }
