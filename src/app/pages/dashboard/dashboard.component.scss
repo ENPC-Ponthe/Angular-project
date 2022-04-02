@@ -140,6 +140,8 @@ button {
 #moderation_button {
 	width: 20vw;
 	font-weight: bold;
+	margin: auto;
+	display: block;
 
 	@include sm {
 		padding: 0;

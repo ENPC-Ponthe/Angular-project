@@ -3,7 +3,7 @@
 
 $MAX-WIDTH-CARD-MOBILE: 75vw;
 $MAX-WIDTH-CARD-TABLET: 60vw;
-$MAX-WIDTH-CARD-DESKTOP: 40vw;
+$MAX-WIDTH-CARD-DESKTOP: 50vw;
 
 #auth-card {
 	padding: units(5);
@@ -24,13 +24,15 @@ $MAX-WIDTH-CARD-DESKTOP: 40vw;
 }
 
 /* Header */
-#header, form {
+#header,
+form {
 	margin: 0;
 	max-width: $MAX-WIDTH-CARD-DESKTOP !important;
 
 	@include sm {
 		max-width: $MAX-WIDTH-CARD-MOBILE !important;
 	}
+
 	@include md {
 		max-width: $MAX-WIDTH-CARD-TABLET !important;
 	}
@@ -62,7 +64,8 @@ $MAX-WIDTH-CARD-DESKTOP: 40vw;
 	}
 }
 
-input, select {
+input,
+select {
 	box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-NONE;
 	width: 100% !important;
 
@@ -71,7 +74,8 @@ input, select {
 	}
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
 	box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-FOCUS;
 }
 
@@ -79,6 +83,7 @@ label {
 	transition: color 0.5s ease;
 	font-size: font-size(MEDIUM) !important;
 }
+
 #auth-card:hover label {
 	color: color(DARK_DARK_GREY) !important;
 }
@@ -92,6 +97,7 @@ p {
 	@include sm {
 		max-width: $MAX-WIDTH-CARD-MOBILE !important;
 	}
+
 	@include md {
 		max-width: $MAX-WIDTH-CARD-TABLET !important;
 	}
@@ -112,9 +118,11 @@ select {
 	line-height: 1.65em;
 	transition: color 0.5s ease;
 }
+
 input[type="text"] {
-  width: units(30);
+	width: units(30);
 }
+
 input[type="submit"] {
 	background: $BUTTON-BACKGROUND-GRADIENT-YELLOWER !important;
 
@@ -122,6 +130,7 @@ input[type="submit"] {
 		margin: 0 !important;
 	}
 }
+
 select {
 	display: inline-block !important;
 	height: 59px;
@@ -135,7 +144,10 @@ a {
 	transition: color 0.5s ease;
 	color: color(DARK_DARK_GREY) !important;
 }
-#auth-card:hover p, #auth-card:hover #email p, #auth-card:hover q {
+
+#auth-card:hover p,
+#auth-card:hover #email p,
+#auth-card:hover q {
 	color: color(DARK_DARK_GREY) !important;
 }
 
@@ -143,7 +155,7 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="text"]:focus,
 select:focus {
-	background: rgba(0,0,0,0.1) !important;
+	background: rgba(0, 0, 0, 0.1) !important;
 }
 
 input[type="password"]::placeholder,
@@ -151,6 +163,7 @@ input[type="email"]::placeholder,
 input[type="text"]::placeholder {
 	transition: color 0.5s ease;
 }
+
 #auth-card:hover input[type="password"]::placeholder,
 #auth-card:hover input[type="email"]::placeholder,
 #auth-card:hover input[type="text"]::placeholder {

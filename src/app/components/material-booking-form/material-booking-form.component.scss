@@ -1,25 +1,34 @@
 @import "../../PontheStyle.scss";
 
-input[type="submit"] {
-  background: linear-gradient(30deg, red, yellow);
-  cursor: pointer;
+$CARD-WIDTH: units(25);
+$CARD-HEIGHT: units(37.5);
+$CARD-HEIGHT-MOBILE: units(30);
+$BORDER-CARD-BASE: 1px;
+$BORDER-CARD-SELECTED: 3px;
 
-  @include sm {
-	  padding: 0;
-  }
+input[type="submit"] {
+	background: linear-gradient(30deg, red, yellow);
+	cursor: pointer;
+
+	@include sm {
+		padding: 0;
+	}
 }
 
-input, textarea {
+input,
+textarea {
 	@media (prefers-color-scheme: dark) {
 		color: color(WHITE);
-	  }
+	}
 }
 
-input:focus, textarea:focus {
-  box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-FOCUS-LIGHT;
+input:focus,
+textarea:focus {
+	box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-FOCUS-LIGHT;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
 	@media (prefers-color-scheme: dark) {
 		color: color(LIGHT_GREY);
 	}
@@ -32,12 +41,13 @@ label {
 	margin-bottom: units(0.5);
 	font-weight: 300;
 
-  @media (prefers-color-scheme: dark) {
-    color: color(WHITE);
-  }
+	@media (prefers-color-scheme: dark) {
+		color: color(WHITE);
+	}
 }
 
-#success, #failure {
+#success,
+#failure {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 600;
 	font-size: font-size(MEDIUM);
@@ -45,12 +55,16 @@ label {
 	display: block;
 	transition: visibility 0.3s ease;
 }
-#success::before, #failure::before {
+
+#success::before,
+#failure::before {
 	padding-right: units(1);
 }
+
 #success {
 	color: color(SUCCESS);
 }
+
 #failure {
 	color: color(FAILURE);
 }
@@ -58,6 +72,7 @@ label {
 .visible {
 	visibility: visible;
 }
+
 .hidden {
 	visibility: hidden;
 }
@@ -74,9 +89,9 @@ label {
 }
 
 .itemCard {
-	width: units(30);
-	height: units(47.5);
-	padding: units(2) + 3;
+	width: calc(#{$CARD-WIDTH} - 2 * #{$BORDER-CARD-BASE});
+	height: calc(#{$CARD-HEIGHT} - 2 * #{$BORDER-CARD-BASE});
+	padding: units(1);
 	border: 1px solid color(LIGHT_GREY);
 	border-radius: units(3);
 	margin: units(1);
@@ -84,19 +99,12 @@ label {
 	transition: background 0.3s ease, box-shadow 0.3s ease;
 
 	@include sm {
-		padding: units(1) + 3;
-		height: units(33);
-		width: units(22);
-	}
-	@include md {
-		padding: units(1) + 3;
-		height: units(42.5);
-		width: units(25);
+		height: calc(#{$CARD-HEIGHT-MOBILE} - 2 * #{$BORDER-CARD-BASE});
 	}
 }
+
 .itemCard:hover {
 	background: color(LIGHT_GREY);
-	box-shadow: box-shadow(LIGHT);
 	cursor: pointer;
 
 	@media (prefers-color-scheme: dark) {
@@ -107,50 +115,54 @@ label {
 .itemPic {
 	max-width: 100%;
 	height: units(22);
+	align-items: center;
+	display: flex;
 
 	@include sm {
 		height: units(15);
 	}
 }
+
 .itemCard img {
 	max-width: 100%;
 	max-height: units(20);
 	margin: auto;
 
 	@include sm {
-		height: units(13);
+		max-height: units(15);
 	}
 }
 
 .itemCard h2 {
-	font-size: font-size(XXLARGE);
-	margin-bottom: units(1);
+	font-size: font-size(XLARGE);
+	margin-bottom: units(0.5);
 
 	@include sm {
 		font-size: font-size(LARGE);
 	}
 }
+
 .itemCard p {
-	font-size: font-size(XLARGE);
-	line-height: 1.5em;
+	font-size: 0.8em;
+	line-height: 1.35em;
 
 	@include sm {
 		font-size: 14px;
 	}
+
 	@include md {
 		font-size: font-size(MEDIUM);
 	}
 }
 
 .selected {
-	border: 4px solid color(SUCCESS);
-	padding: units(2);
+	border: $BORDER-CARD-SELECTED solid color(SUCCESS);
+	width: $CARD-WIDTH;
+	height: $CARD-HEIGHT;
+	padding: 5px;
 
 	@include sm {
-		padding: units(1);
-	}
-	@include md {
-		padding: units(1);
+		height: $CARD-HEIGHT-MOBILE;
 	}
 }
 
@@ -159,7 +171,7 @@ label {
 	margin: 0;
 }
 
-form > .fields > .field {
+form>.fields>.field {
 	padding: 0;
 }
 
