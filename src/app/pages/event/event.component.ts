@@ -17,7 +17,7 @@ import { GetImagesResponse } from 'src/app/types/pics.types';
   selector: 'app-event',
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.scss'],
-  animations : [
+  animations: [
     // Hover animation on the pictures
     // trigger('picsTrigger', [
     //   state('visible', style({opacity: 1})),
@@ -56,12 +56,12 @@ export class EventComponent implements OnInit, OnDestroy {
 
 
   constructor(private galeriesService: GaleriesService,
-              private activeRoute: ActivatedRoute,
-              public httpService: HttpService,
-              public picsService: PicsService,
-              public reactionsService: ReactionsService) {
+    private activeRoute: ActivatedRoute,
+    public httpService: HttpService,
+    public picsService: PicsService,
+    public reactionsService: ReactionsService) {
     this.sub = activeRoute.fragment.pipe(filter(f => !!f)).subscribe(
-      f => document.getElementById(f).scrollIntoView({ behavior : 'smooth' })
+      f => document.getElementById(f).scrollIntoView({ behavior: 'smooth' })
     );
   }
 
@@ -74,20 +74,20 @@ export class EventComponent implements OnInit, OnDestroy {
     this.picsService.onChangeCurrentGallery(this.selectedRoute);
     // Request of pictures of the event
     this.galeriesService.getEventByName(this.selectedRoute)
-    .subscribe(
-      (res: GetImagesResponse) => {
-        const { files, number_of_files, gallery } = res;
-        this.picsService.pics = files;
-        this.picsService.numberOfPics = number_of_files;
-        this.picsService.initRawPics(number_of_files);
-        this.name = gallery.name;
-        this.resume = gallery.description;
-        // Define the state of all pictures as not going to be deleted
-        this.moderationState = Array(number_of_files).fill(false);
-        setTimeout(() => { this.displaySpinner = false; }, 200);
-      },
-      (error) => { }
-    );
+      .subscribe(
+        (res: GetImagesResponse) => {
+          const { files, number_of_files, gallery } = res;
+          this.picsService.pics = files;
+          this.picsService.numberOfPics = number_of_files;
+          this.picsService.initRawPics(number_of_files);
+          this.name = gallery.name;
+          this.resume = gallery.description;
+          // Define the state of all pictures as not going to be deleted
+          this.moderationState = Array(number_of_files).fill(false);
+          setTimeout(() => { this.displaySpinner = false; }, 200);
+        },
+        (error) => { }
+      );
     this.isPublic = this.galeriesService.isPublicOrPrivate(this.selectedRoute);
   }
 
@@ -98,18 +98,18 @@ export class EventComponent implements OnInit, OnDestroy {
   }
 
   @HostListener('window:scroll', ['$event'])
-    scrollHandler() {
-      const articles = document.getElementsByClassName('thumb');
-      const articleHeight = articles[0].clientHeight;
-      const boundary = articles[articles.length - 1];
-      const boundaryTop = boundary.getBoundingClientRect().top;
+  scrollHandler() {
+    const articles = document.getElementsByClassName('thumb');
+    const articleHeight = articles[0].clientHeight;
+    const boundary = articles[articles.length - 1];
+    const boundaryTop = boundary.getBoundingClientRect().top;
 
-      const THRESHOLD = (window.innerWidth < BREAKPOINTS.SMALL) ? 14 : 4;
-      // Load more pics when there are 4 lines of pics remaining before the end of the current page
-      if (boundaryTop - THRESHOLD * articleHeight < window.innerHeight) {
-        this.picsService.loadMorePics();
-      }
+    const THRESHOLD = (window.innerWidth < BREAKPOINTS.SMALL) ? 14 : 4;
+    // Load more pics when there are 4 lines of pics remaining before the end of the current page
+    if (boundaryTop - THRESHOLD * articleHeight < window.innerHeight) {
+      this.picsService.loadMorePics();
     }
+  }
 
   activateUploadArea() {
     this.showUploadArea = true;
@@ -147,17 +147,19 @@ export class EventComponent implements OnInit, OnDestroy {
     this.picClicked = true;
     // Have a blurred background when the image viewer is active
     document.getElementById('header').style.display = 'none';
-    document.getElementById('event-panel').style.display = 'none';
-    document.getElementById('main').style.filter = 'blur(8px)';
-    document.getElementById('footer').style.display = 'none';
+    try { document.getElementById('event-panel').style.display = 'none'; } catch (err) { }
+    try { document.getElementById('footer').style.display = 'none'; } catch (err) { }
+    try { document.getElementById('main').style.filter = 'blur(16px)'; } catch (err) { }
+    try { document.getElementById('main-gallery').style.filter = 'blur(16px)'; } catch (err) { }
   }
 
   closePic() {
     this.picClicked = false;
     // Remove the blurred background
-    document.getElementById('header').style.display = 'block';
-    document.getElementById('event-panel').style.display = 'block';
-    document.getElementById('main').style.filter = 'none';
-    document.getElementById('footer').style.display = 'block';
+    document.getElementById('header').style.display = 'flex';
+    try { document.getElementById('event-panel').style.display = 'flex'; } catch (err) { }
+    try { document.getElementById('footer').style.display = 'flex'; } catch (err) { }
+    try { document.getElementById('main').style.filter = 'none'; } catch (err) { }
+    try { document.getElementById('main-gallery').style.filter = 'none'; } catch (err) { }
   }
 }
