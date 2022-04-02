@@ -13,15 +13,18 @@ export enum KEY_CODE {
   ENTER = 'Enter'
 }
 
+const MAX_WIDTH_IMAGE = 100; //vw
+const MAX_HEIGHT_IMAGE = 100; //vh
+
 @Component({
   selector: 'app-image-viewer',
   templateUrl: './image-viewer.component.html',
   styleUrls: ['./image-viewer.component.scss'],
   animations: [
     trigger('widePicsAnimation', [
-      state('true', style({opacity: 1})),
-      state('false', style({opacity: 0})),
-      transition('*=>*', [ animate('200ms') ] ),
+      state('true', style({ opacity: 1 })),
+      state('false', style({ opacity: 0 })),
+      transition('*=>*', [animate('200ms')]),
     ]),
     trigger('changePicAnimation', [
       transition(':enter', [pulse()]),
@@ -48,16 +51,17 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
   @Input() captionWidePic: string;
   @Input() indexPicture = 0;
   @Input() isGallery = true;
-  rawPics: any[];
   @Output() changeIndexPicture = new EventEmitter<number>();
   @Output() closeViewer = new EventEmitter<boolean>();
   showArrows = true;
   slugPic: string;
+  imageWidth = 0;
+  imageHeight = 0;
 
   indexNewPicLoaded: Subscription;
 
   constructor(public picsService: PicsService,
-              private sanitizer: DomSanitizer) {
+    private sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
@@ -66,7 +70,6 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
         this.updateWidePic();
       }
     });
-    this.rawPics = this.picsService.rawPics;
     this.updateWidePic();
   }
 
@@ -115,18 +118,34 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
     this.changeIndexPicture.emit(this.indexPicture);
 
     this.picsService.loadFullImage(this.indexPicture);
+
+    setTimeout(() => this.computeImgTargetSize(), 1)
+  }
+
+  computeImgTargetSize() {
+    const imageInDOM = document.getElementById("pic") as HTMLImageElement;
+    const width = imageInDOM.naturalWidth;
+    const height = imageInDOM.naturalHeight;
+
+    const MAXWIDTH = MAX_WIDTH_IMAGE / 100 * window.innerWidth;
+    const MAXHEIGHT = MAX_HEIGHT_IMAGE / 100 * window.innerHeight;
+
+    const zoomFactor = Math.min(MAXWIDTH / width, MAXHEIGHT / height);
+
+    this.imageWidth = zoomFactor * width;
+    this.imageHeight = zoomFactor * height;
   }
 
   navLeft() {
     this.indexPicture = this.indexPicture - 1;
     if (this.indexPicture < 0) {
-      this.indexPicture += (this.rawPics.length || Object.keys(this.rawPics).length);
+      this.indexPicture += (this.picsService.rawPics.length || Object.keys(this.picsService.rawPics).length);
     }
     this.updateWidePic();
   }
 
   navRight() {
-    this.indexPicture = (this.indexPicture + 1) % (this.rawPics.length || Object.keys(this.rawPics).length);
+    this.indexPicture = (this.indexPicture + 1) % (this.picsService.rawPics.length || Object.keys(this.picsService.rawPics).length);
     this.updateWidePic();
   }
 

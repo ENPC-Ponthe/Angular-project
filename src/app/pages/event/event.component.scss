@@ -1,7 +1,7 @@
 @import "gallery/gallery_general";
 @import "../../PontheStyle.scss";
 
-$SIZE-REACTION-LARGE: units(6);
+$SIZE-REACTION-LARGE: units(4.5);
 $SIZE-REACTION-SMALL: units(4);
 
 .spacer {
@@ -130,8 +130,8 @@ app-upload {
   position: absolute;
   height: $SIZE-REACTION-LARGE;
   width: $SIZE-REACTION-LARGE;
-  top: units(1.5);
-  left: units(1.5);
+  top: units(1);
+  left: units(1);
 
   @include sm {
     height: $SIZE-REACTION-SMALL;
