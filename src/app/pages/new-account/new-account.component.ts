@@ -24,8 +24,8 @@ export class NewAccountComponent implements OnInit {
   alertErrorVisible = false;
 
   constructor(private formBuilder: FormBuilder,
-    private userService: UserService,
-    private router: Router) {
+              private userService: UserService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -47,7 +47,7 @@ export class NewAccountComponent implements OnInit {
 
   // Submission of the registration form
   onSubmitForm() {
-    this.userForm.value.email += "@" + this.userForm.value.extension;
+    this.userForm.value.email += '@' + this.userForm.value.extension;
     const formValue = this.userForm.value;
     const newUser = new User(formValue.firstname,
       formValue.lastname,

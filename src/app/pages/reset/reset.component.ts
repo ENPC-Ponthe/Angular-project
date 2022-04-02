@@ -19,8 +19,8 @@ export class ResetComponent implements OnInit {
   alertVisible = false;
 
   constructor(private formBuilder: FormBuilder,
-    private router: Router,
-    private userService: UserService) {
+              private router: Router,
+              private userService: UserService) {
   }
 
   ngOnInit() {
@@ -37,7 +37,7 @@ export class ResetComponent implements OnInit {
 
   // Submission of the reset form
   onSubmitForm() {
-    this.resetForm.value.email += "@" + this.resetForm.value.extension;
+    this.resetForm.value.email += '@' + this.resetForm.value.extension;
     this.userService.resetUser(this.resetForm.value).subscribe(
       (res) => { this.alertVisible = true; },
       (error) => { }

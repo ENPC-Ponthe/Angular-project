@@ -16,7 +16,7 @@ export class NavLinkComponent implements OnInit {
   isHovered = false;
 
   constructor(private router: Router,
-    public breakpointsService: BreakpointsService) { }
+              public breakpointsService: BreakpointsService) { }
 
   ngOnInit() {
   }

@@ -26,7 +26,7 @@ export class GaleriesFooterComponent implements OnInit {
   footerState = 'hidden';
 
   constructor(private galeriesService: GaleriesService,
-    public breakpointsService: BreakpointsService) {
+              public breakpointsService: BreakpointsService) {
   }
 
   ngOnInit() {

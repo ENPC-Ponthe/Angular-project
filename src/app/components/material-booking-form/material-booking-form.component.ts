@@ -27,7 +27,7 @@ export class MaterialBookingFormComponent implements OnInit {
   selectedItems = {};
 
   constructor(private formBuilder: FormBuilder,
-    private messagesService: MessagesService) { }
+              private messagesService: MessagesService) { }
 
   ngOnInit() {
     this.initForm();

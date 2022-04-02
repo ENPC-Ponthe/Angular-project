@@ -56,10 +56,10 @@ export class EventComponent implements OnInit, OnDestroy {
 
 
   constructor(private galeriesService: GaleriesService,
-    private activeRoute: ActivatedRoute,
-    public httpService: HttpService,
-    public picsService: PicsService,
-    public reactionsService: ReactionsService) {
+              private activeRoute: ActivatedRoute,
+              public httpService: HttpService,
+              public picsService: PicsService,
+              public reactionsService: ReactionsService) {
     this.sub = activeRoute.fragment.pipe(filter(f => !!f)).subscribe(
       f => document.getElementById(f).scrollIntoView({ behavior: 'smooth' })
     );

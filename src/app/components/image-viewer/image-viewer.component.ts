@@ -13,8 +13,8 @@ export enum KEY_CODE {
   ENTER = 'Enter'
 }
 
-const MAX_WIDTH_IMAGE = 100; //vw
-const MAX_HEIGHT_IMAGE = 100; //vh
+const MAX_WIDTH_IMAGE = 100; // vw
+const MAX_HEIGHT_IMAGE = 100; // vh
 
 @Component({
   selector: 'app-image-viewer',
@@ -61,7 +61,7 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
   indexNewPicLoaded: Subscription;
 
   constructor(public picsService: PicsService,
-    private sanitizer: DomSanitizer) {
+              private sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
@@ -119,11 +119,11 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
 
     this.picsService.loadFullImage(this.indexPicture);
 
-    setTimeout(() => this.computeImgTargetSize(), 1)
+    setTimeout(() => this.computeImgTargetSize(), 1);
   }
 
   computeImgTargetSize() {
-    const imageInDOM = document.getElementById("pic") as HTMLImageElement;
+    const imageInDOM = document.getElementById('pic') as HTMLImageElement;
     const width = imageInDOM.naturalWidth;
     const height = imageInDOM.naturalHeight;
 

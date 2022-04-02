@@ -14,8 +14,8 @@ import { routesApp } from 'src/app/Routes';
 export class FooterComponent {
 
   constructor(private httpService: HttpService,
-    private breakpointsService: BreakpointsService,
-    private router: Router) {
+              private breakpointsService: BreakpointsService,
+              private router: Router) {
   }
 
   get isOnline() {
