@@ -1,11 +1,9 @@
-@import url("../../../../assets/assets_h/css/main.css");
 @import "../../../PontheStyle.scss";
 @import "../../../constants/style/burger.scss";
 
 #header {
-	font-family: "Roboto", "sans-serif";
+	font-family: "Source Sans Pro", "sans-serif";
 	font-weight: 300;
-	font-size: 1.25em;
 	letter-spacing: 0.025em;
 	position: fixed;
 	z-index: 10000;
@@ -25,29 +23,19 @@
 		transition: background 0.3s ease;
 	}
 }
-#header:hover {
-	background: color(WHITE);
-	box-shadow: $BOX-SHADOW-INPUT-BASE $BOX-SHADOW-INPUT-SHIFT-FOCUS;
-	color: color(DARK_DARK_GREY);
-	text-shadow: none;
-}
 
 .link {
 	display: inline-block;
 	margin-right: units(5);
-	font-size: 1.35em;
+	font-size: 1.15em;
 	font-weight: 600;
 	transition: color 0.3s ease;
 
 	@include sm {
 		font-size: 1.2em;
 	}
-	@include md {
-		font-size: 1.15em;
-	}
 }
 .link:hover {
-	color: color(YELLOW);
 	text-decoration: underline;
 	cursor: pointer;
 }
@@ -56,7 +44,7 @@
 }
 
 #header ul {
-	padding: 1.5em 0 0 5.5em;
+	padding: units(4) 0 0 units(6);
 
 	@include sm {
 		padding-left: units(8);

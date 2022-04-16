@@ -1,4 +1,3 @@
-@import url("../../../../assets/assets_h/css/main.css");
 @import "../../../PontheStyle.scss";
 @import "../../../constants/style/burger.scss";
 
@@ -14,13 +13,12 @@
   top: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
-  height: 3em;
+  height: $NAV-HEIGHT;
   line-height: 3em;
   box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.1);
 
   @include sm {
     font-size: 1.6em;
-    height: 3em;
     line-height: 1.5em;
   }
 
@@ -38,18 +36,27 @@
   display: inline-block;
   width: 3.3em;
   position: relative;
-  top: 0.3em;
-  left: 0.3em;
+  top: 0;
+  left: units(1);
 
   @include sm {
-    left: 0.5em;
-    width: 3.25em;
-    top: 0.4em;
+    left: 0;
+    top: 0;
   }
 
   @include sm-landscape {
     width: 2.25em;
     top: 0.3em;
+  }
+}
+
+#header a {
+  height: $NAV-HEIGHT;
+  display: flex;
+
+  @include sm {
+    padding: units(0.5) 0;
+    height: calc(#{$NAV-HEIGHT} - 2 * #{units(0.5)});
   }
 }
 
@@ -67,11 +74,20 @@
   font-size: 1.25em;
 }
 
+#header h1 a:hover {
+  color: color(DARK_GREY);
+
+  @include sm {
+    color: color(DARK_DARK_GREY);
+  }
+}
+
+
 #header nav {
   position: absolute;
   right: 0.5em;
   top: 0;
-  height: 3em;
+  height: $NAV-HEIGHT;
   line-height: 3em;
   font-size: 1.15em;
 
@@ -83,6 +99,14 @@
 
 #header nav ul {
   margin: 0;
+  height: $NAV-HEIGHT;
+  display: flex;
+  align-items: center;
+  margin-right: units(4.5);
+}
+
+app-nav-link {
+  display: flex;
 }
 
 @media screen and (max-width: 1680px) {
@@ -109,11 +133,13 @@
   @include sm {
     text-align: center;
     position: absolute;
+    top: 0;
+    height: $NAV-HEIGHT;
+    line-height: $NAV-HEIGHT;
+    width: 33vw;
+    margin: auto;
     left: 0;
-    top: 0.15em;
-    height: 2.5em;
-    line-height: 2.5em;
-    width: 100vw;
+    right: 0;
   }
   @include sm-landscape {
     top: -0.35em;
@@ -124,9 +150,10 @@
 #header h1 a {
   @include sm {
     font-size: 1em;
-    width: 100vw;
+    width: 40vw;
     left: 0;
-    height: 2em;
+    height: $NAV-HEIGHT;
+    padding: 0;
   }
   @include sm-landscape {
     font-size: 0.85em;
@@ -136,10 +163,15 @@
 #header a {
   @include sm {
     top: 0;
-    height: 3.5em;
-    width: 4em;
+    width: auto;
     position: absolute;
     z-index: 2;
+    left: units(0.5);
+  }
+}
+#header a:hover {
+  @include sm {
+    text-decoration: none;
   }
 }
 
@@ -153,7 +185,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    line-height: 3em;
+    line-height: $NAV-HEIGHT;
     visibility: collapse;
     color: color(DARK_DARK_GREY);
     text-shadow: none;
@@ -171,9 +203,8 @@
 
 #header-mobile ul {
   @include sm {
-    padding-left: units(3.5);
-    padding-right: units(3.5);
-    padding-top: units(12);
+    padding: 0 units(3);
+    padding-top: $NAV-HEIGHT;
   }
   @include sm-landscape {
     padding-left: units(11);
@@ -196,8 +227,10 @@
   @include sm {
     visibility: visible;
     position: fixed;
-    top: units(1.75);
-    right: units(1.5);
+    top: 0;
+    right: units(1);
+    height: $NAV-HEIGHT;
+    padding: 0 units(1.5);
   }
   @include sm-landscape {
     top: 0;
@@ -222,4 +255,10 @@
   #header-mobile h1 a {
     font-size: 1.05em;
   }
+}
+
+#languages {
+  top: units(2.5);
+  right: units(0.5);
+  position: absolute;
 }

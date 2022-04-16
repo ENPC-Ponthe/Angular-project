@@ -1,7 +1,6 @@
-@import url("../../../assets/assets_h/css/main.css");
 @import "../../PontheStyle.scss";
 
-$FLAG-SIZE: 1.25em;
+$FLAG-SIZE: units(3);
 $SECTION-PADDING: units(0.25);
 $SECTION-MARGIN: units(0.25);
 $NUMBER-OF-LANGUAGES-TO-ANIMATE: $NUMBER-OF-LANGUAGES - 1;
@@ -12,8 +11,14 @@ $NUMBER-OF-LANGUAGES-TO-ANIMATE: $NUMBER-OF-LANGUAGES - 1;
     height: calc(#{$FLAG-SIZE} + 2 * #{$SECTION-PADDING});
     transition: height 0.5s ease;
     display: flex;
+}
+
+.open-up {
     flex-direction: column-reverse;
-    position: absolute;
+}
+
+.open-down {
+    flex-direction: column;
 }
 
 #flags-section:hover {
@@ -21,8 +26,8 @@ $NUMBER-OF-LANGUAGES-TO-ANIMATE: $NUMBER-OF-LANGUAGES - 1;
 }
 
 .flag-icon {
-	border-radius: units(0.5);
-	width: $FLAG-SIZE;
+    border-radius: units(0.5);
+    width: $FLAG-SIZE;
     height: $FLAG-SIZE;
     line-height: $FLAG-SIZE;
     cursor: pointer;
@@ -47,6 +52,6 @@ span {
 
 @for $i from 1 through $NUMBER-OF-LANGUAGES-TO-ANIMATE {
     .flag#{$i} {
-        transition-delay: $i * 0.3s;
+        transition-delay: $i * 0.1s;
     }
 }

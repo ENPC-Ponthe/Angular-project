@@ -18,6 +18,7 @@ import { environment } from 'src/environments/environment';
 export class AuthComponent implements OnInit {
   pathAuthVideo = PATH_AUTH_VIDEO;
   ssoPath: string;
+  videoPlaying = false;
 
   // Authentification form defined here
   userForm: FormGroup;
@@ -40,13 +41,15 @@ export class AuthComponent implements OnInit {
   // Initialisation of the form when the page is initially loaded
   initForm() {
     this.userForm = this.formBuilder.group({
-      email : ['', Validators.required],
-      password : ['', Validators.required]
+      email: ['', Validators.required],
+      extension: ['eleves.enpc.fr', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
   // Submission of the form
   onSignIn() {
+    this.userForm.value.email += '@' + this.userForm.value.extension;
     this.authService.signIn(this.userForm.value);
   }
 
@@ -56,5 +59,9 @@ export class AuthComponent implements OnInit {
 
   installPwa(): void {
     this.Pwa.installPwa();
+  }
+
+  onVideoPlay() {
+    this.videoPlaying = true;
   }
 }

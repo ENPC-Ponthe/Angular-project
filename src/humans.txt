@@ -1,0 +1,15 @@
+/ * TEAM * /
+Ponthé members who contributed to this website:
+
+Thomas Buiron: Responsable web 023
+Thomas Chabal: Prez 020
+Philippe Ferreira De Sousa: Responsable web 019
+Inès Tazi: Prez 019
+
+/ * SITE * /
+Galeries Ponthé is the photo and video gallery of Le Ponthé, Ecole des Ponts ParisTech's audiovisual club.
+It gathers all the visual memories of students during their years at Ecole des Ponts.
+Originally developed entirely in Python using Flask, this website was then completed with an Angular front-end.
+
+Languages: French, English, Spanish
+Technologies: Python / Flask, Angular

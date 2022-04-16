@@ -3,8 +3,8 @@ $AUTH-PICS-FOLDER: $ASSETS-FOLDER + "auth_pics/";
 $TEAM-FOLDER: $ASSETS-FOLDER + "ponthe_teams/";
 
 /* BACKGROUND IMAGES */
-$INTRO-IMAGE: url("/assets/assets_h/css/images/overlay.png"), url($ASSETS-FOLDER + "introP.jpg");
-$OVERLAY-IMAGE: url("/assets/assets_h/css/images/overlay.png");
+$INTRO-IMAGE: url("/assets/images/site/overlay.png"), url($ASSETS-FOLDER + "introP.jpg");
+$OVERLAY-IMAGE: url("/assets/images/site/overlay.png");
 $AUTH-BG-SLIDER-IMAGES:
     url($AUTH-PICS-FOLDER + "wei.jpg")
     url($AUTH-PICS-FOLDER + "font1.jpg")
