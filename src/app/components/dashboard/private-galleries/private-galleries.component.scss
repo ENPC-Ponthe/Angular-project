@@ -1,11 +1,11 @@
-@import url("../../../../assets/assets_g/css/main.css");
 @import "../../../PontheStyle.scss";
+@import "gallery/gallery_general";
 
-#main {
+#main-gallery {
 	background: none;
 }
 
-#main .thumb > .image {
+#main-gallery .thumb>.image {
 	-webkit-tap-highlight-color: color(WHITE);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -19,6 +19,10 @@
 	width: 100%;
 }
 
+#main-gallery article a {
+	display: flex;
+}
+
 #private {
 	width: 5em;
 	background: color(GRADIENT_RED_YELLOW);
@@ -28,6 +32,7 @@
 	top: 1vh;
 	left: 0.5vw;
 	border-radius: 10px;
+	font-weight: 400;
 }
 
 .private_background {
@@ -37,7 +42,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	opacity:0.55;
+	opacity: 0.55;
 }
 
 #no_private_gallery {
@@ -54,16 +59,17 @@
 }
 
 .galleryTitle {
-	font-weight: 600;
+	font-weight: 700;
 	text-transform: capitalize;
 	letter-spacing: -0.015em;
-	font-size: 2em;
 	margin: 0;
 	display: block;
 	width: 100vw;
 	left: 0;
 	text-align: left;
 	padding-left: 6vw;
+	line-height: 1.5em !important;
+	font-size: 2em !important;
 
 	@include sm {
 		font-size: 1.75em;

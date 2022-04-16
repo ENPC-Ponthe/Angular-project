@@ -1,4 +1,4 @@
-@import url("../../../../assets/assets_g/css/main.css");
+@import "gallery/gallery_general";
 @import "../../../PontheStyle.scss";
 
 #event-panel {
@@ -9,7 +9,12 @@
   }
 }
 
-#menu-button, #download-button {
+#event-panel>nav {
+  @include font-size(MEDIUM);
+}
+
+#menu-button,
+#download-button {
   vertical-align: middle;
   padding: 0 !important;
   cursor: pointer;
@@ -19,6 +24,8 @@
   &:before {
     color: color(WHITE) !important;
   }
+
+  font-size: 1.6em;
 }
 
 .footer-panel {
@@ -29,6 +36,7 @@
   opacity: 1;
   transform: translateY(2vh) !important;
 }
+
 #footer-hidden {
   opacity: 0;
 }
@@ -44,5 +52,20 @@
   @include sm-landscape {
     top: 2.5em;
     height: calc(100vh - 6em);
+  }
+}
+
+.icon {
+  color: #505051;
+}
+
+.panel {
+  width: calc(100% - 6em);
+  padding: 2em 3em;
+
+  @include sm {
+    width: calc(100% - 4em);
+    padding: 2em 2em 1em 2em;
+    transform: translateY(75vh);
   }
 }

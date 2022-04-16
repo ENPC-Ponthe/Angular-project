@@ -1,46 +1,37 @@
 @import "../../../PontheStyle.scss";
 
-$SIZE-ICONS: units(5);
+$SIZE-ICONS: units(4.5);
 $SIZE-ICONS-MOBILE: units(4);
 
+$MARGIN-FROM-CORNER: units(1);
+$MARGIN-ICONS: units(0.5);
+
+#single-icon,
 #reactions {
     position: absolute;
     top: 0;
     left: 0;
-    background: color(WHITE);
-    padding: units(0.5);
-    margin-top: units(1.5);
-    margin-left: units(1.5);
+    padding: 0;
     border-radius: units(1);
+}
 
-    @include sm {
-        margin-top: units(1);
-        margin-left: units(1);
-        padding-bottom: 0;
-    }
+#reactions {
+    background: color(WHITE);
+    margin-top: calc(#{$MARGIN-FROM-CORNER} - #{$MARGIN-ICONS});
+    margin-left: calc(#{$MARGIN-FROM-CORNER} - #{$MARGIN-ICONS});
 }
 
 #single-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: units(0.5);
-    margin-top: units(1.5);
-    margin-left: units(1.5);
-    border-radius: units(1);
-
-    @include sm {
-        margin-top: units(1);
-        margin-left: units(1);
-        padding: 0;
-    }
+    margin-top: $MARGIN-FROM-CORNER;
+    margin-left: $MARGIN-FROM-CORNER;
 }
 
-.reaction-icon, .small-reaction {
+.reaction-icon,
+.small-reaction {
     height: $SIZE-ICONS;
     width: $SIZE-ICONS;
     display: inline-block;
-    margin: units(0.5);
+    margin: $MARGIN-ICONS;
 
     @include sm {
         height: $SIZE-ICONS-MOBILE;

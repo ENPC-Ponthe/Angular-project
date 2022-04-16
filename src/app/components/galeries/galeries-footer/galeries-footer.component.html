@@ -1,22 +1,22 @@
 <!-- Header, displayed on the bottom -->
-<header id="header" id="event-panel">
+<div id="header" id="event-panel">
   <h1>
     <a [routerLink]="getFooterTitleRedirection()" [attr.aria-label]="nameEvent"><strong>{{ nameEvent }}</strong></a>
   </h1>
   <nav>
     <ul>
-      <li (click)="changeStateFooter()"><a class="icon fa-info-circle" id="menu-button"
+      <li *ngIf="!breakpointsService.isMobile"><a (click)="downloadArchive()" id="download-button"
+          class="icon-gallery fa fa-download fa-2x" aria-label="download button"></a>
+      </li>
+      <li (click)="changeStateFooter()"><a class="icon-gallery" id="menu-button"
           [attr.aria-label]="'galeries.footer.title' | translate">{{
           'galeries.footer.title' | translate }}</a></li>
-      <li><a (click)="downloadArchive()" id="download-button" class="icon fa fa-download fa-2x"
-          aria-label="download button"></a>
-      </li>
     </ul>
   </nav>
-</header>
+</div>
 
 <!-- Footer, revealed when clicking on "A propos de l'album" -->
-<footer id="footer" class="panel" [@footerTrigger]="footerState">
+<div id="gallery-footer" class="panel" [@footerTrigger]="footerState">
   <div class="inner split">
 
     <!-- General information on the album -->
@@ -43,4 +43,4 @@
     <!-- Contact form -->
     <app-galeries-contact-form></app-galeries-contact-form>
   </div>
-</footer>
+</div>
