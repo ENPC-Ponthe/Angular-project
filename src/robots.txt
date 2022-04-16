@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://ponthe.enpc.org/sitemap.xml

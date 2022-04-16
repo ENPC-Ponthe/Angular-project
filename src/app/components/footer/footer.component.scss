@@ -1,4 +1,3 @@
-@import url("../../../assets/assets_h/css/main.css");
 @import "../../PontheStyle.scss";
 
 #footer {
@@ -21,7 +20,7 @@
 	position: relative;
 	margin: 0;
 	line-height: 1em;
-	padding: 1.5em;
+	padding: 1em;
 	background: color(DARK_DARK_GREY);
 	color: rgba(185, 186, 187, 0.5);
 }
@@ -70,8 +69,8 @@
 
 	@include sm {
 		position: absolute;
-		top: units(7.5);
-		left: units(3);
+		top: units(5);
+		left: units(2);
 		height: units(1.25);
 	}
 }
@@ -88,7 +87,12 @@
 		justify-content: center;
 		line-height: 1.5em;
 		text-align: center;
-		padding: 2em 1em 2em 1em;
+		padding: 1.25em 1em;
+
+		@include sm {
+			font-size: 1em;
+			line-height: 1.5em;
+		}
 	}
 
 	#footer > * {
