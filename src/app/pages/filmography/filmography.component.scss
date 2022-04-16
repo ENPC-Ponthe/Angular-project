@@ -1,32 +1,21 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
-@import url("../../../assets/assets_g/css/main.css");
+@import "gallery/gallery_general";
 @import "../../PontheStyle.scss";
 
-$SPACER-HEIGHT: 4em;
-
 #bg-movies {
-    position: fixed;
-    background: color(HOME_GREY) !important;
-    height: 100vh;
-    top: 0;
-    width: 100vw;
+	position: fixed;
+	background: color(HOME_GREY) !important;
+	height: 100vh;
+	top: 0;
+	width: 100vw;
 }
 
 .spacer {
-  margin-top: $SPACER-HEIGHT;
-
-  @include sm {
-	  margin-top: units(10);
-
-	  @media (prefers-color-scheme: dark) {
-		margin-top: 3.8em;
-	}
-  }
+	margin-top: $NAV-HEIGHT;
 }
 
-#main {
+#main-gallery {
 	padding: 0 units(2);
-	
+
 	@include sm {
 		flex-direction: column;
 		padding: 0 units(1);
@@ -41,23 +30,9 @@ $SPACER-HEIGHT: 4em;
 	}
 }
 
-#main .thumb .image {
-	-webkit-tap-highlight-color: color(WHITE);
-	background-position: center;
-	background-repeat: no-repeat;
-	@include background-size(cover);
-	vertical-align: middle;
-	border: 0;
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-}
-
-#main article {
-    border-radius: units(2.5);
-    margin: units(1.5);
+#main-gallery article {
+	border-radius: units(2.5);
+	margin: units(1.5);
 	width: calc((100vw - 2 * #{units(2)}) / 3 - 2 * #{units(2)}) !important;
 	transition: box-shadow 0.3s ease !important;
 
@@ -67,27 +42,29 @@ $SPACER-HEIGHT: 4em;
 		min-height: 16em !important;
 		height: calc(40vh - 4em) !important;
 	}
+
 	@include md {
 		margin: units(1);
 		width: calc(50vw - 2 * #{units(1.5)}) !important;
 		height: 25vh !important;
 	}
 }
-#main article:hover {
+
+#main-gallery article:hover {
 	box-shadow: box-shadow(LARGE);
 }
 
 #reload-boundary {
 	width: 100vw;
 	padding: units(10);
-    background: color(DARK_GREY);
-    z-index: 1;
+	background: color(DARK_GREY);
+	z-index: 1;
 }
 
 #no-filmography {
 	width: 90vw;
-    margin: auto;
-    text-align: center;
+	margin: auto;
+	text-align: center;
 	font-family: "Source Sans Pro";
 	font-weight: 400;
 	text-transform: inherit;

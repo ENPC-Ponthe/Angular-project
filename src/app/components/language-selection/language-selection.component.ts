@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { TranslateService, SUPPORTED_LANGUAGES } from '../../services/translate.service';
 import { FLAGS_BY_LANG } from '../../Constants';
@@ -16,6 +16,7 @@ export class LanguageSelectionComponent implements OnInit {
 
   selectedLanguage: string;
   showFlags = false;
+  @Input() openUp = false;
 
   constructor(private translate: TranslateService) { }
 

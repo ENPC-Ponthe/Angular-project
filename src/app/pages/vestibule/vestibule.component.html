@@ -1,11 +1,7 @@
 <div class="spacer"></div>
 
-<div id="main">
-  <article
-    *ngFor="let category of categories"
-    [id]="'article_' + category.type"
-    (click)="redirect(category.route)"
-  >
+<div id="main-gallery">
+  <article *ngFor="let category of categories" [id]="'article_' + category.type" (click)="redirect(category.route)">
     <h2>{{ category.name | translate }}</h2>
   </article>
 </div>

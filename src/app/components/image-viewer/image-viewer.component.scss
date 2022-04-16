@@ -1,4 +1,4 @@
-@import url("../../../assets/assets_g/css/main.css");
+@import "gallery/gallery_general";
 @import "../../PontheStyle.scss";
 
 #image-viewer {
@@ -10,82 +10,81 @@
   width: 100vw;
   align-items: center;
   position: fixed;
+  z-index: 1;
 }
 
 .darkbg {
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100vw;
-  height:100vh;
-  background-color: rgba(0,0,0,0.25);
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
   position: fixed;
   z-index: 5000;
 }
 
 .wide-pic {
-  display: block;
+  display: flex;
   margin: auto;
   padding: auto;
   position: fixed;
   z-index: 10000;
   background-color: transparent;
   box-shadow: 0 units(0.5) units(1) 0 rgba(0, 0, 0, 0.2), 0 units(0.75) units(2.5) 0 rgba(0, 0, 0, 0.19);
-  max-height: 95vh;
+  align-items: center;
   transition: margin-top 0.5s ease;
 }
 
-.wide-pic > img {
+.wide-pic>img {
   display: block;
   position: relative;
-  max-width: 95vw;
-  max-height: 95vh;
+  object-fit: cover;
   transition: height 0.5s ease, width 0.5s ease;
 }
 
-.wide-pic > caption {
+.wide-pic>caption {
   display: block;
   text-align: center;
-  padding: 0.25% 2.5%;
+  padding: units(1) units(2);
   position: absolute;
   bottom: 0;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  font-size: 1em;
+  font-size: 0.8em;
   line-height: 1.5em;
   letter-spacing: 0.1em;
-  margin-bottom: 0.5em;
   text-transform: uppercase;
 }
 
-.wide-pic > #num_photo {
+.wide-pic>#num_photo {
   padding: 0.25em 0.5em;
   position: fixed;
   top: 0;
   font-size: 0.9em;
   line-height: 1.2em;
+  height: 1.2em;
   text-transform: none;
   left: 0;
   background: #324167;
-  height: 1.7em;
   border-radius: units(1.25);
 }
 
-#closer {
-  width: 6%;
-  top: 3%;
-  right: 2%;
-  border-radius: units(12.5);
-}
 
-#right_arrow, #left_arrow, #closer {
-  position: absolute;
+#right_arrow,
+#left_arrow,
+#closer {
   z-index: 10000;
   cursor: pointer;
 }
 
-#right_arrow, #left_arrow {
-  width: 10%;
-  top: 45%;
+#right_arrow,
+#left_arrow {
+  position: absolute;
+  height: units(7);
+
+  @include sm {
+    height: units(5);
+  }
 }
 
 #right_arrow {
@@ -98,10 +97,22 @@
   left: 0;
 }
 
-#downloadButton {
+
+/* Action buttons */
+#actionsWidePic {
   position: absolute;
-  right: 8%;
-  top: 4.5%;
+  display: flex;
+  top: 0;
+  right: 0;
+  align-items: center;
+}
+
+#closer {
+  width: units(6.5);
+}
+
+#downloadButton {
   color: color(WHITE);
-  font-size: units(4);
+  font-size: units(3.5);
+  border: 0;
 }

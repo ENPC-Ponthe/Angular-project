@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 
 import { HttpService } from '../../services/http.service';
+import { BreakpointsService } from 'src/app/services/breakpoints.service';
 import { routesApp } from 'src/app/Routes';
 
 @Component({
@@ -14,6 +14,7 @@ import { routesApp } from 'src/app/Routes';
 export class FooterComponent {
 
   constructor(private httpService: HttpService,
+              private breakpointsService: BreakpointsService,
               private router: Router) {
   }
 

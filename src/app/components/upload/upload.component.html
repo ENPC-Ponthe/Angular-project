@@ -5,20 +5,9 @@
     <li *ngFor="let file of filesUploading">{{ file }}</li>
   </ul>
 </div>
-<ngx-file-picker #uploader
-  [totalMaxSize]="10000"
-  [fileMaxCount]="250"
-  [fileMaxSize]="10000"
-  [uploadType]="'multi'"
-  (validationError)= "onValidationError($event)"
-  [adapter]="adapter"
-  [fileExtensions]="['pdf', 'jpg', 'JPG', 'jpeg', 'png', 'mp4', 'docx', 'mov', 'avi', 'zip']"
-  [enableCropper]="false"
-  (uploadSuccess)="onUploadSuccess($event)"
-  (removeSuccess)="onRemoveSuccess($event)"
-  [showeDragDropZone]="true"
-  [showPreviewContainer]="true"
-  (fileAdded)="onFileAdded($event)"
-  style="margin-bottom: 2vh;"
->
+<ngx-file-picker #uploader [totalMaxSize]="10000" [fileMaxCount]="500" [fileMaxSize]="10000" [uploadType]="'multi'"
+  (validationError)="onValidationError($event)" [adapter]="adapter"
+  [fileExtensions]="['jpg', 'JPG', 'jpeg', 'png', 'mp4', 'mov', 'avi', 'zip']" [enableCropper]="false"
+  (uploadSuccess)="onUploadSuccess($event)" (removeSuccess)="onRemoveSuccess($event)" [showeDragDropZone]="true"
+  [showPreviewContainer]="true" (fileAdded)="onFileAdded($event)">
 </ngx-file-picker>

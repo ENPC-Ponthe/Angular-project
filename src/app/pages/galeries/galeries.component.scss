@@ -1,41 +1,16 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
-@import url("../../../assets/assets_g/css/main.css");
+@import "gallery/gallery_general";
 @import "../../PontheStyle.scss";
-
-$SPACER-HEIGHT: 4em;
 
 body {
 	background: color(DARK_GREY);
 }
 
 .spacer {
-  margin-top: $SPACER-HEIGHT;
-
-  @include sm {
-	margin-top: units(10);
-	
-	@media (prefers-color-scheme: dark) {
-		margin-top: 3.8em;
-	}
-  }
+	margin-top: $NAV-HEIGHT;
 }
 
 #main {
-	min-height: calc(100vh - #{$SPACER-HEIGHT});
-}
-
-#main .thumb > .image {
-	-webkit-tap-highlight-color: color(WHITE);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	vertical-align: middle;
-	border: 0;
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
+	min-height: calc(100vh - #{$NAV-HEIGHT});
 }
 
 #reload-boundary {
@@ -47,7 +22,7 @@ body {
 #no-gallery {
 	width: 90vw;
 	margin-left: 5vw;
-	margin-top: units(4);
+	margin-top: $NAV-HEIGHT;
 	font-family: "Source Sans Pro";
 	font-weight: 400;
 	text-transform: inherit;

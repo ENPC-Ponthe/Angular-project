@@ -1,67 +1,44 @@
-<app-modal
-  [title]="'dashboard.usefulLinks.title' | translate"
-  [editText]="editMode ? ('confirm' | translate) : ('edit' | translate)"
-  [closeText]="'close' | translate"
-  [visible]="visible"
-  (edit)="editConfirmModal()"
-  (close)="closeModal()">
+<app-modal [title]="'dashboard.usefulLinks.title' | translate"
+  [editText]="editMode ? ('confirm' | translate) : ('edit' | translate)" [closeText]="'close' | translate"
+  [visible]="visible" (edit)="editConfirmModal()" (close)="closeModal()">
   <div id="container">
     <button *ngIf="editMode" name="add" class="addSubject_button" (click)="addSubject(0)">
       {{ 'dashboard.links.usefulLinks.addSubject' | translate }}
     </button>
-    <div *ngFor="let subject of usefulLinks; let subjectIndex = index" class="subject">
+    <div *ngFor="let subject of usefulLinks; let subjectIndex = index">
       <div *ngIf="!editMode" class="subject">
-        <h2 [innerHTML]="subject.title"></h2>
+        <h2 class="subtitle" [innerHTML]="subject.title"></h2>
         <div *ngFor="let link of subject.content" class="link">
           <a [href]="link.url">{{ link.title }}</a>
           <p>{{ link.description }}</p>
         </div>
       </div>
 
-      <div *ngIf="editMode" class="subject">
-        <input type="text"
-          class="title_input section_title"
-          placeholder="Sujet"
-          [value]="subject.title" 
-          (change)="updateSubject(subjectIndex, $event)"/>
+      <div *ngIf="editMode">
+        <input type="text" class="section_title field_partial_big" placeholder="Sujet" [value]="subject.title"
+          (change)="updateSubject(subjectIndex, $event)" />
         <button name="remove" (click)="removeSubject(subjectIndex)">✕</button>
         <div *ngFor="let link of subject.content; let linkIndex = index">
-          <input type="text" name="url"
-            placeholder="Url"
-            class="input_field content_article url_input"
-            [value]="link.url"
-            (change)="updateLink(subjectIndex, linkIndex, $event)" />
-          <input type="text" name="title"
-            placeholder="Titre"
-            class="input_field content_article"
-            [value]="link.title"
+          <input type="text" name="title" placeholder="Titre" class="field_partial" [value]="link.title"
             (change)="updateTitle(subjectIndex, linkIndex, $event)" />
-          <button name="remove"
-            class="removeButton"
-            (click)="removeLink(subjectIndex, linkIndex)">✕</button>
-          <textarea type="text" name="description" rows="2"
-            placeholder="Description"
-            class="input_field content_article"
-            [value]="link.description"
-            (change)="updateDescription(subjectIndex, linkIndex, $event)"></textarea>
+          <button name="remove" class="removeButton" (click)="removeLink(subjectIndex, linkIndex)">✕</button>
+          <input type="text" name="url" placeholder="Url" class="url_input field_full" [value]="link.url"
+            (change)="updateLink(subjectIndex, linkIndex, $event)" />
+          <textarea type="text" name="description" rows="2" placeholder="Description" class="field_full"
+            [value]="link.description" (change)="updateDescription(subjectIndex, linkIndex, $event)"></textarea>
         </div>
         <button name="add" class="add_button" (click)="addLink(subjectIndex)">
           {{ 'dashboard.links.usefulLinks.addLink' | translate }}
-       </button>
-       <button name="add" class="addSubject_button" (click)="addSubject(subjectIndex + 1)">
-         {{ 'dashboard.links.usefulLinks.addSubject' | translate }}
-      </button>
+        </button>
+        <button name="add" class="addSubject_button" (click)="addSubject(subjectIndex + 1)">
+          {{ 'dashboard.links.usefulLinks.addSubject' | translate }}
+        </button>
       </div>
     </div>
   </div>
 </app-modal>
 
-<app-confirm-modal
-  class="confirmModal"
-  [title]="'dashboard.modalChangeValidate.title' | translate"
-  [cancelText]="'cancel' | translate"
-  [validateText]="'confirm' | translate"
-  [visible]="visibleConfirmModal"
-  (closeCancel)="closeConfirmModal()"
-  (closeValidate)="onSubmitUsefulLinks()">
+<app-confirm-modal class="confirmModal" [title]="'dashboard.modalChangeValidate.title' | translate"
+  [cancelText]="'cancel' | translate" [validateText]="'confirm' | translate" [visible]="visibleConfirmModal"
+  (closeCancel)="closeConfirmModal()" (closeValidate)="onSubmitUsefulLinks()">
 </app-confirm-modal>
