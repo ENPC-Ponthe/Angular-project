@@ -30,7 +30,7 @@
     "flag-icon-css": "^3.4.6",
     "jwt-decode": "^2.2.0",
     "ngx-awesome-uploader": "^8.1.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
